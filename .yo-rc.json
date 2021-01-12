@@ -2,7 +2,8 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "sn.ssi.sigmap",
-      "nativeLanguage": "fr"
+      "nativeLanguage": "fr",
+      "microservicePath": "../planpassationms"
     },
     "jhipsterVersion": "6.10.5",
     "applicationType": "gateway",

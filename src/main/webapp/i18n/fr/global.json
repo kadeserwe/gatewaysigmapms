@@ -7,6 +7,14 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
+        "planpassationmsHistorique": "Historique",
+        "planpassationmsPlanPassation": "Plan Passation",
+        "planpassationmsRealisation": "Realisation",
+        "planpassationmsSygService": "Syg Service",
+        "planpassationmsSygTypeService": "Syg Type Service",
+        "planpassationmsSygTypeMarche": "Syg Type Marche",
+        "planpassationmsSygTypeSourceFinancement": "Syg Type Source Financement",
+        "planpassationmsSygSourceFinancement": "Syg Source Financement",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
