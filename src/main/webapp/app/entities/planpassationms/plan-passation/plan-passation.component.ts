@@ -7,7 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { IPlanPassation } from 'app/shared/model/planpassationms/plan-passation.model';
 
-import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
+import { BOUTON_DETAILS, BOUTON_MODIFIER, BOUTON_SUPRIMER, ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { PlanPassationService } from './plan-passation.service';
 import { PlanPassationDeleteDialogComponent } from './plan-passation-delete-dialog.component';
 
@@ -24,6 +24,10 @@ export class PlanPassationComponent implements OnInit, OnDestroy {
   predicate!: string;
   ascending!: boolean;
   ngbPaginationPage = 1;
+  btnSuprimer = BOUTON_SUPRIMER;
+  btnModifier = BOUTON_MODIFIER;
+  btnDetails = BOUTON_DETAILS;
+  term: any;
 
   constructor(
     protected planPassationService: PlanPassationService,

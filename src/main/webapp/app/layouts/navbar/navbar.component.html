@@ -1,7 +1,8 @@
 <nav class="navbar navbar-dark navbar-expand-md bg-dark">
     <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
         <span class="logo-img"></span>
-        <span jhiTranslate="global.title" class="navbar-title">Gatewaysigmap</span> <span class="navbar-version">{{ version }}</span>
+        <span >SIGMAP</span>
+        <!--<span class="navbar-version">{{ version }}</span>-->
     </a>
     <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
         <fa-icon icon="bars"></fa-icon>
@@ -21,57 +22,57 @@
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                     <span>
                         <fa-icon icon="th-list"></fa-icon>
-                        <span jhiTranslate="global.menu.entities.main">
-                            Entities
+                        <span >
+                            Modules
                         </span>
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
                     <li>
                         <a class="dropdown-item" routerLink="historique" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <fa-icon icon="album" [fixedWidth]="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.planpassationmsHistorique">Historique</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="plan-passation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <fa-icon icon="album" [fixedWidth]="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.planpassationmsPlanPassation">Plan Passation</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="realisation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <fa-icon icon="album" [fixedWidth]="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.planpassationmsRealisation">Realisation</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="syg-service" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <fa-icon icon="album" [fixedWidth]="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.planpassationmsSygService">Syg Service</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="syg-type-service" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <fa-icon icon="album" [fixedWidth]="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.planpassationmsSygTypeService">Syg Type Service</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="syg-type-marche" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <fa-icon icon="album" [fixedWidth]="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.planpassationmsSygTypeMarche">Syg Type Marche</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="syg-type-source-financement" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <fa-icon icon="album" [fixedWidth]="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.planpassationmsSygTypeSourceFinancement">Syg Type Source Financement</span>
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" routerLink="syg-source-financement" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <fa-icon icon="album" [fixedWidth]="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.planpassationmsSygSourceFinancement">Syg Source Financement</span>
                         </a>
                     </li>

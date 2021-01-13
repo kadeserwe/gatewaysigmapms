@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-realisation-heading" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.home.createOrEditLabel">Create or edit a Realisation</h2>
+            <h2 ><span class="badge badge-primary">Créer ou editer une Réalisation</span></h2>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -28,7 +28,7 @@
                     <div *ngIf="editForm.get('dateAttribution')!.invalid && (editForm.get('dateAttribution')!.dirty || editForm.get('dateAttribution')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateAttribution')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -40,10 +40,10 @@
                     <div *ngIf="editForm.get('delaiexecution')!.invalid && (editForm.get('delaiexecution')!.dirty || editForm.get('delaiexecution')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('delaiexecution')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                         <small class="form-text text-danger"
-                            [hidden]="!editForm.get('delaiexecution')?.errors?.number" jhiTranslate="entity.validation.number">
+                               [hidden]="!editForm.get('delaiexecution')?.errors?.number" jhiTranslate="entity.validation.number">
                             This field should be a number.
                         </small>
                     </div>
@@ -68,10 +68,10 @@
                     <div *ngIf="editForm.get('examenDncmp')!.invalid && (editForm.get('examenDncmp')!.dirty || editForm.get('examenDncmp')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('examenDncmp')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                         <small class="form-text text-danger"
-                            [hidden]="!editForm.get('examenDncmp')?.errors?.number" jhiTranslate="entity.validation.number">
+                               [hidden]="!editForm.get('examenDncmp')?.errors?.number" jhiTranslate="entity.validation.number">
                             This field should be a number.
                         </small>
                     </div>
@@ -84,10 +84,10 @@
                     <div *ngIf="editForm.get('examenPtf')!.invalid && (editForm.get('examenPtf')!.dirty || editForm.get('examenPtf')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('examenPtf')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                         <small class="form-text text-danger"
-                            [hidden]="!editForm.get('examenPtf')?.errors?.number" jhiTranslate="entity.validation.number">
+                               [hidden]="!editForm.get('examenPtf')?.errors?.number" jhiTranslate="entity.validation.number">
                             This field should be a number.
                         </small>
                     </div>
@@ -100,7 +100,7 @@
                     <div *ngIf="editForm.get('chapitreImputation')!.invalid && (editForm.get('chapitreImputation')!.dirty || editForm.get('chapitreImputation')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('chapitreImputation')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                     <div *ngIf="editForm.get('autorisationEngagement')!.invalid && (editForm.get('autorisationEngagement')!.dirty || editForm.get('autorisationEngagement')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('autorisationEngagement')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                     <div *ngIf="editForm.get('dateReceptionDossier')!.invalid && (editForm.get('dateReceptionDossier')!.dirty || editForm.get('dateReceptionDossier')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateReceptionDossier')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
                     <div *ngIf="editForm.get('dateNonObjection')!.invalid && (editForm.get('dateNonObjection')!.dirty || editForm.get('dateNonObjection')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateNonObjection')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                     <div *ngIf="editForm.get('dateAutorisation')!.invalid && (editForm.get('dateAutorisation')!.dirty || editForm.get('dateAutorisation')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateAutorisation')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                     <div *ngIf="editForm.get('dateRecepNonObjection')!.invalid && (editForm.get('dateRecepNonObjection')!.dirty || editForm.get('dateRecepNonObjection')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateRecepNonObjection')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -192,7 +192,7 @@
                     <div *ngIf="editForm.get('dateRecepDossCorrige')!.invalid && (editForm.get('dateRecepDossCorrige')!.dirty || editForm.get('dateRecepDossCorrige')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateRecepDossCorrige')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -208,7 +208,7 @@
                     <div *ngIf="editForm.get('datePubParPrmp')!.invalid && (editForm.get('datePubParPrmp')!.dirty || editForm.get('datePubParPrmp')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('datePubParPrmp')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -224,7 +224,7 @@
                     <div *ngIf="editForm.get('dateOuverturePlis')!.invalid && (editForm.get('dateOuverturePlis')!.dirty || editForm.get('dateOuverturePlis')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateOuverturePlis')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -240,7 +240,7 @@
                     <div *ngIf="editForm.get('dateRecepNonObjectOcmp')!.invalid && (editForm.get('dateRecepNonObjectOcmp')!.dirty || editForm.get('dateRecepNonObjectOcmp')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateRecepNonObjectOcmp')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -256,7 +256,7 @@
                     <div *ngIf="editForm.get('dateRecepRapportEva')!.invalid && (editForm.get('dateRecepRapportEva')!.dirty || editForm.get('dateRecepRapportEva')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateRecepRapportEva')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -272,7 +272,7 @@
                     <div *ngIf="editForm.get('dateRecepNonObjectPtf')!.invalid && (editForm.get('dateRecepNonObjectPtf')!.dirty || editForm.get('dateRecepNonObjectPtf')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateRecepNonObjectPtf')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -288,7 +288,7 @@
                     <div *ngIf="editForm.get('dateExamenJuridique')!.invalid && (editForm.get('dateExamenJuridique')!.dirty || editForm.get('dateExamenJuridique')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateExamenJuridique')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -304,7 +304,7 @@
                     <div *ngIf="editForm.get('dateNotifContrat')!.invalid && (editForm.get('dateNotifContrat')!.dirty || editForm.get('dateNotifContrat')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateNotifContrat')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
@@ -320,7 +320,7 @@
                     <div *ngIf="editForm.get('dateApprobationContrat')!.invalid && (editForm.get('dateApprobationContrat')!.dirty || editForm.get('dateApprobationContrat')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('dateApprobationContrat')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
+                            This field is required.
                         </small>
                     </div>
                 </div>
