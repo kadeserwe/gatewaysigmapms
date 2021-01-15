@@ -24,7 +24,7 @@ export class SygTypeServiceComponent implements OnInit, OnDestroy {
   predicate!: string;
   ascending!: boolean;
   ngbPaginationPage = 1;
-  tnSuprimer = BOUTON_SUPRIMER;
+  btnSuprimer = BOUTON_SUPRIMER;
   btnModifier = BOUTON_MODIFIER;
   btnDetails = BOUTON_DETAILS;
 
