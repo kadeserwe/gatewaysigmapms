@@ -7,7 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ISygTypeSourceFinancement } from 'app/shared/model/planpassationms/syg-type-source-financement.model';
 
-import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
+import { BOUTON_DETAILS, BOUTON_MODIFIER, BOUTON_SUPRIMER, ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { SygTypeSourceFinancementService } from './syg-type-source-financement.service';
 import { SygTypeSourceFinancementDeleteDialogComponent } from './syg-type-source-financement-delete-dialog.component';
 
@@ -24,6 +24,9 @@ export class SygTypeSourceFinancementComponent implements OnInit, OnDestroy {
   predicate!: string;
   ascending!: boolean;
   ngbPaginationPage = 1;
+  btnSuprimer = BOUTON_SUPRIMER;
+  btnModifier = BOUTON_MODIFIER;
+  btnDetails = BOUTON_DETAILS;
 
   constructor(
     protected sygTypeSourceFinancementService: SygTypeSourceFinancementService,

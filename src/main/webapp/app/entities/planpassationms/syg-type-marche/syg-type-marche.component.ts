@@ -7,7 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ISygTypeMarche } from 'app/shared/model/planpassationms/syg-type-marche.model';
 
-import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
+import { BOUTON_DETAILS, BOUTON_MODIFIER, BOUTON_SUPRIMER, ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { SygTypeMarcheService } from './syg-type-marche.service';
 import { SygTypeMarcheDeleteDialogComponent } from './syg-type-marche-delete-dialog.component';
 
@@ -24,6 +24,9 @@ export class SygTypeMarcheComponent implements OnInit, OnDestroy {
   predicate!: string;
   ascending!: boolean;
   ngbPaginationPage = 1;
+  btnSuprimer = BOUTON_SUPRIMER;
+  btnModifier = BOUTON_MODIFIER;
+  btnDetails = BOUTON_DETAILS;
 
   constructor(
     protected sygTypeMarcheService: SygTypeMarcheService,

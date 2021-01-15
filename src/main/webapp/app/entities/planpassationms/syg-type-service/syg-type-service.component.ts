@@ -7,7 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ISygTypeService } from 'app/shared/model/planpassationms/syg-type-service.model';
 
-import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
+import { BOUTON_DETAILS, BOUTON_MODIFIER, BOUTON_SUPRIMER, ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { SygTypeServiceService } from './syg-type-service.service';
 import { SygTypeServiceDeleteDialogComponent } from './syg-type-service-delete-dialog.component';
 
@@ -24,6 +24,9 @@ export class SygTypeServiceComponent implements OnInit, OnDestroy {
   predicate!: string;
   ascending!: boolean;
   ngbPaginationPage = 1;
+  tnSuprimer = BOUTON_SUPRIMER;
+  btnModifier = BOUTON_MODIFIER;
+  btnDetails = BOUTON_DETAILS;
 
   constructor(
     protected sygTypeServiceService: SygTypeServiceService,
