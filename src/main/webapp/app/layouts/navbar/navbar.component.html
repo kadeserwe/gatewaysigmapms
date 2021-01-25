@@ -27,58 +27,120 @@
                         </span>
                     </span>
                 </a>
-                <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
-                    <li>
-                        <a class="dropdown-item" routerLink="historique" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-<!--                            <fa-icon icon="album" [fixedWidth]="true"></fa-icon>-->
-                            <span jhiTranslate="global.menu.entities.planpassationmsHistorique">Historique</span>
-                        </a>
-                    </li>
-                    <li>
+<!--                <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">-->
+               <!-- <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu" id="sous-menu">
+                    <button class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Services</button> &lt;!&ndash; bouton &ndash;&gt;
+                    <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="sous-menu">
+                        <a class="dropdown-item" href="#">Service 1</a>
+                        <a class="dropdown-item" href="#">Autre service</a>
+                        <a class="dropdown-item" href="#">Dernier Service</a>
+                    </div>
+                </div>-->
+
+
+                    <div class="input-group-btn" ngbDropdownMenu aria-labelledby="entity-menu">
+                        <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                            <button class="btn btn-secondary" ngbDropdownToggle>Plan de passation</button>
+                            <div class="dropdown-menu" ngbDropdownMenu>
+
                         <a class="dropdown-item" routerLink="plan-passation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
 
-                            <span jhiTranslate="global.menu.entities.planpassationmsPlanPassation">Plan Passation</span>
+                            <span >Plan Passation</span>
                         </a>
-                    </li>
-                    <li>
+                        <a class="dropdown-item" routerLink="historique" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <!--                            <fa-icon icon="album" [fixedWidth]="true"></fa-icon>-->
+                            <span >Historique</span>
+                        </a>
+
                         <a class="dropdown-item" routerLink="realisation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
 
                             <span jhiTranslate="global.menu.entities.planpassationmsRealisation">Realisation</span>
                         </a>
-                    </li>
-                    <li>
+
                         <a class="dropdown-item" routerLink="syg-service" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
 
-                            <span jhiTranslate="global.menu.entities.planpassationmsSygService">Syg Service</span>
+                            <span > Service</span>
                         </a>
-                    </li>
-                    <li>
+
                         <a class="dropdown-item" routerLink="syg-type-service" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
 
-                            <span jhiTranslate="global.menu.entities.planpassationmsSygTypeService">Syg Type Service</span>
+                            <span > Type Service</span>
                         </a>
-                    </li>
-                    <li>
+
                         <a class="dropdown-item" routerLink="syg-type-marche" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
 
-                            <span jhiTranslate="global.menu.entities.planpassationmsSygTypeMarche">Syg Type Marche</span>
+                            <span > Type Marche</span>
                         </a>
-                    </li>
-                    <li>
+
                         <a class="dropdown-item" routerLink="syg-type-source-financement" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
 
-                            <span jhiTranslate="global.menu.entities.planpassationmsSygTypeSourceFinancement">Syg Type Source Financement</span>
+                            <span > Type Source Financement</span>
                         </a>
-                    </li>
-                    <li>
+
                         <a class="dropdown-item" routerLink="syg-source-financement" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
 
-                            <span jhiTranslate="global.menu.entities.planpassationmsSygSourceFinancement">Syg Source Financement</span>
+                            <span > Source Financement</span>
                         </a>
-                    </li>
-                    <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
-                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!--<div class="nav-item dropdown pointer" id="entity_sous_menu"> &lt;!&ndash; groupe de boutons &ndash;&gt;
+                        <button type="button" class="btn">Plan de passation</button>
+                        <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </button>-->
+                  <!--  <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity_sous_menu">
+
+
+
+                        <a class="dropdown-item" routerLink="plan-passation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+
+                            <span >Plan Passation</span>
+                        </a>
+                        <a class="dropdown-item" routerLink="historique" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            &lt;!&ndash;                            <fa-icon icon="album" [fixedWidth]="true"></fa-icon>&ndash;&gt;
+                            <span >Historique</span>
+                        </a>
+
+                        <a class="dropdown-item" routerLink="realisation" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+
+                            <span jhiTranslate="global.menu.entities.planpassationmsRealisation">Realisation</span>
+                        </a>
+
+                        <a class="dropdown-item" routerLink="syg-service" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+
+                            <span > Service</span>
+                        </a>
+
+                        <a class="dropdown-item" routerLink="syg-type-service" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+
+                            <span > Type Service</span>
+                        </a>
+
+                        <a class="dropdown-item" routerLink="syg-type-marche" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+
+                            <span > Type Marche</span>
+                        </a>
+
+                        <a class="dropdown-item" routerLink="syg-type-source-financement" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+
+                            <span > Type Source Financement</span>
+                        </a>
+
+                        <a class="dropdown-item" routerLink="syg-source-financement" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+
+                            <span > Source Financement</span>
+                        </a>
+
+                    &lt;!&ndash; jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here &ndash;&gt;
+
+                </div>-->
+
+
             </li>
+
             <li *jhiHasAnyAuthority="'ROLE_ADMIN'" ngbDropdown class="nav-item dropdown pointer" display="dynamic" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="admin-menu">
                     <span>

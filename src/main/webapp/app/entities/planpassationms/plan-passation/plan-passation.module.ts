@@ -7,9 +7,10 @@ import { PlanPassationDetailComponent } from './plan-passation-detail.component'
 import { PlanPassationUpdateComponent } from './plan-passation-update.component';
 import { PlanPassationDeleteDialogComponent } from './plan-passation-delete-dialog.component';
 import { planPassationRoute } from './plan-passation.route';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
-  imports: [GatewaysigmapSharedModule, RouterModule.forChild(planPassationRoute)],
+  imports: [GatewaysigmapSharedModule, Ng2SearchPipeModule, RouterModule.forChild(planPassationRoute)],
   declarations: [PlanPassationComponent, PlanPassationDetailComponent, PlanPassationUpdateComponent, PlanPassationDeleteDialogComponent],
   entryComponents: [PlanPassationDeleteDialogComponent],
 })
