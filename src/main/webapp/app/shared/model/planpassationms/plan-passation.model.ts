@@ -27,6 +27,7 @@ export interface IPlanPassation {
   dateRejet?: Moment;
   datePublication?: Moment;
   commentairePublication?: string;
+  numero?: string;
 }
 
 export class PlanPassation implements IPlanPassation {
@@ -56,6 +57,7 @@ export class PlanPassation implements IPlanPassation {
     public dateValidation2?: Moment,
     public dateRejet?: Moment,
     public datePublication?: Moment,
-    public commentairePublication?: string
+    public commentairePublication?: string,
+    public numero?: string
   ) {}
 }
