@@ -55,6 +55,7 @@ export class PlanPassationUpdateComponent implements OnInit {
     dateRejet: [],
     datePublication: [],
     commentairePublication: [],
+    numero: [],
   });
 
   constructor(
@@ -99,6 +100,7 @@ export class PlanPassationUpdateComponent implements OnInit {
       dateRejet: planPassation.dateRejet,
       datePublication: planPassation.datePublication,
       commentairePublication: planPassation.commentairePublication,
+      numero: planPassation.numero,
     });
   }
 
@@ -161,6 +163,7 @@ export class PlanPassationUpdateComponent implements OnInit {
       dateRejet: this.editForm.get(['dateRejet'])!.value,
       datePublication: this.editForm.get(['datePublication'])!.value,
       commentairePublication: this.editForm.get(['commentairePublication'])!.value,
+      numero: this.editForm.get(['numero'])!.value,
     };
   }
 

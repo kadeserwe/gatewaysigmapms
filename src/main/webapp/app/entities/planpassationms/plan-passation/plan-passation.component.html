@@ -18,8 +18,13 @@
     <div class="alert alert-warning" id="no-result" *ngIf="planPassations?.length === 0">
         <span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.home.notFound">No planPassations found</span>
     </div>
-    <div class="form-group">
-        <input type="text" class="form-control ml-2" placeholder="Recherche" [(ngModel)]="term">
+    <div class="row mb-3">
+      <div class="form-group">
+        <input type="text" class="mr-2" placeholder="Recherche" [(ngModel)]="term">
+      </div>
+    <div>
+        <input type="date" class="mr-2" [(ngModel)]="term">
+    </div>
     </div>
     <div class="table-responsive" id="entities" *ngIf="planPassations && planPassations.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
@@ -62,7 +67,7 @@
                 <td>{{ planPassation.annee }}</td>
 
 
-                <td>{{ planPassation.dateCreation | date:'mediumDate' }}</td>
+                <td>{{ planPassation.dateCreation | date:'mediumDate'| filter:term  }}</td>
                  <td>{{ planPassation.dateMiseValidation | date:'mediumDate' }}</td>
                  <td>{{ planPassation.dateValidation | date:'mediumDate' }}</td>
                  <td>{{ planPassation.statut }}</td>
