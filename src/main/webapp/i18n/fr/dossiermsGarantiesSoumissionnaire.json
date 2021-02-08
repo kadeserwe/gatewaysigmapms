@@ -1,0 +1,34 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsGarantiesSoumissionnaire": {
+      "home": {
+        "title": "GarantiesSoumissionnaires",
+        "createLabel": "Créer un nouveau Garanties Soumissionnaire",
+        "createOrEditLabel": "Créer ou éditer un Garanties Soumissionnaire",
+        "notFound": "Aucun Garanties Soumissionnaire trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Garanties Soumissionnaire {{ id }} ?"
+      },
+      "detail": {
+        "title": "Garanties Soumissionnaire"
+      },
+      "fournie": "Fournie",
+      "libelle": "Libelle",
+      "observations": "Observations",
+      "libellelot": "Libellelot",
+      "montant": "Montant",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "garantiesDossier": "Garanties Dossier",
+      "plisOuverture": "Plis Ouverture",
+      "naturesGarantie": "Natures Garantie"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsGarantiesSoumissionnaire": {
+      "created": "Un nouveau Garanties Soumissionnaire a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Garanties Soumissionnaire avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Garanties Soumissionnaire avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

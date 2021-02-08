@@ -1,0 +1,103 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.home.title">Presence Ouvertures</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-presence-ouverture" [routerLink]="['/presence-ouverture/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.home.createLabel">
+            Create a new Presence Ouverture
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="presenceOuvertures?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.home.notFound">No presenceOuvertures found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="presenceOuvertures && presenceOuvertures.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="supplementaire"><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.supplementaire">Supplementaire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telephone"><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.telephone">Telephone</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nomRepresentant"><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.nomRepresentant">Nom Representant</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenomRepresentant"><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.prenomRepresentant">Prenom Representant</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nomStructure"><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.nomStructure">Nom Structure</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qualite"><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.qualite">Qualite</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etapePI"><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.etapePI">Etape PI</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossierAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.dossierAppelOffre">Dossier Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="appelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.appelOffre">Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="plisOuvertureId"><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.plisOuverture">Plis Ouverture</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let presenceOuverture of presenceOuvertures ;trackBy: trackId">
+                    <td><a [routerLink]="['/presence-ouverture', presenceOuverture.id, 'view']">{{ presenceOuverture.id }}</a></td>
+                    <td>{{ presenceOuverture.supplementaire }}</td>
+                    <td>{{ presenceOuverture.email }}</td>
+                    <td>{{ presenceOuverture.telephone }}</td>
+                    <td>{{ presenceOuverture.nomRepresentant }}</td>
+                    <td>{{ presenceOuverture.prenomRepresentant }}</td>
+                    <td>{{ presenceOuverture.nomStructure }}</td>
+                    <td>{{ presenceOuverture.qualite }}</td>
+                    <td>{{ presenceOuverture.etapePI }}</td>
+                    <td>
+                        <div *ngIf="presenceOuverture.dossierAppelOffreId">
+                            <a [routerLink]="['/dossier-appel-offre', presenceOuverture.dossierAppelOffreId , 'view']" >{{ presenceOuverture.dossierAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="presenceOuverture.appelOffreId">
+                            <a [routerLink]="['/appel-offre', presenceOuverture.appelOffreId , 'view']" >{{ presenceOuverture.appelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="presenceOuverture.plisOuvertureId">
+                            <a [routerLink]="['/plis-ouverture', presenceOuverture.plisOuvertureId , 'view']" >{{ presenceOuverture.plisOuvertureId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/presence-ouverture', presenceOuverture.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/presence-ouverture', presenceOuverture.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(presenceOuverture)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="presenceOuvertures && presenceOuvertures.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

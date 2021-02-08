@@ -1,0 +1,37 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsAvisAttribution": {
+      "home": {
+        "title": "AvisAttributions",
+        "createLabel": "Créer un nouveau Avis Attribution",
+        "createOrEditLabel": "Créer ou éditer un Avis Attribution",
+        "notFound": "Aucun Avis Attribution trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Avis Attribution {{ id }} ?"
+      },
+      "detail": {
+        "title": "Avis Attribution"
+      },
+      "attriObjet": "Attri Objet",
+      "attriType": "Attri Type",
+      "attritexte": "Attritexte",
+      "attriRef": "Attri Ref",
+      "attrifichier": "Attrifichier",
+      "attriRaisonsocial": "Attri Raisonsocial",
+      "attriDate": "Attri Date",
+      "attridatepublication": "Attridatepublication",
+      "attriPub": "Attri Pub",
+      "autiriteId": "Autirite Id",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "lot": "Lot"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsAvisAttribution": {
+      "created": "Un nouveau Avis Attribution a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Avis Attribution avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Avis Attribution avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

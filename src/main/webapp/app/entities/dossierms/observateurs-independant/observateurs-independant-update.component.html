@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-observateurs-independant-heading" jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.home.createOrEditLabel">Create or edit a Observateurs Independant</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.representant" for="field_representant">Representant</label>
+                    <input type="text" class="form-control" name="representant" id="field_representant"
+                           formControlName="representant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.qualite" for="field_qualite">Qualite</label>
+                    <input type="text" class="form-control" name="qualite" id="field_qualite"
+                           formControlName="qualite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.presence" for="field_presence">Presence</label>
+                    <input type="text" class="form-control" name="presence" id="field_presence"
+                           formControlName="presence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.dateConvocation" for="field_dateConvocation">Date Convocation</label>
+                    <div class="input-group">
+                        <input id="field_dateConvocation" type="text" class="form-control" name="dateConvocation" ngbDatepicker #dateConvocationDp="ngbDatepicker" formControlName="dateConvocation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateConvocationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.etape" for="field_etape">Etape</label>
+                    <input type="number" class="form-control" name="etape" id="field_etape"
+                           formControlName="etape"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.dossierAppelOffre" for="field_dossierAppelOffre">Dossier Appel Offre</label>
+                    <select class="form-control" id="field_dossierAppelOffre" name="dossierAppelOffre" formControlName="dossierAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dossierAppelOffreOption.id" *ngFor="let dossierAppelOffreOption of dossierappeloffres; trackBy: trackById">{{ dossierAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

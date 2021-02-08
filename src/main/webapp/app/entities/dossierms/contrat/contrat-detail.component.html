@@ -1,0 +1,346 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contrat">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.detail.title">Contrat</span> {{ contrat.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.montant">Montant</span></dt>
+                <dd>
+                    <span>{{ contrat.montant }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.montantVerse">Montant Verse</span></dt>
+                <dd>
+                    <span>{{ contrat.montantVerse }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateSignature">Con Date Signature</span></dt>
+                <dd>
+                    <span>{{ contrat.conDateSignature }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateApprobation">Con Date Approbation</span></dt>
+                <dd>
+                    <span>{{ contrat.conDateApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateNotification">Con Date Notification</span></dt>
+                <dd>
+                    <span>{{ contrat.conDateNotification }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateRecepProvisoire">Con Date Recep Provisoire</span></dt>
+                <dd>
+                    <span>{{ contrat.conDateRecepProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateRecepDefinitive">Con Date Recep Definitive</span></dt>
+                <dd>
+                    <span>{{ contrat.conDateRecepDefinitive }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateOrdreDemarrage">Con Date Ordre Demarrage</span></dt>
+                <dd>
+                    <span>{{ contrat.conDateOrdreDemarrage }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.condateAttributionProvisoire">Condate Attribution Provisoire</span></dt>
+                <dd>
+                    <span>{{ contrat.condateAttributionProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.condateAttributionDefinitive">Condate Attribution Definitive</span></dt>
+                <dd>
+                    <span>{{ contrat.condateAttributionDefinitive }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDatePaiement">Con Date Paiement</span></dt>
+                <dd>
+                    <span>{{ contrat.conDatePaiement }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.dateDemandeImmatriculation">Date Demande Immatriculation</span></dt>
+                <dd>
+                    <span>{{ contrat.dateDemandeImmatriculation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.dateImmatriculation">Date Immatriculation</span></dt>
+                <dd>
+                    <span>{{ contrat.dateImmatriculation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.datePub">Date Pub</span></dt>
+                <dd>
+                    <span>{{ contrat.datePub }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.dateDemandePubContrat">Date Demande Pub Contrat</span></dt>
+                <dd>
+                    <span>{{ contrat.dateDemandePubContrat }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateCreation">Con Date Creation</span></dt>
+                <dd>
+                    <span>{{ contrat.conDateCreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateDemandeAutorisation">Renouvcont Date Demande Autorisation</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontDateDemandeAutorisation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateautorisation">Renouvcont Dateautorisation</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontDateautorisation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateDemandeExamenJuridique">Renouvcont Date Demande Examen Juridique</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontDateDemandeExamenJuridique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateExamenJuridique">Renouvcont Date Examen Juridique</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontDateExamenJuridique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateDemandeApprobation">Renouvcont Date Demande Approbation</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontDateDemandeApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateApprobation">Renouvcont Date Approbation</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontDateApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateRejet">Renouvcont Date Rejet</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontDateRejet }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateRetourApprobation">Renouvcont Date Retour Approbation</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontDateRetourApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentSignature">Con Comment Signature</span></dt>
+                <dd>
+                    <span>{{ contrat.conCommentSignature }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefSignature">Con Ref Signature</span></dt>
+                <dd>
+                    <span>{{ contrat.conRefSignature }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentApprobation">Con Comment Approbation</span></dt>
+                <dd>
+                    <span>{{ contrat.conCommentApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefApprobation">Con Ref Approbation</span></dt>
+                <dd>
+                    <span>{{ contrat.conRefApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentNotification">Con Comment Notification</span></dt>
+                <dd>
+                    <span>{{ contrat.conCommentNotification }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefNotification">Con Ref Notification</span></dt>
+                <dd>
+                    <span>{{ contrat.conRefNotification }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conFichierRecepProvisoire">Con Fichier Recep Provisoire</span></dt>
+                <dd>
+                    <span>{{ contrat.conFichierRecepProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentRecepProvisoire">Con Comment Recep Provisoire</span></dt>
+                <dd>
+                    <span>{{ contrat.conCommentRecepProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conFichierRecepDefinitive">Con Fichier Recep Definitive</span></dt>
+                <dd>
+                    <span>{{ contrat.conFichierRecepDefinitive }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentRecepDefinitive">Con Comment Recep Definitive</span></dt>
+                <dd>
+                    <span>{{ contrat.conCommentRecepDefinitive }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conFichierOrdreDemarrage">Con Fichier Ordre Demarrage</span></dt>
+                <dd>
+                    <span>{{ contrat.conFichierOrdreDemarrage }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentOrdreDemarrage">Con Comment Ordre Demarrage</span></dt>
+                <dd>
+                    <span>{{ contrat.conCommentOrdreDemarrage }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefAttributionProvisoire">Con Ref Attribution Provisoire</span></dt>
+                <dd>
+                    <span>{{ contrat.conRefAttributionProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireAttributionProvisoire">Con Commentaire Attribution Provisoire</span></dt>
+                <dd>
+                    <span>{{ contrat.conCommentaireAttributionProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefAttributionDefinitive">Con Ref Attribution Definitive</span></dt>
+                <dd>
+                    <span>{{ contrat.conRefAttributionDefinitive }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireAttributionDefinitive">Con Commentaire Attribution Definitive</span></dt>
+                <dd>
+                    <span>{{ contrat.conCommentaireAttributionDefinitive }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conStatut">Con Statut</span></dt>
+                <dd>
+                    <span>{{ contrat.conStatut }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.numMatriculation">Num Matriculation</span></dt>
+                <dd>
+                    <span>{{ contrat.numMatriculation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireDmdmat">Con Commentaire Dmdmat</span></dt>
+                <dd>
+                    <span>{{ contrat.conCommentaireDmdmat }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireMatriculation">Con Commentaire Matriculation</span></dt>
+                <dd>
+                    <span>{{ contrat.conCommentaireMatriculation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.concSituation">Conc Situation</span></dt>
+                <dd>
+                    <span>{{ contrat.concSituation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.nationnalite">Nationnalite</span></dt>
+                <dd>
+                    <span>{{ contrat.nationnalite }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.fichierImmatricule">Fichier Immatricule</span></dt>
+                <dd>
+                    <span>{{ contrat.fichierImmatricule }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.fichierJustificatif">Fichier Justificatif</span></dt>
+                <dd>
+                    <span>{{ contrat.fichierJustificatif }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.commentairePub">Commentaire Pub</span></dt>
+                <dd>
+                    <span>{{ contrat.commentairePub }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.fichierContrat">Fichier Contrat</span></dt>
+                <dd>
+                    <span>{{ contrat.fichierContrat }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentDemandePub">Con Comment Demande Pub</span></dt>
+                <dd>
+                    <span>{{ contrat.conCommentDemandePub }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierAutorisationPrealable">Renouvcont Fichier Autorisation Prealable</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontFichierAutorisationPrealable }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierExamenJuridique">Renouvcont Fichier Examen Juridique</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontFichierExamenJuridique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierContratSigne">Renouvcont Fichier Contrat Signe</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontFichierContratSigne }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierPageGarde">Renouvcont Fichier Page Garde</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontFichierPageGarde }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierPageSignature">Renouvcont Fichier Page Signature</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontFichierPageSignature }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierRapportMotivation">Renouvcont Fichier Rapport Motivation</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontFichierRapportMotivation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierProjetContrat">Renouvcont Fichier Projet Contrat</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontFichierProjetContrat }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontCommentAutorisation">Renouvcont Comment Autorisation</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontCommentAutorisation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontCommentDemandeApprobation">Renouvcont Comment Demande Approbation</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontCommentDemandeApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontCommentExamenJuridique">Renouvcont Comment Examen Juridique</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontCommentExamenJuridique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.autoriteId">Autorite Id</span></dt>
+                <dd>
+                    <span>{{ contrat.autoriteId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.serviceId">Service Id</span></dt>
+                <dd>
+                    <span>{{ contrat.serviceId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.modePassationId">Mode Passation Id</span></dt>
+                <dd>
+                    <span>{{ contrat.modePassationId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.typeMarcheId">Type Marche Id</span></dt>
+                <dd>
+                    <span>{{ contrat.typeMarcheId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.immatriculation">Immatriculation</span></dt>
+                <dd>
+                    <span>{{ contrat.immatriculation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.delai">Delai</span></dt>
+                <dd>
+                    <span>{{ contrat.delai }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontImmatStatut">Renouvcont Immat Statut</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontImmatStatut }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontPubStatut">Renouvcont Pub Statut</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontPubStatut }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontAutorisationStatut">Renouvcont Autorisation Statut</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontAutorisationStatut }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontExamenJuridiqueStatut">Renouvcont Examen Juridique Statut</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontExamenJuridiqueStatut }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontApprobationStatut">Renouvcont Approbation Statut</span></dt>
+                <dd>
+                    <span>{{ contrat.renouvcontApprobationStatut }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.etatContratdebase">Etat Contratdebase</span></dt>
+                <dd>
+                    <span>{{ contrat.etatContratdebase }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.libelleLot">Libelle Lot</span></dt>
+                <dd>
+                    <span>{{ contrat.libelleLot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="contrat.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', contrat.dossierAppelOffreId, 'view']">{{ contrat.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.lot">Lot</span></dt>
+                <dd>
+                    <div *ngIf="contrat.lotId">
+                        <a [routerLink]="['/lot', contrat.lotId, 'view']">{{ contrat.lotId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.fournisseur">Fournisseur</span></dt>
+                <dd>
+                    <div *ngIf="contrat.fournisseurId">
+                        <a [routerLink]="['/fournisseur', contrat.fournisseurId, 'view']">{{ contrat.fournisseurId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.plisOuverture">Plis Ouverture</span></dt>
+                <dd>
+                    <div *ngIf="contrat.plisOuvertureId">
+                        <a [routerLink]="['/plis-ouverture', contrat.plisOuvertureId, 'view']">{{ contrat.plisOuvertureId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contrat', contrat.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

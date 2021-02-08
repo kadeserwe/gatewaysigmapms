@@ -1,0 +1,240 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="plisOuverture">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.detail.title">Plis Ouverture</span> {{ plisOuverture.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.raisonSociale">Raison Sociale</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.raisonSociale }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.adresseMail">Adresse Mail</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.adresseMail }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.commentaire">Commentaire</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.commentaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.rang">Rang</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.rang }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.ninea">Ninea</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.ninea }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.natCode">Nat Code</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.natCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.monCode">Mon Code</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.monCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.pvOffreFinanciere">Pv Offre Financiere</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.pvOffreFinanciere }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.negociation">Negociation</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.negociation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantOffert">Montant Offert</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.montantOffert }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreFinancier">Score Financier</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.scoreFinancier }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.prixEvalue">Prix Evalue</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.prixEvalue }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreTechniquePondere">Score Technique Pondere</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.scoreTechniquePondere }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreFinancierPondere">Score Financier Pondere</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.scoreFinancierPondere }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreFinal">Score Final</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.scoreFinal }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantDefinitif">Montant Definitif</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.montantDefinitif }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantTVA">Montant TVA</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.montantTVA }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantDouane">Montant Douane</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.montantDouane }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.dateDepot">Date Depot</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.dateDepot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.heuredepot">Heuredepot</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.heuredepot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.rabais">Rabais</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.rabais }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreTechnique">Score Technique</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.scoreTechnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.seuilAtteint">Seuil Atteint</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.seuilAtteint }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.classemenTechnique">Classemen Technique</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.classemenTechnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.classementGeneral">Classement General</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.classementGeneral }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.candidatRestreintID">Candidat Restreint ID</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.candidatRestreintID }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.etatPreselection">Etat Preselection</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.etatPreselection }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.etatExamenPreliminaire">Etat Examen Preliminaire</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.etatExamenPreliminaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.critereQualification">Critere Qualification</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.critereQualification }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.attributaireProvisoire">Attributaire Provisoire</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.attributaireProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.offreTechnique">Offre Technique</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.offreTechnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.offreFinanciere">Offre Financiere</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.offreFinanciere }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.lettreSoumission">Lettre Soumission</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.lettreSoumission }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.valide">Valide</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.valide }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.numero">Numero</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.numero }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.garantie">Garantie</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.garantie }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.pieceRequise">Piece Requise</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.pieceRequise }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.observationsOffres">Observations Offres</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.observationsOffres }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.observationsCandidats">Observations Candidats</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.observationsCandidats }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.modeReception">Mode Reception</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.modeReception }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.notifie">Notifie</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.notifie }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.signatureOffre">Signature Offre</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.signatureOffre }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.exhaustivite">Exhaustivite</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.exhaustivite }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.garantieSoumission">Garantie Soumission</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.garantieSoumission }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.conformite">Conformite</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.conformite }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.critereProvenance">Critere Provenance</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.critereProvenance }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.notePreselectionne">Note Preselectionne</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.notePreselectionne }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.autoriteId">Autorite Id</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.autoriteId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.ajustement">Ajustement</span></dt>
+                <dd>
+                    <span>{{ plisOuverture.ajustement }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="plisOuverture.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', plisOuverture.dossierAppelOffreId, 'view']">{{ plisOuverture.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.retraitRegistreDAO">Retrait Registre DAO</span></dt>
+                <dd>
+                    <div *ngIf="plisOuverture.retraitRegistreDAOId">
+                        <a [routerLink]="['/retrait-registre-dao', plisOuverture.retraitRegistreDAOId, 'view']">{{ plisOuverture.retraitRegistreDAOId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.fournisseur">Fournisseur</span></dt>
+                <dd>
+                    <div *ngIf="plisOuverture.fournisseurId">
+                        <a [routerLink]="['/fournisseur', plisOuverture.fournisseurId, 'view']">{{ plisOuverture.fournisseurId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/plis-ouverture', plisOuverture.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsObservateursIndependant": {
+      "home": {
+        "title": "ObservateursIndependants",
+        "createLabel": "Créer un nouveau Observateurs Independant",
+        "createOrEditLabel": "Créer ou éditer un Observateurs Independant",
+        "notFound": "Aucun Observateurs Independant trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Observateurs Independant {{ id }} ?"
+      },
+      "detail": {
+        "title": "Observateurs Independant"
+      },
+      "representant": "Representant",
+      "qualite": "Qualite",
+      "presence": "Presence",
+      "dateConvocation": "Date Convocation",
+      "etape": "Etape",
+      "dossierAppelOffre": "Dossier Appel Offre"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsObservateursIndependant": {
+      "created": "Un nouveau Observateurs Independant a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Observateurs Independant avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Observateurs Independant avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

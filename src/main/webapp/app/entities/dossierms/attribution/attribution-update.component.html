@@ -1,0 +1,152 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-attribution-heading" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.home.createOrEditLabel">Create or edit a Attribution</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.referencePlandePassation" for="field_referencePlandePassation">Reference Plande Passation</label>
+                    <input type="text" class="form-control" name="referencePlandePassation" id="field_referencePlandePassation"
+                           formControlName="referencePlandePassation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.referenceAvisGeneral" for="field_referenceAvisGeneral">Reference Avis General</label>
+                    <input type="text" class="form-control" name="referenceAvisGeneral" id="field_referenceAvisGeneral"
+                           formControlName="referenceAvisGeneral"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.attributaireProvisoire" for="field_attributaireProvisoire">Attributaire Provisoire</label>
+                    <input type="text" class="form-control" name="attributaireProvisoire" id="field_attributaireProvisoire"
+                           formControlName="attributaireProvisoire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.commentaire" for="field_commentaire">Commentaire</label>
+                    <input type="text" class="form-control" name="commentaire" id="field_commentaire"
+                           formControlName="commentaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.commentaireDefinitif" for="field_commentaireDefinitif">Commentaire Definitif</label>
+                    <input type="text" class="form-control" name="commentaireDefinitif" id="field_commentaireDefinitif"
+                           formControlName="commentaireDefinitif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.nomFichierDef" for="field_nomFichierDef">Nom Fichier Def</label>
+                    <input type="text" class="form-control" name="nomFichierDef" id="field_nomFichierDef"
+                           formControlName="nomFichierDef"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.attriType" for="field_attriType">Attri Type</label>
+                    <input type="text" class="form-control" name="attriType" id="field_attriType"
+                           formControlName="attriType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.montantMarche" for="field_montantMarche">Montant Marche</label>
+                    <input type="number" class="form-control" name="montantMarche" id="field_montantMarche"
+                           formControlName="montantMarche"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.montantdefinitif" for="field_montantdefinitif">Montantdefinitif</label>
+                    <input type="number" class="form-control" name="montantdefinitif" id="field_montantdefinitif"
+                           formControlName="montantdefinitif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.moisExecution" for="field_moisExecution">Mois Execution</label>
+                    <input type="number" class="form-control" name="moisExecution" id="field_moisExecution"
+                           formControlName="moisExecution"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.semaineExecution" for="field_semaineExecution">Semaine Execution</label>
+                    <input type="number" class="form-control" name="semaineExecution" id="field_semaineExecution"
+                           formControlName="semaineExecution"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.joursExecution" for="field_joursExecution">Jours Execution</label>
+                    <input type="number" class="form-control" name="joursExecution" id="field_joursExecution"
+                           formControlName="joursExecution"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.datePublicationProvisoire" for="field_datePublicationProvisoire">Date Publication Provisoire</label>
+                    <div class="input-group">
+                        <input id="field_datePublicationProvisoire" type="text" class="form-control" name="datePublicationProvisoire" ngbDatepicker #datePublicationProvisoireDp="ngbDatepicker" formControlName="datePublicationProvisoire"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datePublicationProvisoireDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.datePublicationDefinitive" for="field_datePublicationDefinitive">Date Publication Definitive</label>
+                    <div class="input-group">
+                        <input id="field_datePublicationDefinitive" type="text" class="form-control" name="datePublicationDefinitive" ngbDatepicker #datePublicationDefinitiveDp="ngbDatepicker" formControlName="datePublicationDefinitive"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datePublicationDefinitiveDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.dateattribution" for="field_dateattribution">Dateattribution</label>
+                    <div class="input-group">
+                        <input id="field_dateattribution" type="text" class="form-control" name="dateattribution" ngbDatepicker #dateattributionDp="ngbDatepicker" formControlName="dateattribution"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateattributionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.dossierAppelOffre" for="field_dossierAppelOffre">Dossier Appel Offre</label>
+                    <select class="form-control" id="field_dossierAppelOffre" name="dossierAppelOffre" formControlName="dossierAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dossierAppelOffreOption.id" *ngFor="let dossierAppelOffreOption of dossierappeloffres; trackBy: trackById">{{ dossierAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.plisOuverture" for="field_plisOuverture">Plis Ouverture</label>
+                    <select class="form-control" id="field_plisOuverture" name="plisOuverture" formControlName="plisOuvertureId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="plisOuvertureOption.id" *ngFor="let plisOuvertureOption of plisouvertures; trackBy: trackById">{{ plisOuvertureOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAttribution.lot" for="field_lot">Lot</label>
+                    <select class="form-control" id="field_lot" name="lot" formControlName="lotId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="lotOption.id" *ngFor="let lotOption of lots; trackBy: trackById">{{ lotOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

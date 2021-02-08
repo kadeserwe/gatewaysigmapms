@@ -1,0 +1,154 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-historique-appel-offres-ac-heading" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.home.createOrEditLabel">Create or edit a Historique Appel Offres AC</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacValidation" for="field_histoacValidation">Histoac Validation</label>
+                    <input type="text" class="form-control" name="histoacValidation" id="field_histoacValidation"
+                           formControlName="histoacValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacCommentaire" for="field_histoacCommentaire">Histoac Commentaire</label>
+                    <input type="text" class="form-control" name="histoacCommentaire" id="field_histoacCommentaire"
+                           formControlName="histoacCommentaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacFichiervalidation" for="field_histoacFichiervalidation">Histoac Fichiervalidation</label>
+                    <input type="text" class="form-control" name="histoacFichiervalidation" id="field_histoacFichiervalidation"
+                           formControlName="histoacFichiervalidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacBorderau" for="field_histoacBorderau">Histoac Borderau</label>
+                    <input type="text" class="form-control" name="histoacBorderau" id="field_histoacBorderau"
+                           formControlName="histoacBorderau"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoValidation" for="field_histoValidation">Histo Validation</label>
+                    <input type="text" class="form-control" name="histoValidation" id="field_histoValidation"
+                           formControlName="histoValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoCommentaire" for="field_histoCommentaire">Histo Commentaire</label>
+                    <input type="text" class="form-control" name="histoCommentaire" id="field_histoCommentaire"
+                           formControlName="histoCommentaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoFichiervalidation" for="field_histoFichiervalidation">Histo Fichiervalidation</label>
+                    <input type="text" class="form-control" name="histoFichiervalidation" id="field_histoFichiervalidation"
+                           formControlName="histoFichiervalidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.daoFichier" for="field_daoFichier">Dao Fichier</label>
+                    <input type="text" class="form-control" name="daoFichier" id="field_daoFichier"
+                           formControlName="daoFichier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.origine" for="field_origine">Origine</label>
+                    <input type="text" class="form-control" name="origine" id="field_origine"
+                           formControlName="origine"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacDatevalidation" for="field_histoacDatevalidation">Histoac Datevalidation</label>
+                    <div class="input-group">
+                        <input id="field_histoacDatevalidation" type="text" class="form-control" name="histoacDatevalidation" ngbDatepicker #histoacDatevalidationDp="ngbDatepicker" formControlName="histoacDatevalidation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="histoacDatevalidationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacDatecreationdossier" for="field_histoacDatecreationdossier">Histoac Datecreationdossier</label>
+                    <div class="input-group">
+                        <input id="field_histoacDatecreationdossier" type="text" class="form-control" name="histoacDatecreationdossier" ngbDatepicker #histoacDatecreationdossierDp="ngbDatepicker" formControlName="histoacDatecreationdossier"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="histoacDatecreationdossierDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoDatevalidation" for="field_histoDatevalidation">Histo Datevalidation</label>
+                    <div class="input-group">
+                        <input id="field_histoDatevalidation" type="text" class="form-control" name="histoDatevalidation" ngbDatepicker #histoDatevalidationDp="ngbDatepicker" formControlName="histoDatevalidation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="histoDatevalidationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacAttribution" for="field_histoacAttribution">Histoac Attribution</label>
+                    <input type="number" class="form-control" name="histoacAttribution" id="field_histoacAttribution"
+                           formControlName="histoacAttribution"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacAc" for="field_histoacAc">Histoac Ac</label>
+                    <input type="number" class="form-control" name="histoacAc" id="field_histoacAc"
+                           formControlName="histoacAc"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.validerparNom" for="field_validerparNom">Validerpar Nom</label>
+                    <input type="text" class="form-control" name="validerparNom" id="field_validerparNom"
+                           formControlName="validerparNom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.validerparPrenom" for="field_validerparPrenom">Validerpar Prenom</label>
+                    <input type="text" class="form-control" name="validerparPrenom" id="field_validerparPrenom"
+                           formControlName="validerparPrenom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.userId" for="field_userId">User Id</label>
+                    <input type="number" class="form-control" name="userId" id="field_userId"
+                           formControlName="userId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.autiriteId" for="field_autiriteId">Autirite Id</label>
+                    <input type="number" class="form-control" name="autiriteId" id="field_autiriteId"
+                           formControlName="autiriteId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.dossierAppelOffre" for="field_dossierAppelOffre">Dossier Appel Offre</label>
+                    <select class="form-control" id="field_dossierAppelOffre" name="dossierAppelOffre" formControlName="dossierAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dossierAppelOffreOption.id" *ngFor="let dossierAppelOffreOption of dossierappeloffres; trackBy: trackById">{{ dossierAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

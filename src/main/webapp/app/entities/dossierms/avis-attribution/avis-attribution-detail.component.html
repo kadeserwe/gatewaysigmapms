@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="avisAttribution">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.detail.title">Avis Attribution</span> {{ avisAttribution.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriObjet">Attri Objet</span></dt>
+                <dd>
+                    <span>{{ avisAttribution.attriObjet }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriType">Attri Type</span></dt>
+                <dd>
+                    <span>{{ avisAttribution.attriType }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attritexte">Attritexte</span></dt>
+                <dd>
+                    <span>{{ avisAttribution.attritexte }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriRef">Attri Ref</span></dt>
+                <dd>
+                    <span>{{ avisAttribution.attriRef }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attrifichier">Attrifichier</span></dt>
+                <dd>
+                    <span>{{ avisAttribution.attrifichier }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriRaisonsocial">Attri Raisonsocial</span></dt>
+                <dd>
+                    <span>{{ avisAttribution.attriRaisonsocial }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriDate">Attri Date</span></dt>
+                <dd>
+                    <span>{{ avisAttribution.attriDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attridatepublication">Attridatepublication</span></dt>
+                <dd>
+                    <span>{{ avisAttribution.attridatepublication }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriPub">Attri Pub</span></dt>
+                <dd>
+                    <span>{{ avisAttribution.attriPub }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.autiriteId">Autirite Id</span></dt>
+                <dd>
+                    <span>{{ avisAttribution.autiriteId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="avisAttribution.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', avisAttribution.dossierAppelOffreId, 'view']">{{ avisAttribution.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.lot">Lot</span></dt>
+                <dd>
+                    <div *ngIf="avisAttribution.lotId">
+                        <a [routerLink]="['/lot', avisAttribution.lotId, 'view']">{{ avisAttribution.lotId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/avis-attribution', avisAttribution.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

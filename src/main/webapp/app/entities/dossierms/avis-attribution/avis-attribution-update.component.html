@@ -1,0 +1,110 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-avis-attribution-heading" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.home.createOrEditLabel">Create or edit a Avis Attribution</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriObjet" for="field_attriObjet">Attri Objet</label>
+                    <input type="text" class="form-control" name="attriObjet" id="field_attriObjet"
+                           formControlName="attriObjet"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriType" for="field_attriType">Attri Type</label>
+                    <input type="text" class="form-control" name="attriType" id="field_attriType"
+                           formControlName="attriType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attritexte" for="field_attritexte">Attritexte</label>
+                    <input type="text" class="form-control" name="attritexte" id="field_attritexte"
+                           formControlName="attritexte"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriRef" for="field_attriRef">Attri Ref</label>
+                    <input type="text" class="form-control" name="attriRef" id="field_attriRef"
+                           formControlName="attriRef"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attrifichier" for="field_attrifichier">Attrifichier</label>
+                    <input type="text" class="form-control" name="attrifichier" id="field_attrifichier"
+                           formControlName="attrifichier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriRaisonsocial" for="field_attriRaisonsocial">Attri Raisonsocial</label>
+                    <input type="text" class="form-control" name="attriRaisonsocial" id="field_attriRaisonsocial"
+                           formControlName="attriRaisonsocial"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriDate" for="field_attriDate">Attri Date</label>
+                    <div class="input-group">
+                        <input id="field_attriDate" type="text" class="form-control" name="attriDate" ngbDatepicker #attriDateDp="ngbDatepicker" formControlName="attriDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="attriDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attridatepublication" for="field_attridatepublication">Attridatepublication</label>
+                    <div class="input-group">
+                        <input id="field_attridatepublication" type="text" class="form-control" name="attridatepublication" ngbDatepicker #attridatepublicationDp="ngbDatepicker" formControlName="attridatepublication"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="attridatepublicationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriPub" for="field_attriPub">Attri Pub</label>
+                    <input type="number" class="form-control" name="attriPub" id="field_attriPub"
+                           formControlName="attriPub"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.autiriteId" for="field_autiriteId">Autirite Id</label>
+                    <input type="number" class="form-control" name="autiriteId" id="field_autiriteId"
+                           formControlName="autiriteId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.dossierAppelOffre" for="field_dossierAppelOffre">Dossier Appel Offre</label>
+                    <select class="form-control" id="field_dossierAppelOffre" name="dossierAppelOffre" formControlName="dossierAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dossierAppelOffreOption.id" *ngFor="let dossierAppelOffreOption of dossierappeloffres; trackBy: trackById">{{ dossierAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.lot" for="field_lot">Lot</label>
+                    <select class="form-control" id="field_lot" name="lot" formControlName="lotId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="lotOption.id" *ngFor="let lotOption of lots; trackBy: trackById">{{ lotOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,462 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-dossier-appel-offre-heading" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.home.createOrEditLabel">Create or edit a Dossier Appel Offre</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosLieuDepotDossier" for="field_dosLieuDepotDossier">Dos Lieu Depot Dossier</label>
+                    <input type="text" class="form-control" name="dosLieuDepotDossier" id="field_dosLieuDepotDossier"
+                           formControlName="dosLieuDepotDossier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosReference" for="field_dosReference">Dos Reference</label>
+                    <input type="text" class="form-control" name="dosReference" id="field_dosReference"
+                           formControlName="dosReference"/>
+                    <div *ngIf="editForm.get('dosReference')!.invalid && (editForm.get('dosReference')!.dirty || editForm.get('dosReference')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dosReference')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosAdresseRetrait" for="field_dosAdresseRetrait">Dos Adresse Retrait</label>
+                    <input type="text" class="form-control" name="dosAdresseRetrait" id="field_dosAdresseRetrait"
+                           formControlName="dosAdresseRetrait"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosConditionAcquistion" for="field_dosConditionAcquistion">Dos Condition Acquistion</label>
+                    <input type="text" class="form-control" name="dosConditionAcquistion" id="field_dosConditionAcquistion"
+                           formControlName="dosConditionAcquistion"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosAllotissement" for="field_dosAllotissement">Dos Allotissement</label>
+                    <input type="text" class="form-control" name="dosAllotissement" id="field_dosAllotissement"
+                           formControlName="dosAllotissement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosLotDivisible" for="field_dosLotDivisible">Dos Lot Divisible</label>
+                    <input type="text" class="form-control" name="dosLotDivisible" id="field_dosLotDivisible"
+                           formControlName="dosLotDivisible"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireMiseValidation" for="field_dosCommentaireMiseValidation">Dos Commentaire Mise Validation</label>
+                    <input type="text" class="form-control" name="dosCommentaireMiseValidation" id="field_dosCommentaireMiseValidation"
+                           formControlName="dosCommentaireMiseValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireValidation" for="field_dosCommentaireValidation">Dos Commentaire Validation</label>
+                    <input type="text" class="form-control" name="dosCommentaireValidation" id="field_dosCommentaireValidation"
+                           formControlName="dosCommentaireValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierValidation" for="field_dosFichierValidation">Dos Fichier Validation</label>
+                    <input type="text" class="form-control" name="dosFichierValidation" id="field_dosFichierValidation"
+                           formControlName="dosFichierValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentairePublicationProvisoire" for="field_dosCommentairePublicationProvisoire">Dos Commentaire Publication Provisoire</label>
+                    <input type="text" class="form-control" name="dosCommentairePublicationProvisoire" id="field_dosCommentairePublicationProvisoire"
+                           formControlName="dosCommentairePublicationProvisoire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentairesPublicationDefinitive" for="field_dosCommentairesPublicationDefinitive">Dos Commentaires Publication Definitive</label>
+                    <input type="text" class="form-control" name="dosCommentairesPublicationDefinitive" id="field_dosCommentairesPublicationDefinitive"
+                           formControlName="dosCommentairesPublicationDefinitive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentairePublication" for="field_dosCommentairePublication">Dos Commentaire Publication</label>
+                    <input type="text" class="form-control" name="dosCommentairePublication" id="field_dosCommentairePublication"
+                           formControlName="dosCommentairePublication"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentSignature" for="field_dosCommentSignature">Dos Comment Signature</label>
+                    <input type="text" class="form-control" name="dosCommentSignature" id="field_dosCommentSignature"
+                           formControlName="dosCommentSignature"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosRefSignature" for="field_dosRefSignature">Dos Ref Signature</label>
+                    <input type="text" class="form-control" name="dosRefSignature" id="field_dosRefSignature"
+                           formControlName="dosRefSignature"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentApprobation" for="field_dosCommentApprobation">Dos Comment Approbation</label>
+                    <input type="text" class="form-control" name="dosCommentApprobation" id="field_dosCommentApprobation"
+                           formControlName="dosCommentApprobation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosRefApprobation" for="field_dosRefApprobation">Dos Ref Approbation</label>
+                    <input type="text" class="form-control" name="dosRefApprobation" id="field_dosRefApprobation"
+                           formControlName="dosRefApprobation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateDebutRetrait" for="field_dosDateDebutRetrait">Dos Date Debut Retrait</label>
+                    <div class="input-group">
+                        <input id="field_dosDateDebutRetrait" type="text" class="form-control" name="dosDateDebutRetrait" ngbDatepicker #dosDateDebutRetraitDp="ngbDatepicker" formControlName="dosDateDebutRetrait"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateDebutRetraitDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateLimiteDepot" for="field_dosDateLimiteDepot">Dos Date Limite Depot</label>
+                    <div class="input-group">
+                        <input id="field_dosDateLimiteDepot" type="text" class="form-control" name="dosDateLimiteDepot" ngbDatepicker #dosDateLimiteDepotDp="ngbDatepicker" formControlName="dosDateLimiteDepot"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateLimiteDepotDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosHeurelimitedepot" for="field_dosHeurelimitedepot">Dos Heurelimitedepot</label>
+                    <div class="input-group">
+                        <input id="field_dosHeurelimitedepot" type="text" class="form-control" name="dosHeurelimitedepot" ngbDatepicker #dosHeurelimitedepotDp="ngbDatepicker" formControlName="dosHeurelimitedepot"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosHeurelimitedepotDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateCreation" for="field_dosDateCreation">Dos Date Creation</label>
+                    <div class="input-group">
+                        <input id="field_dosDateCreation" type="text" class="form-control" name="dosDateCreation" ngbDatepicker #dosDateCreationDp="ngbDatepicker" formControlName="dosDateCreation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateCreationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateRejet" for="field_dosDateRejet">Dos Date Rejet</label>
+                    <div class="input-group">
+                        <input id="field_dosDateRejet" type="text" class="form-control" name="dosDateRejet" ngbDatepicker #dosDateRejetDp="ngbDatepicker" formControlName="dosDateRejet"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateRejetDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDatePublicationProvisoire" for="field_dosDatePublicationProvisoire">Dos Date Publication Provisoire</label>
+                    <div class="input-group">
+                        <input id="field_dosDatePublicationProvisoire" type="text" class="form-control" name="dosDatePublicationProvisoire" ngbDatepicker #dosDatePublicationProvisoireDp="ngbDatepicker" formControlName="dosDatePublicationProvisoire"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDatePublicationProvisoireDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDatePublicationDefinitive" for="field_dosDatePublicationDefinitive">Dos Date Publication Definitive</label>
+                    <div class="input-group">
+                        <input id="field_dosDatePublicationDefinitive" type="text" class="form-control" name="dosDatePublicationDefinitive" ngbDatepicker #dosDatePublicationDefinitiveDp="ngbDatepicker" formControlName="dosDatePublicationDefinitive"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDatePublicationDefinitiveDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateDemandePublication" for="field_dosDateDemandePublication">Dos Date Demande Publication</label>
+                    <div class="input-group">
+                        <input id="field_dosDateDemandePublication" type="text" class="form-control" name="dosDateDemandePublication" ngbDatepicker #dosDateDemandePublicationDp="ngbDatepicker" formControlName="dosDateDemandePublication"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateDemandePublicationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireDemandePublication" for="field_dosCommentaireDemandePublication">Dos Commentaire Demande Publication</label>
+                    <input type="text" class="form-control" name="dosCommentaireDemandePublication" id="field_dosCommentaireDemandePublication"
+                           formControlName="dosCommentaireDemandePublication"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierDemandePublication" for="field_dosFichierDemandePublication">Dos Fichier Demande Publication</label>
+                    <input type="text" class="form-control" name="dosFichierDemandePublication" id="field_dosFichierDemandePublication"
+                           formControlName="dosFichierDemandePublication"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosLieuAcquisitionDAO" for="field_dosLieuAcquisitionDAO">Dos Lieu Acquisition DAO</label>
+                    <input type="text" class="form-control" name="dosLieuAcquisitionDAO" id="field_dosLieuAcquisitionDAO"
+                           formControlName="dosLieuAcquisitionDAO"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.telechargerDAO" for="field_telechargerDAO">Telecharger DAO</label>
+                    <input type="number" class="form-control" name="telechargerDAO" id="field_telechargerDAO"
+                           formControlName="telechargerDAO"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateOuvertueDesplis" for="field_dosDateOuvertueDesplis">Dos Date Ouvertue Desplis</label>
+                    <div class="input-group">
+                        <input id="field_dosDateOuvertueDesplis" type="text" class="form-control" name="dosDateOuvertueDesplis" ngbDatepicker #dosDateOuvertueDesplisDp="ngbDatepicker" formControlName="dosDateOuvertueDesplis"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateOuvertueDesplisDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosHeureOuvertureDesPlis" for="field_dosHeureOuvertureDesPlis">Dos Heure Ouverture Des Plis</label>
+                    <div class="input-group">
+                        <input id="field_dosHeureOuvertureDesPlis" type="text" class="form-control" name="dosHeureOuvertureDesPlis" ngbDatepicker #dosHeureOuvertureDesPlisDp="ngbDatepicker" formControlName="dosHeureOuvertureDesPlis"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosHeureOuvertureDesPlisDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDatePublication" for="field_dosDatePublication">Dos Date Publication</label>
+                    <div class="input-group">
+                        <input id="field_dosDatePublication" type="text" class="form-control" name="dosDatePublication" ngbDatepicker #dosDatePublicationDp="ngbDatepicker" formControlName="dosDatePublication"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDatePublicationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFicchierPublication" for="field_dosFicchierPublication">Dos Ficchier Publication</label>
+                    <input type="text" class="form-control" name="dosFicchierPublication" id="field_dosFicchierPublication"
+                           formControlName="dosFicchierPublication"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.autiriteId" for="field_autiriteId">Autirite Id</label>
+                    <input type="number" class="form-control" name="autiriteId" id="field_autiriteId"
+                           formControlName="autiriteId"/>
+                    <div *ngIf="editForm.get('autiriteId')!.invalid && (editForm.get('autiriteId')!.dirty || editForm.get('autiriteId')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('autiriteId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('autiriteId')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosMontantGarantie" for="field_dosMontantGarantie">Dos Montant Garantie</label>
+                    <input type="number" class="form-control" name="dosMontantGarantie" id="field_dosMontantGarantie"
+                           formControlName="dosMontantGarantie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosMontantDao" for="field_dosMontantDao">Dos Montant Dao</label>
+                    <input type="number" class="form-control" name="dosMontantDao" id="field_dosMontantDao"
+                           formControlName="dosMontantDao"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosMontantEstime" for="field_dosMontantEstime">Dos Montant Estime</label>
+                    <input type="number" class="form-control" name="dosMontantEstime" id="field_dosMontantEstime"
+                           formControlName="dosMontantEstime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosIncidents" for="field_dosIncidents">Dos Incidents</label>
+                    <input type="text" class="form-control" name="dosIncidents" id="field_dosIncidents"
+                           formControlName="dosIncidents"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dateRemiseDossierTechnique" for="field_dateRemiseDossierTechnique">Date Remise Dossier Technique</label>
+                    <div class="input-group">
+                        <input id="field_dateRemiseDossierTechnique" type="text" class="form-control" name="dateRemiseDossierTechnique" ngbDatepicker #dateRemiseDossierTechniqueDp="ngbDatepicker" formControlName="dateRemiseDossierTechnique"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRemiseDossierTechniqueDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dateLimiteDossierTechnique" for="field_dateLimiteDossierTechnique">Date Limite Dossier Technique</label>
+                    <div class="input-group">
+                        <input id="field_dateLimiteDossierTechnique" type="text" class="form-control" name="dateLimiteDossierTechnique" ngbDatepicker #dateLimiteDossierTechniqueDp="ngbDatepicker" formControlName="dateLimiteDossierTechnique"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateLimiteDossierTechniqueDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.commentaireDelaiTechnique" for="field_commentaireDelaiTechnique">Commentaire Delai Technique</label>
+                    <input type="text" class="form-control" name="commentaireDelaiTechnique" id="field_commentaireDelaiTechnique"
+                           formControlName="commentaireDelaiTechnique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateMiseValidationAttribution" for="field_dosDateMiseValidationAttribution">Dos Date Mise Validation Attribution</label>
+                    <div class="input-group">
+                        <input id="field_dosDateMiseValidationAttribution" type="text" class="form-control" name="dosDateMiseValidationAttribution" ngbDatepicker #dosDateMiseValidationAttributionDp="ngbDatepicker" formControlName="dosDateMiseValidationAttribution"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateMiseValidationAttributionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosEtatValidation" for="field_dosEtatValidation">Dos Etat Validation</label>
+                    <input type="text" class="form-control" name="dosEtatValidation" id="field_dosEtatValidation"
+                           formControlName="dosEtatValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosBordereau" for="field_dosBordereau">Dos Bordereau</label>
+                    <input type="text" class="form-control" name="dosBordereau" id="field_dosBordereau"
+                           formControlName="dosBordereau"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierMiseValidationPrequalif" for="field_dosFichierMiseValidationPrequalif">Dos Fichier Mise Validation Prequalif</label>
+                    <input type="text" class="form-control" name="dosFichierMiseValidationPrequalif" id="field_dosFichierMiseValidationPrequalif"
+                           formControlName="dosFichierMiseValidationPrequalif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosfichierSignature" for="field_dosfichierSignature">Dosfichier Signature</label>
+                    <input type="text" class="form-control" name="dosfichierSignature" id="field_dosfichierSignature"
+                           formControlName="dosfichierSignature"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateSignature" for="field_dosDateSignature">Dos Date Signature</label>
+                    <div class="input-group">
+                        <input id="field_dosDateSignature" type="text" class="form-control" name="dosDateSignature" ngbDatepicker #dosDateSignatureDp="ngbDatepicker" formControlName="dosDateSignature"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateSignatureDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateMiseValidationSignature" for="field_dosDateMiseValidationSignature">Dos Date Mise Validation Signature</label>
+                    <div class="input-group">
+                        <input id="field_dosDateMiseValidationSignature" type="text" class="form-control" name="dosDateMiseValidationSignature" ngbDatepicker #dosDateMiseValidationSignatureDp="ngbDatepicker" formControlName="dosDateMiseValidationSignature"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateMiseValidationSignatureDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateAttributionDefinitive" for="field_dosDateAttributionDefinitive">Dos Date Attribution Definitive</label>
+                    <div class="input-group">
+                        <input id="field_dosDateAttributionDefinitive" type="text" class="form-control" name="dosDateAttributionDefinitive" ngbDatepicker #dosDateAttributionDefinitiveDp="ngbDatepicker" formControlName="dosDateAttributionDefinitive"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateAttributionDefinitiveDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateDemandeApprobation" for="field_dosDateDemandeApprobation">Dos Date Demande Approbation</label>
+                    <div class="input-group">
+                        <input id="field_dosDateDemandeApprobation" type="text" class="form-control" name="dosDateDemandeApprobation" ngbDatepicker #dosDateDemandeApprobationDp="ngbDatepicker" formControlName="dosDateDemandeApprobation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateDemandeApprobationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentDemandeApprobation" for="field_dosCommentDemandeApprobation">Dos Comment Demande Approbation</label>
+                    <input type="text" class="form-control" name="dosCommentDemandeApprobation" id="field_dosCommentDemandeApprobation"
+                           formControlName="dosCommentDemandeApprobation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.fichierApprobation" for="field_fichierApprobation">Fichier Approbation</label>
+                    <input type="text" class="form-control" name="fichierApprobation" id="field_fichierApprobation"
+                           formControlName="fichierApprobation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateNotification" for="field_dosDateNotification">Dos Date Notification</label>
+                    <div class="input-group">
+                        <input id="field_dosDateNotification" type="text" class="form-control" name="dosDateNotification" ngbDatepicker #dosDateNotificationDp="ngbDatepicker" formControlName="dosDateNotification"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dosDateNotificationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentNotification" for="field_dosCommentNotification">Dos Comment Notification</label>
+                    <input type="text" class="form-control" name="dosCommentNotification" id="field_dosCommentNotification"
+                           formControlName="dosCommentNotification"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosRefNotification" for="field_dosRefNotification">Dos Ref Notification</label>
+                    <input type="text" class="form-control" name="dosRefNotification" id="field_dosRefNotification"
+                           formControlName="dosRefNotification"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierNotification" for="field_dosFichierNotification">Dos Fichier Notification</label>
+                    <input type="text" class="form-control" name="dosFichierNotification" id="field_dosFichierNotification"
+                           formControlName="dosFichierNotification"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireAttributionDefinitive" for="field_dosCommentaireAttributionDefinitive">Dos Commentaire Attribution Definitive</label>
+                    <input type="text" class="form-control" name="dosCommentaireAttributionDefinitive" id="field_dosCommentaireAttributionDefinitive"
+                           formControlName="dosCommentaireAttributionDefinitive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.appelOffre" for="field_appelOffre">Appel Offre</label>
+                    <select class="form-control" id="field_appelOffre" name="appelOffre" formControlName="appelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="appelOffreOption.id" *ngFor="let appelOffreOption of appeloffres; trackBy: trackById">{{ appelOffreOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

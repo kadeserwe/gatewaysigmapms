@@ -1,0 +1,187 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.home.title">Dossier Appel Offres</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dossier-appel-offre" [routerLink]="['/dossier-appel-offre/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.home.createLabel">
+            Create a new Dossier Appel Offre
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="dossierAppelOffres?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.home.notFound">No dossierAppelOffres found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="dossierAppelOffres && dossierAppelOffres.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosLieuDepotDossier"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosLieuDepotDossier">Dos Lieu Depot Dossier</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosReference"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosReference">Dos Reference</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosAdresseRetrait"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosAdresseRetrait">Dos Adresse Retrait</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosConditionAcquistion"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosConditionAcquistion">Dos Condition Acquistion</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosAllotissement"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosAllotissement">Dos Allotissement</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosLotDivisible"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosLotDivisible">Dos Lot Divisible</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosCommentaireMiseValidation"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireMiseValidation">Dos Commentaire Mise Validation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosCommentaireValidation"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireValidation">Dos Commentaire Validation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosFichierValidation"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierValidation">Dos Fichier Validation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosCommentairePublicationProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentairePublicationProvisoire">Dos Commentaire Publication Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosCommentairesPublicationDefinitive"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentairesPublicationDefinitive">Dos Commentaires Publication Definitive</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosCommentairePublication"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentairePublication">Dos Commentaire Publication</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosCommentSignature"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentSignature">Dos Comment Signature</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosRefSignature"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosRefSignature">Dos Ref Signature</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosCommentApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentApprobation">Dos Comment Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosRefApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosRefApprobation">Dos Ref Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateDebutRetrait"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateDebutRetrait">Dos Date Debut Retrait</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateLimiteDepot"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateLimiteDepot">Dos Date Limite Depot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosHeurelimitedepot"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosHeurelimitedepot">Dos Heurelimitedepot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateCreation"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateCreation">Dos Date Creation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateRejet"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateRejet">Dos Date Rejet</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDatePublicationProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDatePublicationProvisoire">Dos Date Publication Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDatePublicationDefinitive"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDatePublicationDefinitive">Dos Date Publication Definitive</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateDemandePublication"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateDemandePublication">Dos Date Demande Publication</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosCommentaireDemandePublication"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireDemandePublication">Dos Commentaire Demande Publication</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosFichierDemandePublication"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierDemandePublication">Dos Fichier Demande Publication</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosLieuAcquisitionDAO"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosLieuAcquisitionDAO">Dos Lieu Acquisition DAO</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telechargerDAO"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.telechargerDAO">Telecharger DAO</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateOuvertueDesplis"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateOuvertueDesplis">Dos Date Ouvertue Desplis</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosHeureOuvertureDesPlis"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosHeureOuvertureDesPlis">Dos Heure Ouverture Des Plis</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDatePublication"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDatePublication">Dos Date Publication</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosFicchierPublication"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFicchierPublication">Dos Ficchier Publication</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="autiriteId"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.autiriteId">Autirite Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosMontantGarantie"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosMontantGarantie">Dos Montant Garantie</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosMontantDao"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosMontantDao">Dos Montant Dao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosMontantEstime"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosMontantEstime">Dos Montant Estime</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosIncidents"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosIncidents">Dos Incidents</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateRemiseDossierTechnique"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dateRemiseDossierTechnique">Date Remise Dossier Technique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateLimiteDossierTechnique"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dateLimiteDossierTechnique">Date Limite Dossier Technique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commentaireDelaiTechnique"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.commentaireDelaiTechnique">Commentaire Delai Technique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateMiseValidationAttribution"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateMiseValidationAttribution">Dos Date Mise Validation Attribution</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosEtatValidation"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosEtatValidation">Dos Etat Validation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosBordereau"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosBordereau">Dos Bordereau</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosFichierMiseValidationPrequalif"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierMiseValidationPrequalif">Dos Fichier Mise Validation Prequalif</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosfichierSignature"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosfichierSignature">Dosfichier Signature</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateSignature"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateSignature">Dos Date Signature</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateMiseValidationSignature"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateMiseValidationSignature">Dos Date Mise Validation Signature</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateAttributionDefinitive"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateAttributionDefinitive">Dos Date Attribution Definitive</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateDemandeApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateDemandeApprobation">Dos Date Demande Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosCommentDemandeApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentDemandeApprobation">Dos Comment Demande Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.fichierApprobation">Fichier Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosDateNotification"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateNotification">Dos Date Notification</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosCommentNotification"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentNotification">Dos Comment Notification</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosRefNotification"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosRefNotification">Dos Ref Notification</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosFichierNotification"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierNotification">Dos Fichier Notification</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dosCommentaireAttributionDefinitive"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireAttributionDefinitive">Dos Commentaire Attribution Definitive</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="appelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.appelOffre">Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dossierAppelOffre of dossierAppelOffres ;trackBy: trackId">
+                    <td><a [routerLink]="['/dossier-appel-offre', dossierAppelOffre.id, 'view']">{{ dossierAppelOffre.id }}</a></td>
+                    <td>{{ dossierAppelOffre.dosLieuDepotDossier }}</td>
+                    <td>{{ dossierAppelOffre.dosReference }}</td>
+                    <td>{{ dossierAppelOffre.dosAdresseRetrait }}</td>
+                    <td>{{ dossierAppelOffre.dosConditionAcquistion }}</td>
+                    <td>{{ dossierAppelOffre.dosAllotissement }}</td>
+                    <td>{{ dossierAppelOffre.dosLotDivisible }}</td>
+                    <td>{{ dossierAppelOffre.dosCommentaireMiseValidation }}</td>
+                    <td>{{ dossierAppelOffre.dosCommentaireValidation }}</td>
+                    <td>{{ dossierAppelOffre.dosFichierValidation }}</td>
+                    <td>{{ dossierAppelOffre.dosCommentairePublicationProvisoire }}</td>
+                    <td>{{ dossierAppelOffre.dosCommentairesPublicationDefinitive }}</td>
+                    <td>{{ dossierAppelOffre.dosCommentairePublication }}</td>
+                    <td>{{ dossierAppelOffre.dosCommentSignature }}</td>
+                    <td>{{ dossierAppelOffre.dosRefSignature }}</td>
+                    <td>{{ dossierAppelOffre.dosCommentApprobation }}</td>
+                    <td>{{ dossierAppelOffre.dosRefApprobation }}</td>
+                    <td>{{ dossierAppelOffre.dosDateDebutRetrait | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosDateLimiteDepot | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosHeurelimitedepot | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosDateCreation | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosDateRejet | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosDatePublicationProvisoire | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosDatePublicationDefinitive | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosDateDemandePublication | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosCommentaireDemandePublication }}</td>
+                    <td>{{ dossierAppelOffre.dosFichierDemandePublication }}</td>
+                    <td>{{ dossierAppelOffre.dosLieuAcquisitionDAO }}</td>
+                    <td>{{ dossierAppelOffre.telechargerDAO }}</td>
+                    <td>{{ dossierAppelOffre.dosDateOuvertueDesplis | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosHeureOuvertureDesPlis | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosDatePublication | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosFicchierPublication }}</td>
+                    <td>{{ dossierAppelOffre.autiriteId }}</td>
+                    <td>{{ dossierAppelOffre.dosMontantGarantie }}</td>
+                    <td>{{ dossierAppelOffre.dosMontantDao }}</td>
+                    <td>{{ dossierAppelOffre.dosMontantEstime }}</td>
+                    <td>{{ dossierAppelOffre.dosIncidents }}</td>
+                    <td>{{ dossierAppelOffre.dateRemiseDossierTechnique | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dateLimiteDossierTechnique | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.commentaireDelaiTechnique }}</td>
+                    <td>{{ dossierAppelOffre.dosDateMiseValidationAttribution | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosEtatValidation }}</td>
+                    <td>{{ dossierAppelOffre.dosBordereau }}</td>
+                    <td>{{ dossierAppelOffre.dosFichierMiseValidationPrequalif }}</td>
+                    <td>{{ dossierAppelOffre.dosfichierSignature }}</td>
+                    <td>{{ dossierAppelOffre.dosDateSignature | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosDateMiseValidationSignature | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosDateAttributionDefinitive | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosDateDemandeApprobation | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosCommentDemandeApprobation }}</td>
+                    <td>{{ dossierAppelOffre.fichierApprobation }}</td>
+                    <td>{{ dossierAppelOffre.dosDateNotification | date:'mediumDate' }}</td>
+                    <td>{{ dossierAppelOffre.dosCommentNotification }}</td>
+                    <td>{{ dossierAppelOffre.dosRefNotification }}</td>
+                    <td>{{ dossierAppelOffre.dosFichierNotification }}</td>
+                    <td>{{ dossierAppelOffre.dosCommentaireAttributionDefinitive }}</td>
+                    <td>
+                        <div *ngIf="dossierAppelOffre.appelOffreId">
+                            <a [routerLink]="['/appel-offre', dossierAppelOffre.appelOffreId , 'view']" >{{ dossierAppelOffre.appelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/dossier-appel-offre', dossierAppelOffre.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/dossier-appel-offre', dossierAppelOffre.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(dossierAppelOffre)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="dossierAppelOffres && dossierAppelOffres.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

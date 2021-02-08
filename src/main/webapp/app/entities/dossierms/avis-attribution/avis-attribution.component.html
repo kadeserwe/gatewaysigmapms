@@ -1,0 +1,101 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.home.title">Avis Attributions</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-avis-attribution" [routerLink]="['/avis-attribution/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.home.createLabel">
+            Create a new Avis Attribution
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="avisAttributions?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.home.notFound">No avisAttributions found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="avisAttributions && avisAttributions.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attriObjet"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriObjet">Attri Objet</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attriType"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriType">Attri Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attritexte"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attritexte">Attritexte</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attriRef"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriRef">Attri Ref</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attrifichier"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attrifichier">Attrifichier</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attriRaisonsocial"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriRaisonsocial">Attri Raisonsocial</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attriDate"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriDate">Attri Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attridatepublication"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attridatepublication">Attridatepublication</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attriPub"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.attriPub">Attri Pub</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="autiriteId"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.autiriteId">Autirite Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossierAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.dossierAppelOffre">Dossier Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lotId"><span jhiTranslate="gatewaysigmapApp.dossiermsAvisAttribution.lot">Lot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let avisAttribution of avisAttributions ;trackBy: trackId">
+                    <td><a [routerLink]="['/avis-attribution', avisAttribution.id, 'view']">{{ avisAttribution.id }}</a></td>
+                    <td>{{ avisAttribution.attriObjet }}</td>
+                    <td>{{ avisAttribution.attriType }}</td>
+                    <td>{{ avisAttribution.attritexte }}</td>
+                    <td>{{ avisAttribution.attriRef }}</td>
+                    <td>{{ avisAttribution.attrifichier }}</td>
+                    <td>{{ avisAttribution.attriRaisonsocial }}</td>
+                    <td>{{ avisAttribution.attriDate | date:'mediumDate' }}</td>
+                    <td>{{ avisAttribution.attridatepublication | date:'mediumDate' }}</td>
+                    <td>{{ avisAttribution.attriPub }}</td>
+                    <td>{{ avisAttribution.autiriteId }}</td>
+                    <td>
+                        <div *ngIf="avisAttribution.dossierAppelOffreId">
+                            <a [routerLink]="['/dossier-appel-offre', avisAttribution.dossierAppelOffreId , 'view']" >{{ avisAttribution.dossierAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="avisAttribution.lotId">
+                            <a [routerLink]="['/lot', avisAttribution.lotId , 'view']" >{{ avisAttribution.lotId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/avis-attribution', avisAttribution.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/avis-attribution', avisAttribution.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(avisAttribution)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="avisAttributions && avisAttributions.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

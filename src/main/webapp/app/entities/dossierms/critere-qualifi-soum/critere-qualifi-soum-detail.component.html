@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="critereQualifiSoum">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.detail.title">Critere Qualifi Soum</span> {{ critereQualifiSoum.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.conforme">Conforme</span></dt>
+                <dd>
+                    <span>{{ critereQualifiSoum.conforme }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.libelle">Libelle</span></dt>
+                <dd>
+                    <span>{{ critereQualifiSoum.libelle }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.libelleLot">Libelle Lot</span></dt>
+                <dd>
+                    <span>{{ critereQualifiSoum.libelleLot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="critereQualifiSoum.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', critereQualifiSoum.dossierAppelOffreId, 'view']">{{ critereQualifiSoum.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.plisOuverture">Plis Ouverture</span></dt>
+                <dd>
+                    <div *ngIf="critereQualifiSoum.plisOuvertureId">
+                        <a [routerLink]="['/plis-ouverture', critereQualifiSoum.plisOuvertureId, 'view']">{{ critereQualifiSoum.plisOuvertureId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.lot">Lot</span></dt>
+                <dd>
+                    <div *ngIf="critereQualifiSoum.lotId">
+                        <a [routerLink]="['/lot', critereQualifiSoum.lotId, 'view']">{{ critereQualifiSoum.lotId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.dossiersSosuscritere">Dossiers Sosuscritere</span></dt>
+                <dd>
+                    <div *ngIf="critereQualifiSoum.dossiersSosuscritereId">
+                        <a [routerLink]="['/dossiers-souscritere', critereQualifiSoum.dossiersSosuscritereId, 'view']">{{ critereQualifiSoum.dossiersSosuscritereId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/critere-qualifi-soum', critereQualifiSoum.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

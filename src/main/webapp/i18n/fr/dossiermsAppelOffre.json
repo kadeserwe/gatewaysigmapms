@@ -1,0 +1,70 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsAppelOffre": {
+      "home": {
+        "title": "AppelOffres",
+        "createLabel": "Créer un nouveau Appel Offre",
+        "createOrEditLabel": "Créer ou éditer un Appel Offre",
+        "notFound": "Aucun Appel Offre trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Appel Offre {{ id }} ?"
+      },
+      "detail": {
+        "title": "Appel Offre"
+      },
+      "apoDatecreation": "Apo Datecreation",
+      "apoDateAutorisation": "Apo Date Autorisation",
+      "apoDateDemandeAutorisation": "Apo Date Demande Autorisation",
+      "apoDateRejet": "Apo Date Rejet",
+      "apoDateMiseAutorisation": "Apo Date Mise Autorisation",
+      "dateStopProcedure": "Date Stop Procedure",
+      "dateAffectationDossier": "Date Affectation Dossier",
+      "apoDatePVOuverturepli": "Apo Date PV Ouverturepli",
+      "apoDateVersement": "Apo Date Versement",
+      "datePubListeRestreinte": "Date Pub Liste Restreinte",
+      "apoProjet": "Apo Projet",
+      "apoObjet": "Apo Objet",
+      "apoReference": "Apo Reference",
+      "apoNumeroPretCredit": "Apo Numero Pret Credit",
+      "apoCommentaireAutorisation": "Apo Commentaire Autorisation",
+      "apoFichierMiseAutorisation": "Apo Fichier Mise Autorisation",
+      "numeroMarche": "Numero Marche",
+      "motifStopProcedure": "Motif Stop Procedure",
+      "apoFichierPV": "Apo Fichier PV",
+      "apoFichierValidation": "Apo Fichier Validation",
+      "apoAutorisationPrealable": "Apo Autorisation Prealable",
+      "apoFichierAutorisationPrealable": "Apo Fichier Autorisation Prealable",
+      "apoReferenceRequeteAc": "Apo Reference Requete Ac",
+      "apoRapportSpecial": "Apo Rapport Special",
+      "apoReferenceCommunication": "Apo Reference Communication",
+      "apoReleveConseil": "Apo Releve Conseil",
+      "apoFichierRapportSpecial": "Apo Fichier Rapport Special",
+      "apoFichierReleveConseil": "Apo Fichier Releve Conseil",
+      "pubListeRestreinte": "Pub Liste Restreinte",
+      "fichierListeRestreinte": "Fichier Liste Restreinte",
+      "apoMontantEstime": "Apo Montant Estime",
+      "apoMontantVersement": "Apo Montant Versement",
+      "apoResponsableDCMP": "Apo Responsable DCMP",
+      "etatSeuil": "Etat Seuil",
+      "apoStatut": "Apo Statut",
+      "apoValide": "Apo Valide",
+      "apoNbreDAO": "Apo Nbre DAO",
+      "apoNbreDC": "Apo Nbre DC",
+      "apoEtatValidation": "Apo Etat Validation",
+      "autiriteId": "Autirite Id",
+      "realisationId": "Realisation Id",
+      "modepassationId": "Modepassation Id",
+      "typemarcheId": "Typemarche Id",
+      "modeselectionId": "Modeselection Id",
+      "categorieAppelOffre": "Categorie Appel Offre"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsAppelOffre": {
+      "created": "Un nouveau Appel Offre a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Appel Offre avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Appel Offre avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

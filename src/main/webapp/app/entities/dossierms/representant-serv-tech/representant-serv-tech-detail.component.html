@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="representantServTech">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsRepresentantServTech.detail.title">Representant Serv Tech</span> {{ representantServTech.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRepresentantServTech.representant">Representant</span></dt>
+                <dd>
+                    <span>{{ representantServTech.representant }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRepresentantServTech.qualite">Qualite</span></dt>
+                <dd>
+                    <span>{{ representantServTech.qualite }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRepresentantServTech.presence">Presence</span></dt>
+                <dd>
+                    <span>{{ representantServTech.presence }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRepresentantServTech.dateConvocation">Date Convocation</span></dt>
+                <dd>
+                    <span>{{ representantServTech.dateConvocation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRepresentantServTech.etape">Etape</span></dt>
+                <dd>
+                    <span>{{ representantServTech.etape }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRepresentantServTech.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="representantServTech.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', representantServTech.dossierAppelOffreId, 'view']">{{ representantServTech.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/representant-serv-tech', representantServTech.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

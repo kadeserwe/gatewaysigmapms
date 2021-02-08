@@ -1,0 +1,126 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="document">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.detail.title">Document</span> {{ document.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.typeDocument">Type Document</span></dt>
+                <dd>
+                    <span>{{ document.typeDocument }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.textPVOuverture">Text PV Ouverture</span></dt>
+                <dd>
+                    <span>{{ document.textPVOuverture }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.nomFichier">Nom Fichier</span></dt>
+                <dd>
+                    <span>{{ document.nomFichier }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.libelle">Libelle</span></dt>
+                <dd>
+                    <span>{{ document.libelle }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.reference">Reference</span></dt>
+                <dd>
+                    <span>{{ document.reference }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.objet">Objet</span></dt>
+                <dd>
+                    <span>{{ document.objet }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.origine">Origine</span></dt>
+                <dd>
+                    <span>{{ document.origine }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.lieuAcquisitionDAO">Lieu Acquisition DAO</span></dt>
+                <dd>
+                    <span>{{ document.lieuAcquisitionDAO }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.fichierDemandePublication">Fichier Demande Publication</span></dt>
+                <dd>
+                    <span>{{ document.fichierDemandePublication }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.fichierDC">Fichier DC</span></dt>
+                <dd>
+                    <span>{{ document.fichierDC }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.fichierAR">Fichier AR</span></dt>
+                <dd>
+                    <span>{{ document.fichierAR }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.date">Date</span></dt>
+                <dd>
+                    <span>{{ document.date }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.heure">Heure</span></dt>
+                <dd>
+                    <span>{{ document.heure }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.dateDemandePublication">Date Demande Publication</span></dt>
+                <dd>
+                    <span>{{ document.dateDemandePublication }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.dateLimiteDepot">Date Limite Depot</span></dt>
+                <dd>
+                    <span>{{ document.dateLimiteDepot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.heureLimiteDepot">Heure Limite Depot</span></dt>
+                <dd>
+                    <span>{{ document.heureLimiteDepot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.dateOuvertueDesplis">Date Ouvertue Desplis</span></dt>
+                <dd>
+                    <span>{{ document.dateOuvertueDesplis }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.heureOuvertureDesPlis">Heure Ouverture Des Plis</span></dt>
+                <dd>
+                    <span>{{ document.heureOuvertureDesPlis }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.autoriteId">Autorite Id</span></dt>
+                <dd>
+                    <span>{{ document.autoriteId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="document.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', document.dossierAppelOffreId, 'view']">{{ document.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.appelOffre">Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="document.appelOffreId">
+                        <a [routerLink]="['/appel-offre', document.appelOffreId, 'view']">{{ document.appelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.plisOuverture">Plis Ouverture</span></dt>
+                <dd>
+                    <div *ngIf="document.plisOuvertureId">
+                        <a [routerLink]="['/plis-ouverture', document.plisOuvertureId, 'view']">{{ document.plisOuvertureId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.lot">Lot</span></dt>
+                <dd>
+                    <div *ngIf="document.lotId">
+                        <a [routerLink]="['/lot', document.lotId, 'view']">{{ document.lotId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/document', document.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

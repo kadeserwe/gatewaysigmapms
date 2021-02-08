@@ -1,0 +1,117 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.home.title">Attributions</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-attribution" [routerLink]="['/attribution/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsAttribution.home.createLabel">
+            Create a new Attribution
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="attributions?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.home.notFound">No attributions found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="attributions && attributions.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="referencePlandePassation"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.referencePlandePassation">Reference Plande Passation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="referenceAvisGeneral"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.referenceAvisGeneral">Reference Avis General</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attributaireProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.attributaireProvisoire">Attributaire Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commentaire"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.commentaire">Commentaire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commentaireDefinitif"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.commentaireDefinitif">Commentaire Definitif</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nomFichierDef"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.nomFichierDef">Nom Fichier Def</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attriType"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.attriType">Attri Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantMarche"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.montantMarche">Montant Marche</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantdefinitif"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.montantdefinitif">Montantdefinitif</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="moisExecution"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.moisExecution">Mois Execution</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="semaineExecution"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.semaineExecution">Semaine Execution</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="joursExecution"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.joursExecution">Jours Execution</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="datePublicationProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.datePublicationProvisoire">Date Publication Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="datePublicationDefinitive"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.datePublicationDefinitive">Date Publication Definitive</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateattribution"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.dateattribution">Dateattribution</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossierAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.dossierAppelOffre">Dossier Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="plisOuvertureId"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.plisOuverture">Plis Ouverture</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lotId"><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.lot">Lot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let attribution of attributions ;trackBy: trackId">
+                    <td><a [routerLink]="['/attribution', attribution.id, 'view']">{{ attribution.id }}</a></td>
+                    <td>{{ attribution.referencePlandePassation }}</td>
+                    <td>{{ attribution.referenceAvisGeneral }}</td>
+                    <td>{{ attribution.attributaireProvisoire }}</td>
+                    <td>{{ attribution.commentaire }}</td>
+                    <td>{{ attribution.commentaireDefinitif }}</td>
+                    <td>{{ attribution.nomFichierDef }}</td>
+                    <td>{{ attribution.attriType }}</td>
+                    <td>{{ attribution.montantMarche }}</td>
+                    <td>{{ attribution.montantdefinitif }}</td>
+                    <td>{{ attribution.moisExecution }}</td>
+                    <td>{{ attribution.semaineExecution }}</td>
+                    <td>{{ attribution.joursExecution }}</td>
+                    <td>{{ attribution.datePublicationProvisoire | date:'mediumDate' }}</td>
+                    <td>{{ attribution.datePublicationDefinitive | date:'mediumDate' }}</td>
+                    <td>{{ attribution.dateattribution | date:'mediumDate' }}</td>
+                    <td>
+                        <div *ngIf="attribution.dossierAppelOffreId">
+                            <a [routerLink]="['/dossier-appel-offre', attribution.dossierAppelOffreId , 'view']" >{{ attribution.dossierAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="attribution.plisOuvertureId">
+                            <a [routerLink]="['/plis-ouverture', attribution.plisOuvertureId , 'view']" >{{ attribution.plisOuvertureId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="attribution.lotId">
+                            <a [routerLink]="['/lot', attribution.lotId , 'view']" >{{ attribution.lotId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/attribution', attribution.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/attribution', attribution.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(attribution)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="attributions && attributions.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

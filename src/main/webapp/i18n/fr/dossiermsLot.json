@@ -1,0 +1,31 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsLot": {
+      "home": {
+        "title": "Lots",
+        "createLabel": "Créer un nouveau Lot",
+        "createOrEditLabel": "Créer ou éditer un Lot",
+        "notFound": "Aucun Lot trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Lot {{ id }} ?"
+      },
+      "detail": {
+        "title": "Lot"
+      },
+      "libelle": "Libelle",
+      "numero": "Numero",
+      "commentaire": "Commentaire",
+      "montant": "Montant",
+      "montantdao": "Montantdao",
+      "dossierAppelOffre": "Dossier Appel Offre"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsLot": {
+      "created": "Un nouveau Lot a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Lot avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Lot avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

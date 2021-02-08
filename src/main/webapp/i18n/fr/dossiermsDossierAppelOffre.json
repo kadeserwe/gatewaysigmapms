@@ -1,0 +1,82 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsDossierAppelOffre": {
+      "home": {
+        "title": "DossierAppelOffres",
+        "createLabel": "Créer un nouveau Dossier Appel Offre",
+        "createOrEditLabel": "Créer ou éditer un Dossier Appel Offre",
+        "notFound": "Aucun Dossier Appel Offre trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Dossier Appel Offre {{ id }} ?"
+      },
+      "detail": {
+        "title": "Dossier Appel Offre"
+      },
+      "dosLieuDepotDossier": "Dos Lieu Depot Dossier",
+      "dosReference": "Dos Reference",
+      "dosAdresseRetrait": "Dos Adresse Retrait",
+      "dosConditionAcquistion": "Dos Condition Acquistion",
+      "dosAllotissement": "Dos Allotissement",
+      "dosLotDivisible": "Dos Lot Divisible",
+      "dosCommentaireMiseValidation": "Dos Commentaire Mise Validation",
+      "dosCommentaireValidation": "Dos Commentaire Validation",
+      "dosFichierValidation": "Dos Fichier Validation",
+      "dosCommentairePublicationProvisoire": "Dos Commentaire Publication Provisoire",
+      "dosCommentairesPublicationDefinitive": "Dos Commentaires Publication Definitive",
+      "dosCommentairePublication": "Dos Commentaire Publication",
+      "dosCommentSignature": "Dos Comment Signature",
+      "dosRefSignature": "Dos Ref Signature",
+      "dosCommentApprobation": "Dos Comment Approbation",
+      "dosRefApprobation": "Dos Ref Approbation",
+      "dosDateDebutRetrait": "Dos Date Debut Retrait",
+      "dosDateLimiteDepot": "Dos Date Limite Depot",
+      "dosHeurelimitedepot": "Dos Heurelimitedepot",
+      "dosDateCreation": "Dos Date Creation",
+      "dosDateRejet": "Dos Date Rejet",
+      "dosDatePublicationProvisoire": "Dos Date Publication Provisoire",
+      "dosDatePublicationDefinitive": "Dos Date Publication Definitive",
+      "dosDateDemandePublication": "Dos Date Demande Publication",
+      "dosCommentaireDemandePublication": "Dos Commentaire Demande Publication",
+      "dosFichierDemandePublication": "Dos Fichier Demande Publication",
+      "dosLieuAcquisitionDAO": "Dos Lieu Acquisition DAO",
+      "telechargerDAO": "Telecharger DAO",
+      "dosDateOuvertueDesplis": "Dos Date Ouvertue Desplis",
+      "dosHeureOuvertureDesPlis": "Dos Heure Ouverture Des Plis",
+      "dosDatePublication": "Dos Date Publication",
+      "dosFicchierPublication": "Dos Ficchier Publication",
+      "autiriteId": "Autirite Id",
+      "dosMontantGarantie": "Dos Montant Garantie",
+      "dosMontantDao": "Dos Montant Dao",
+      "dosMontantEstime": "Dos Montant Estime",
+      "dosIncidents": "Dos Incidents",
+      "dateRemiseDossierTechnique": "Date Remise Dossier Technique",
+      "dateLimiteDossierTechnique": "Date Limite Dossier Technique",
+      "commentaireDelaiTechnique": "Commentaire Delai Technique",
+      "dosDateMiseValidationAttribution": "Dos Date Mise Validation Attribution",
+      "dosEtatValidation": "Dos Etat Validation",
+      "dosBordereau": "Dos Bordereau",
+      "dosFichierMiseValidationPrequalif": "Dos Fichier Mise Validation Prequalif",
+      "dosfichierSignature": "Dosfichier Signature",
+      "dosDateSignature": "Dos Date Signature",
+      "dosDateMiseValidationSignature": "Dos Date Mise Validation Signature",
+      "dosDateAttributionDefinitive": "Dos Date Attribution Definitive",
+      "dosDateDemandeApprobation": "Dos Date Demande Approbation",
+      "dosCommentDemandeApprobation": "Dos Comment Demande Approbation",
+      "fichierApprobation": "Fichier Approbation",
+      "dosDateNotification": "Dos Date Notification",
+      "dosCommentNotification": "Dos Comment Notification",
+      "dosRefNotification": "Dos Ref Notification",
+      "dosFichierNotification": "Dos Fichier Notification",
+      "dosCommentaireAttributionDefinitive": "Dos Commentaire Attribution Definitive",
+      "appelOffre": "Appel Offre"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsDossierAppelOffre": {
+      "created": "Un nouveau Dossier Appel Offre a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Dossier Appel Offre avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Dossier Appel Offre avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

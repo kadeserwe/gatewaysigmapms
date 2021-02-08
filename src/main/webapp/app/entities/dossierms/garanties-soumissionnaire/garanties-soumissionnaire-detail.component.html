@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="garantiesSoumissionnaire">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.detail.title">Garanties Soumissionnaire</span> {{ garantiesSoumissionnaire.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.fournie">Fournie</span></dt>
+                <dd>
+                    <span>{{ garantiesSoumissionnaire.fournie }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.libelle">Libelle</span></dt>
+                <dd>
+                    <span>{{ garantiesSoumissionnaire.libelle }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.observations">Observations</span></dt>
+                <dd>
+                    <span>{{ garantiesSoumissionnaire.observations }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.libellelot">Libellelot</span></dt>
+                <dd>
+                    <span>{{ garantiesSoumissionnaire.libellelot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.montant">Montant</span></dt>
+                <dd>
+                    <span>{{ garantiesSoumissionnaire.montant }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="garantiesSoumissionnaire.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', garantiesSoumissionnaire.dossierAppelOffreId, 'view']">{{ garantiesSoumissionnaire.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.garantiesDossier">Garanties Dossier</span></dt>
+                <dd>
+                    <div *ngIf="garantiesSoumissionnaire.garantiesDossierId">
+                        <a [routerLink]="['/garanties-dossier', garantiesSoumissionnaire.garantiesDossierId, 'view']">{{ garantiesSoumissionnaire.garantiesDossierId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.plisOuverture">Plis Ouverture</span></dt>
+                <dd>
+                    <div *ngIf="garantiesSoumissionnaire.plisOuvertureId">
+                        <a [routerLink]="['/plis-ouverture', garantiesSoumissionnaire.plisOuvertureId, 'view']">{{ garantiesSoumissionnaire.plisOuvertureId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.naturesGarantie">Natures Garantie</span></dt>
+                <dd>
+                    <div *ngIf="garantiesSoumissionnaire.naturesGarantieId">
+                        <a [routerLink]="['/natures-garantie', garantiesSoumissionnaire.naturesGarantieId, 'view']">{{ garantiesSoumissionnaire.naturesGarantieId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/garanties-soumissionnaire', garantiesSoumissionnaire.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

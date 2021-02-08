@@ -1,0 +1,31 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsGarantiesDossier": {
+      "home": {
+        "title": "GarantiesDossiers",
+        "createLabel": "Créer un nouveau Garanties Dossier",
+        "createOrEditLabel": "Créer ou éditer un Garanties Dossier",
+        "notFound": "Aucun Garanties Dossier trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Garanties Dossier {{ id }} ?"
+      },
+      "detail": {
+        "title": "Garanties Dossier"
+      },
+      "pourcentage": "Pourcentage",
+      "montant": "Montant",
+      "autiriteId": "Autirite Id",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "lot": "Lot",
+      "piecesRecus": "Pieces Recus"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsGarantiesDossier": {
+      "created": "Un nouveau Garanties Dossier a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Garanties Dossier avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Garanties Dossier avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

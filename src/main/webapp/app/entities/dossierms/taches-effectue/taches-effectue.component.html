@@ -1,0 +1,147 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.home.title">Taches Effectues</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-taches-effectue" [routerLink]="['/taches-effectue/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.home.createLabel">
+            Create a new Taches Effectue
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="tachesEffectues?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.home.notFound">No tachesEffectues found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="tachesEffectues && tachesEffectues.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="allotissement"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.allotissement">Allotissement</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="garantie"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.garantie">Garantie</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="pieceAdministrative"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.pieceAdministrative">Piece Administrative</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="critereQualification"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.critereQualification">Critere Qualification</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="devise"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.devise">Devise</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="financement"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.financement">Financement</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="registreRetrait"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.registreRetrait">Registre Retrait</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="registreDepot"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.registreDepot">Registre Depot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lotsSoumis"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.lotsSoumis">Lots Soumis</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commissionsPassation"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.commissionsPassation">Commissions Passation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="representantsSoumis"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.representantsSoumis">Representants Soumis</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="servicesTechniques"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.servicesTechniques">Services Techniques</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="observateurs"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.observateurs">Observateurs</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="garantieSoum"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.garantieSoum">Garantie Soum</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="piecesSoumis"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.piecesSoumis">Pieces Soumis</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lectureOffre"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.lectureOffre">Lecture Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commissionTecnique"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.commissionTecnique">Commission Tecnique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="document"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.document">Document</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="examenGarantie"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenGarantie">Examen Garantie</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="examenExhaustivite"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenExhaustivite">Examen Exhaustivite</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="examenSignatureOffre"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenSignatureOffre">Examen Signature Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="examenConformite"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenConformite">Examen Conformite</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="verificationCritere"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.verificationCritere">Verification Critere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attributionProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.attributionProvisoire">Attribution Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="termeReference"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.termeReference">Terme Reference</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="depotCandidature"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.depotCandidature">Depot Candidature</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="preselection"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.preselection">Preselection</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="notification"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.notification">Notification</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commissionsPassationPI"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.commissionsPassationPI">Commissions Passation PI</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="representantsSoumisPI"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.representantsSoumisPI">Representants Soumis PI</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="notesTechnique"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.notesTechnique">Notes Technique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="offresFinanciere"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.offresFinanciere">Offres Financiere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prixEvalue"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.prixEvalue">Prix Evalue</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="registreDepotPI"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.registreDepotPI">Registre Depot PI</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="critereProvenance"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.critereProvenance">Critere Provenance</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="procesVerbale"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.procesVerbale">Proces Verbale</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossierAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.dossierAppelOffre">Dossier Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tachesEffectue of tachesEffectues ;trackBy: trackId">
+                    <td><a [routerLink]="['/taches-effectue', tachesEffectue.id, 'view']">{{ tachesEffectue.id }}</a></td>
+                    <td>{{ tachesEffectue.allotissement }}</td>
+                    <td>{{ tachesEffectue.garantie }}</td>
+                    <td>{{ tachesEffectue.pieceAdministrative }}</td>
+                    <td>{{ tachesEffectue.critereQualification }}</td>
+                    <td>{{ tachesEffectue.devise }}</td>
+                    <td>{{ tachesEffectue.financement }}</td>
+                    <td>{{ tachesEffectue.registreRetrait }}</td>
+                    <td>{{ tachesEffectue.registreDepot }}</td>
+                    <td>{{ tachesEffectue.lotsSoumis }}</td>
+                    <td>{{ tachesEffectue.commissionsPassation }}</td>
+                    <td>{{ tachesEffectue.representantsSoumis }}</td>
+                    <td>{{ tachesEffectue.servicesTechniques }}</td>
+                    <td>{{ tachesEffectue.observateurs }}</td>
+                    <td>{{ tachesEffectue.garantieSoum }}</td>
+                    <td>{{ tachesEffectue.piecesSoumis }}</td>
+                    <td>{{ tachesEffectue.lectureOffre }}</td>
+                    <td>{{ tachesEffectue.commissionTecnique }}</td>
+                    <td>{{ tachesEffectue.document }}</td>
+                    <td>{{ tachesEffectue.examenGarantie }}</td>
+                    <td>{{ tachesEffectue.examenExhaustivite }}</td>
+                    <td>{{ tachesEffectue.examenSignatureOffre }}</td>
+                    <td>{{ tachesEffectue.examenConformite }}</td>
+                    <td>{{ tachesEffectue.verificationCritere }}</td>
+                    <td>{{ tachesEffectue.attributionProvisoire }}</td>
+                    <td>{{ tachesEffectue.termeReference }}</td>
+                    <td>{{ tachesEffectue.depotCandidature }}</td>
+                    <td>{{ tachesEffectue.preselection }}</td>
+                    <td>{{ tachesEffectue.notification }}</td>
+                    <td>{{ tachesEffectue.commissionsPassationPI }}</td>
+                    <td>{{ tachesEffectue.representantsSoumisPI }}</td>
+                    <td>{{ tachesEffectue.notesTechnique }}</td>
+                    <td>{{ tachesEffectue.offresFinanciere }}</td>
+                    <td>{{ tachesEffectue.prixEvalue }}</td>
+                    <td>{{ tachesEffectue.registreDepotPI }}</td>
+                    <td>{{ tachesEffectue.critereProvenance }}</td>
+                    <td>{{ tachesEffectue.procesVerbale }}</td>
+                    <td>
+                        <div *ngIf="tachesEffectue.dossierAppelOffreId">
+                            <a [routerLink]="['/dossier-appel-offre', tachesEffectue.dossierAppelOffreId , 'view']" >{{ tachesEffectue.dossierAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/taches-effectue', tachesEffectue.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/taches-effectue', tachesEffectue.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(tachesEffectue)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="tachesEffectues && tachesEffectues.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

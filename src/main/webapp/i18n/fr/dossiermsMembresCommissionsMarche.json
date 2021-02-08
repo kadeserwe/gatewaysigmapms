@@ -1,0 +1,46 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsMembresCommissionsMarche": {
+      "home": {
+        "title": "MembresCommissionsMarches",
+        "createLabel": "Créer un nouveau Membres Commissions Marche",
+        "createOrEditLabel": "Créer ou éditer un Membres Commissions Marche",
+        "notFound": "Aucun Membres Commissions Marche trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Membres Commissions Marche {{ id }} ?"
+      },
+      "detail": {
+        "title": "Membres Commissions Marche"
+      },
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "fonction": "Fonction",
+      "telephone": "Telephone",
+      "email": "Email",
+      "gestion": "Gestion",
+      "statut": "Statut",
+      "typeMembre": "Type Membre",
+      "arrete": "Arrete",
+      "fichierArrete": "Fichier Arrete",
+      "photo": "Photo",
+      "type": "Type",
+      "origine": "Origine",
+      "etapePI": "Etape PI",
+      "flagPresident": "Flag President",
+      "actif": "Actif",
+      "position": "Position",
+      "reconduit": "Reconduit",
+      "autoriteId": "Autorite Id",
+      "membre": "Membre",
+      "dateArrete": "Date Arrete"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsMembresCommissionsMarche": {
+      "created": "Un nouveau Membres Commissions Marche a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Membres Commissions Marche avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Membres Commissions Marche avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

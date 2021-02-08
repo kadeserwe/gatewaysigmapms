@@ -1,0 +1,67 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsFournisseur": {
+      "home": {
+        "title": "Fournisseurs",
+        "createLabel": "Créer un nouveau Fournisseur",
+        "createOrEditLabel": "Créer ou éditer un Fournisseur",
+        "notFound": "Aucun Fournisseur trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Fournisseur {{ id }} ?"
+      },
+      "detail": {
+        "title": "Fournisseur"
+      },
+      "nom": "Nom",
+      "adresse": "Adresse",
+      "email": "Email",
+      "telephone": "Telephone",
+      "numeroRegistreCommerce": "Numero Registre Commerce",
+      "piecejointe": "Piecejointe",
+      "code": "Code",
+      "activite": "Activite",
+      "adressecomptable": "Adressecomptable",
+      "adressedirigeant": "Adressedirigeant",
+      "autredenomination": "Autredenomination",
+      "autreformejuridique": "Autreformejuridique",
+      "bpcomptable": "Bpcomptable",
+      "bpdeux": "Bpdeux",
+      "bptrois": "Bptrois",
+      "bpun": "Bpun",
+      "bpsecondaire": "Bpsecondaire",
+      "centreimpot": "Centreimpot",
+      "comptable": "Comptable",
+      "dirigeant": "Dirigeant",
+      "enseigne": "Enseigne",
+      "etssecondaire": "Etssecondaire",
+      "insae": "Insae",
+      "formejuridique": "Formejuridique",
+      "proprietairesiege": "Proprietairesiege",
+      "quartier": "Quartier",
+      "numeroenregistrement": "Numeroenregistrement",
+      "serviceencharge": "Serviceencharge",
+      "siege": "Siege",
+      "sigle": "Sigle",
+      "telcomptable": "Telcomptable",
+      "teldeux": "Teldeux",
+      "teldirigeant": "Teldirigeant",
+      "telsecondaire": "Telsecondaire",
+      "teltrois": "Teltrois",
+      "telun": "Telun",
+      "ville": "Ville",
+      "typedge": "Typedge",
+      "type": "Type",
+      "utilisateurLogin": "Utilisateur Login",
+      "fax": "Fax",
+      "catFournisseur": "Cat Fournisseur"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsFournisseur": {
+      "created": "Un nouveau Fournisseur a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Fournisseur avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Fournisseur avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

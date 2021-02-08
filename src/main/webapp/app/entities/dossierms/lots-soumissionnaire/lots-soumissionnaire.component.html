@@ -1,0 +1,173 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.home.title">Lots Soumissionnaires</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-lots-soumissionnaire" [routerLink]="['/lots-soumissionnaire/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.home.createLabel">
+            Create a new Lots Soumissionnaire
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="lotsSoumissionnaires?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.home.notFound">No lotsSoumissionnaires found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="lotsSoumissionnaires && lotsSoumissionnaires.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="raisonsociale"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.raisonsociale">Raisonsociale</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="numero"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.numero">Numero</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commentaire"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.commentaire">Commentaire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lotsoumis"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lotsoumis">Lotsoumis</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lotrecu"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lotrecu">Lotrecu</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="libelle"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.libelle">Libelle</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="elimine"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.elimine">Elimine</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantOffert"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantOffert">Montant Offert</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantDefinitif"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantDefinitif">Montant Definitif</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantGarantie"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantGarantie">Montant Garantie</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantTVA"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantTVA">Montant TVA</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantDouane"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantDouane">Montant Douane</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantTTC"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantTTC">Montant TTC</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="rabais"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.rabais">Rabais</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="rang"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.rang">Rang</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="scoreTechnique"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreTechnique">Score Technique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="scoreFinancier"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreFinancier">Score Financier</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prixEvalue"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.prixEvalue">Prix Evalue</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="scoreTechniquePondere"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreTechniquePondere">Score Technique Pondere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="scoreFinancierPondere"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreFinancierPondere">Score Financier Pondere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="scoreFinal"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreFinal">Score Final</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateDepot"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.dateDepot">Date Depot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="classementGeneral"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.classementGeneral">Classement General</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="classemenTechnique"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.classemenTechnique">Classemen Technique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etatPreselection"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.etatPreselection">Etat Preselection</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etatExamenPreliminaire"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.etatExamenPreliminaire">Etat Examen Preliminaire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="critereQualification"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.critereQualification">Critere Qualification</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attributaireProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.attributaireProvisoire">Attributaire Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="plilValide"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.plilValide">Plil Valide</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lettreSoumission"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lettreSoumission">Lettre Soumission</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="offreTechnique"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.offreTechnique">Offre Technique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="offreFinanciere"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.offreFinanciere">Offre Financiere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="plinumero"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.plinumero">Plinumero</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossierAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.dossierAppelOffre">Dossier Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lotId"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lot">Lot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="plisOuvertureId"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.plisOuverture">Plis Ouverture</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="monnaieOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.monnaieOffre">Monnaie Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="naturePrixId"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.naturePrix">Nature Prix</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="paysId"><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.pays">Pays</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lotsSoumissionnaire of lotsSoumissionnaires ;trackBy: trackId">
+                    <td><a [routerLink]="['/lots-soumissionnaire', lotsSoumissionnaire.id, 'view']">{{ lotsSoumissionnaire.id }}</a></td>
+                    <td>{{ lotsSoumissionnaire.raisonsociale }}</td>
+                    <td>{{ lotsSoumissionnaire.numero }}</td>
+                    <td>{{ lotsSoumissionnaire.email }}</td>
+                    <td>{{ lotsSoumissionnaire.commentaire }}</td>
+                    <td>{{ lotsSoumissionnaire.lotsoumis }}</td>
+                    <td>{{ lotsSoumissionnaire.lotrecu }}</td>
+                    <td>{{ lotsSoumissionnaire.libelle }}</td>
+                    <td>{{ lotsSoumissionnaire.elimine }}</td>
+                    <td>{{ lotsSoumissionnaire.montantOffert }}</td>
+                    <td>{{ lotsSoumissionnaire.montantDefinitif }}</td>
+                    <td>{{ lotsSoumissionnaire.montantGarantie }}</td>
+                    <td>{{ lotsSoumissionnaire.montantTVA }}</td>
+                    <td>{{ lotsSoumissionnaire.montantDouane }}</td>
+                    <td>{{ lotsSoumissionnaire.montantTTC }}</td>
+                    <td>{{ lotsSoumissionnaire.rabais }}</td>
+                    <td>{{ lotsSoumissionnaire.rang }}</td>
+                    <td>{{ lotsSoumissionnaire.scoreTechnique }}</td>
+                    <td>{{ lotsSoumissionnaire.scoreFinancier }}</td>
+                    <td>{{ lotsSoumissionnaire.prixEvalue }}</td>
+                    <td>{{ lotsSoumissionnaire.scoreTechniquePondere }}</td>
+                    <td>{{ lotsSoumissionnaire.scoreFinancierPondere }}</td>
+                    <td>{{ lotsSoumissionnaire.scoreFinal }}</td>
+                    <td>{{ lotsSoumissionnaire.dateDepot | date:'mediumDate' }}</td>
+                    <td>{{ lotsSoumissionnaire.classementGeneral }}</td>
+                    <td>{{ lotsSoumissionnaire.classemenTechnique }}</td>
+                    <td>{{ lotsSoumissionnaire.etatPreselection }}</td>
+                    <td>{{ lotsSoumissionnaire.etatExamenPreliminaire }}</td>
+                    <td>{{ lotsSoumissionnaire.critereQualification }}</td>
+                    <td>{{ lotsSoumissionnaire.attributaireProvisoire }}</td>
+                    <td>{{ lotsSoumissionnaire.plilValide }}</td>
+                    <td>{{ lotsSoumissionnaire.lettreSoumission }}</td>
+                    <td>{{ lotsSoumissionnaire.offreTechnique }}</td>
+                    <td>{{ lotsSoumissionnaire.offreFinanciere }}</td>
+                    <td>{{ lotsSoumissionnaire.plinumero }}</td>
+                    <td>
+                        <div *ngIf="lotsSoumissionnaire.dossierAppelOffreId">
+                            <a [routerLink]="['/dossier-appel-offre', lotsSoumissionnaire.dossierAppelOffreId , 'view']" >{{ lotsSoumissionnaire.dossierAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="lotsSoumissionnaire.lotId">
+                            <a [routerLink]="['/lot', lotsSoumissionnaire.lotId , 'view']" >{{ lotsSoumissionnaire.lotId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="lotsSoumissionnaire.plisOuvertureId">
+                            <a [routerLink]="['/plis-ouverture', lotsSoumissionnaire.plisOuvertureId , 'view']" >{{ lotsSoumissionnaire.plisOuvertureId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="lotsSoumissionnaire.monnaieOffreId">
+                            <a [routerLink]="['/monnaie-offre', lotsSoumissionnaire.monnaieOffreId , 'view']" >{{ lotsSoumissionnaire.monnaieOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="lotsSoumissionnaire.naturePrixId">
+                            <a [routerLink]="['/nature-prix', lotsSoumissionnaire.naturePrixId , 'view']" >{{ lotsSoumissionnaire.naturePrixId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="lotsSoumissionnaire.paysId">
+                            <a [routerLink]="['/pays', lotsSoumissionnaire.paysId , 'view']" >{{ lotsSoumissionnaire.paysId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/lots-soumissionnaire', lotsSoumissionnaire.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/lots-soumissionnaire', lotsSoumissionnaire.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(lotsSoumissionnaire)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="lotsSoumissionnaires && lotsSoumissionnaires.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

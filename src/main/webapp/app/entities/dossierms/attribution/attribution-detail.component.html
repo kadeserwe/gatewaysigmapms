@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="attribution">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.detail.title">Attribution</span> {{ attribution.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.referencePlandePassation">Reference Plande Passation</span></dt>
+                <dd>
+                    <span>{{ attribution.referencePlandePassation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.referenceAvisGeneral">Reference Avis General</span></dt>
+                <dd>
+                    <span>{{ attribution.referenceAvisGeneral }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.attributaireProvisoire">Attributaire Provisoire</span></dt>
+                <dd>
+                    <span>{{ attribution.attributaireProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.commentaire">Commentaire</span></dt>
+                <dd>
+                    <span>{{ attribution.commentaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.commentaireDefinitif">Commentaire Definitif</span></dt>
+                <dd>
+                    <span>{{ attribution.commentaireDefinitif }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.nomFichierDef">Nom Fichier Def</span></dt>
+                <dd>
+                    <span>{{ attribution.nomFichierDef }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.attriType">Attri Type</span></dt>
+                <dd>
+                    <span>{{ attribution.attriType }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.montantMarche">Montant Marche</span></dt>
+                <dd>
+                    <span>{{ attribution.montantMarche }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.montantdefinitif">Montantdefinitif</span></dt>
+                <dd>
+                    <span>{{ attribution.montantdefinitif }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.moisExecution">Mois Execution</span></dt>
+                <dd>
+                    <span>{{ attribution.moisExecution }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.semaineExecution">Semaine Execution</span></dt>
+                <dd>
+                    <span>{{ attribution.semaineExecution }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.joursExecution">Jours Execution</span></dt>
+                <dd>
+                    <span>{{ attribution.joursExecution }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.datePublicationProvisoire">Date Publication Provisoire</span></dt>
+                <dd>
+                    <span>{{ attribution.datePublicationProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.datePublicationDefinitive">Date Publication Definitive</span></dt>
+                <dd>
+                    <span>{{ attribution.datePublicationDefinitive }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.dateattribution">Dateattribution</span></dt>
+                <dd>
+                    <span>{{ attribution.dateattribution }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="attribution.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', attribution.dossierAppelOffreId, 'view']">{{ attribution.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.plisOuverture">Plis Ouverture</span></dt>
+                <dd>
+                    <div *ngIf="attribution.plisOuvertureId">
+                        <a [routerLink]="['/plis-ouverture', attribution.plisOuvertureId, 'view']">{{ attribution.plisOuvertureId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAttribution.lot">Lot</span></dt>
+                <dd>
+                    <div *ngIf="attribution.lotId">
+                        <a [routerLink]="['/lot', attribution.lotId, 'view']">{{ attribution.lotId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/attribution', attribution.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

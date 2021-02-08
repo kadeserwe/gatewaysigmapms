@@ -1,0 +1,131 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsDocument.home.title">Documents</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-document" [routerLink]="['/document/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsDocument.home.createLabel">
+            Create a new Document
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="documents?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsDocument.home.notFound">No documents found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="documents && documents.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="typeDocument"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.typeDocument">Type Document</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textPVOuverture"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.textPVOuverture">Text PV Ouverture</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nomFichier"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.nomFichier">Nom Fichier</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="libelle"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.libelle">Libelle</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reference"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.reference">Reference</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="objet"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.objet">Objet</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="origine"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.origine">Origine</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lieuAcquisitionDAO"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.lieuAcquisitionDAO">Lieu Acquisition DAO</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierDemandePublication"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.fichierDemandePublication">Fichier Demande Publication</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierDC"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.fichierDC">Fichier DC</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierAR"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.fichierAR">Fichier AR</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.date">Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="heure"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.heure">Heure</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateDemandePublication"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.dateDemandePublication">Date Demande Publication</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateLimiteDepot"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.dateLimiteDepot">Date Limite Depot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="heureLimiteDepot"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.heureLimiteDepot">Heure Limite Depot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateOuvertueDesplis"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.dateOuvertueDesplis">Date Ouvertue Desplis</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="heureOuvertureDesPlis"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.heureOuvertureDesPlis">Heure Ouverture Des Plis</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="autoriteId"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.autoriteId">Autorite Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossierAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.dossierAppelOffre">Dossier Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="appelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.appelOffre">Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="plisOuvertureId"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.plisOuverture">Plis Ouverture</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lotId"><span jhiTranslate="gatewaysigmapApp.dossiermsDocument.lot">Lot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let document of documents ;trackBy: trackId">
+                    <td><a [routerLink]="['/document', document.id, 'view']">{{ document.id }}</a></td>
+                    <td>{{ document.typeDocument }}</td>
+                    <td>{{ document.textPVOuverture }}</td>
+                    <td>{{ document.nomFichier }}</td>
+                    <td>{{ document.libelle }}</td>
+                    <td>{{ document.reference }}</td>
+                    <td>{{ document.objet }}</td>
+                    <td>{{ document.origine }}</td>
+                    <td>{{ document.lieuAcquisitionDAO }}</td>
+                    <td>{{ document.fichierDemandePublication }}</td>
+                    <td>{{ document.fichierDC }}</td>
+                    <td>{{ document.fichierAR }}</td>
+                    <td>{{ document.date | date:'mediumDate' }}</td>
+                    <td>{{ document.heure | date:'mediumDate' }}</td>
+                    <td>{{ document.dateDemandePublication | date:'mediumDate' }}</td>
+                    <td>{{ document.dateLimiteDepot | date:'mediumDate' }}</td>
+                    <td>{{ document.heureLimiteDepot | date:'mediumDate' }}</td>
+                    <td>{{ document.dateOuvertueDesplis | date:'mediumDate' }}</td>
+                    <td>{{ document.heureOuvertureDesPlis | date:'mediumDate' }}</td>
+                    <td>{{ document.autoriteId }}</td>
+                    <td>
+                        <div *ngIf="document.dossierAppelOffreId">
+                            <a [routerLink]="['/dossier-appel-offre', document.dossierAppelOffreId , 'view']" >{{ document.dossierAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="document.appelOffreId">
+                            <a [routerLink]="['/appel-offre', document.appelOffreId , 'view']" >{{ document.appelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="document.plisOuvertureId">
+                            <a [routerLink]="['/plis-ouverture', document.plisOuvertureId , 'view']" >{{ document.plisOuvertureId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="document.lotId">
+                            <a [routerLink]="['/lot', document.lotId , 'view']" >{{ document.lotId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/document', document.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/document', document.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(document)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="documents && documents.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

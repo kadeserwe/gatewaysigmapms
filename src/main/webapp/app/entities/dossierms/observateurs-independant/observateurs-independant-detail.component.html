@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="observateursIndependant">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.detail.title">Observateurs Independant</span> {{ observateursIndependant.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.representant">Representant</span></dt>
+                <dd>
+                    <span>{{ observateursIndependant.representant }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.qualite">Qualite</span></dt>
+                <dd>
+                    <span>{{ observateursIndependant.qualite }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.presence">Presence</span></dt>
+                <dd>
+                    <span>{{ observateursIndependant.presence }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.dateConvocation">Date Convocation</span></dt>
+                <dd>
+                    <span>{{ observateursIndependant.dateConvocation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.etape">Etape</span></dt>
+                <dd>
+                    <span>{{ observateursIndependant.etape }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsObservateursIndependant.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="observateursIndependant.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', observateursIndependant.dossierAppelOffreId, 'view']">{{ observateursIndependant.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/observateurs-independant', observateursIndependant.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="garantiesDossier">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.detail.title">Garanties Dossier</span> {{ garantiesDossier.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.pourcentage">Pourcentage</span></dt>
+                <dd>
+                    <span>{{ garantiesDossier.pourcentage }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.montant">Montant</span></dt>
+                <dd>
+                    <span>{{ garantiesDossier.montant }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.autiriteId">Autirite Id</span></dt>
+                <dd>
+                    <span>{{ garantiesDossier.autiriteId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="garantiesDossier.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', garantiesDossier.dossierAppelOffreId, 'view']">{{ garantiesDossier.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.lot">Lot</span></dt>
+                <dd>
+                    <div *ngIf="garantiesDossier.lotId">
+                        <a [routerLink]="['/lot', garantiesDossier.lotId, 'view']">{{ garantiesDossier.lotId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.piecesRecus">Pieces Recus</span></dt>
+                <dd>
+                    <div *ngIf="garantiesDossier.piecesRecusId">
+                        <a [routerLink]="['/pieces-recus', garantiesDossier.piecesRecusId, 'view']">{{ garantiesDossier.piecesRecusId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/garanties-dossier', garantiesDossier.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

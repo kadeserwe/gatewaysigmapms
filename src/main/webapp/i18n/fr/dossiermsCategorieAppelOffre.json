@@ -1,0 +1,27 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsCategorieAppelOffre": {
+      "home": {
+        "title": "CategorieAppelOffres",
+        "createLabel": "Créer un nouveau Categorie Appel Offre",
+        "createOrEditLabel": "Créer ou éditer un Categorie Appel Offre",
+        "notFound": "Aucun Categorie Appel Offre trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Categorie Appel Offre {{ id }} ?"
+      },
+      "detail": {
+        "title": "Categorie Appel Offre"
+      },
+      "libelle": "Libelle",
+      "niveau": "Niveau"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsCategorieAppelOffre": {
+      "created": "Un nouveau Categorie Appel Offre a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Categorie Appel Offre avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Categorie Appel Offre avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

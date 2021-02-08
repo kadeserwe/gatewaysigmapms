@@ -1,0 +1,115 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="membresCommissionsMarche">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.detail.title">Membres Commissions Marche</span> {{ membresCommissionsMarche.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.prenom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.fonction">Fonction</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.fonction }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.email">Email</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.gestion">Gestion</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.gestion }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.statut">Statut</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.statut }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.typeMembre">Type Membre</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.typeMembre }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.arrete">Arrete</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.arrete }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.fichierArrete">Fichier Arrete</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.fichierArrete }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.photo">Photo</span></dt>
+                <dd>
+                    <div *ngIf="membresCommissionsMarche.photo">
+                        <a (click)="openFile(membresCommissionsMarche.photoContentType, membresCommissionsMarche.photo)">
+                            <img [src]="'data:' + membresCommissionsMarche.photoContentType + ';base64,' + membresCommissionsMarche.photo" style="max-width: 100%;" alt="membresCommissionsMarche image"/>
+                        </a>
+                        {{ membresCommissionsMarche.photoContentType }}, {{ byteSize(membresCommissionsMarche.photo) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.type">Type</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.origine">Origine</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.origine }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.etapePI">Etape PI</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.etapePI }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.flagPresident">Flag President</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.flagPresident }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.actif">Actif</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.actif }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.position">Position</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.position }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.reconduit">Reconduit</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.reconduit }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.autoriteId">Autorite Id</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.autoriteId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.membre">Membre</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.membre }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.dateArrete">Date Arrete</span></dt>
+                <dd>
+                    <span>{{ membresCommissionsMarche.dateArrete }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/membres-commissions-marche', membresCommissionsMarche.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

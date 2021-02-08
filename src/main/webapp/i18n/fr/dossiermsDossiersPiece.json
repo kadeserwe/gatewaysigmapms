@@ -1,0 +1,27 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsDossiersPiece": {
+      "home": {
+        "title": "DossiersPieces",
+        "createLabel": "Créer un nouveau Dossiers Piece",
+        "createOrEditLabel": "Créer ou éditer un Dossiers Piece",
+        "notFound": "Aucun Dossiers Piece trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Dossiers Piece {{ id }} ?"
+      },
+      "detail": {
+        "title": "Dossiers Piece"
+      },
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "piece": "Piece"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsDossiersPiece": {
+      "created": "Un nouveau Dossiers Piece a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Dossiers Piece avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Dossiers Piece avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

@@ -1,0 +1,116 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.home.title">Membres Commissions Marches</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-membres-commissions-marche" [routerLink]="['/membres-commissions-marche/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.home.createLabel">
+            Create a new Membres Commissions Marche
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="membresCommissionsMarches?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.home.notFound">No membresCommissionsMarches found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="membresCommissionsMarches && membresCommissionsMarches.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nom"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.nom">Nom</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenom"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.prenom">Prenom</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fonction"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.fonction">Fonction</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="telephone"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.telephone">Telephone</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="gestion"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.gestion">Gestion</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="statut"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.statut">Statut</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="typeMembre"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.typeMembre">Type Membre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="arrete"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.arrete">Arrete</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierArrete"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.fichierArrete">Fichier Arrete</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="photo"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.photo">Photo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="type"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.type">Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="origine"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.origine">Origine</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etapePI"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.etapePI">Etape PI</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="flagPresident"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.flagPresident">Flag President</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="actif"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.actif">Actif</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="position"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.position">Position</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reconduit"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.reconduit">Reconduit</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="autoriteId"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.autoriteId">Autorite Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="membre"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.membre">Membre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateArrete"><span jhiTranslate="gatewaysigmapApp.dossiermsMembresCommissionsMarche.dateArrete">Date Arrete</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let membresCommissionsMarche of membresCommissionsMarches ;trackBy: trackId">
+                    <td><a [routerLink]="['/membres-commissions-marche', membresCommissionsMarche.id, 'view']">{{ membresCommissionsMarche.id }}</a></td>
+                    <td>{{ membresCommissionsMarche.nom }}</td>
+                    <td>{{ membresCommissionsMarche.prenom }}</td>
+                    <td>{{ membresCommissionsMarche.fonction }}</td>
+                    <td>{{ membresCommissionsMarche.telephone }}</td>
+                    <td>{{ membresCommissionsMarche.email }}</td>
+                    <td>{{ membresCommissionsMarche.gestion }}</td>
+                    <td>{{ membresCommissionsMarche.statut }}</td>
+                    <td>{{ membresCommissionsMarche.typeMembre }}</td>
+                    <td>{{ membresCommissionsMarche.arrete }}</td>
+                    <td>{{ membresCommissionsMarche.fichierArrete }}</td>
+                    <td>
+                        <a *ngIf="membresCommissionsMarche.photo" (click)="openFile(membresCommissionsMarche.photoContentType, membresCommissionsMarche.photo)">
+                            <img [src]="'data:' + membresCommissionsMarche.photoContentType + ';base64,' + membresCommissionsMarche.photo" style="max-height: 30px;" alt="membresCommissionsMarche image"/>
+                        </a>
+                        <span *ngIf="membresCommissionsMarche.photo">{{ membresCommissionsMarche.photoContentType }}, {{ byteSize(membresCommissionsMarche.photo) }}</span>
+                    </td>
+                    <td>{{ membresCommissionsMarche.type }}</td>
+                    <td>{{ membresCommissionsMarche.origine }}</td>
+                    <td>{{ membresCommissionsMarche.etapePI }}</td>
+                    <td>{{ membresCommissionsMarche.flagPresident }}</td>
+                    <td>{{ membresCommissionsMarche.actif }}</td>
+                    <td>{{ membresCommissionsMarche.position }}</td>
+                    <td>{{ membresCommissionsMarche.reconduit }}</td>
+                    <td>{{ membresCommissionsMarche.autoriteId }}</td>
+                    <td>{{ membresCommissionsMarche.membre }}</td>
+                    <td>{{ membresCommissionsMarche.dateArrete | date:'mediumDate' }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/membres-commissions-marche', membresCommissionsMarche.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/membres-commissions-marche', membresCommissionsMarche.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(membresCommissionsMarche)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="membresCommissionsMarches && membresCommissionsMarches.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

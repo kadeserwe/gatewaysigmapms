@@ -1,0 +1,370 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-appel-offre-heading" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.home.createOrEditLabel">Create or edit a Appel Offre</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDatecreation" for="field_apoDatecreation">Apo Datecreation</label>
+                    <div class="input-group">
+                        <input id="field_apoDatecreation" type="text" class="form-control" name="apoDatecreation" ngbDatepicker #apoDatecreationDp="ngbDatepicker" formControlName="apoDatecreation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="apoDatecreationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('apoDatecreation')!.invalid && (editForm.get('apoDatecreation')!.dirty || editForm.get('apoDatecreation')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('apoDatecreation')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateAutorisation" for="field_apoDateAutorisation">Apo Date Autorisation</label>
+                    <div class="input-group">
+                        <input id="field_apoDateAutorisation" type="text" class="form-control" name="apoDateAutorisation" ngbDatepicker #apoDateAutorisationDp="ngbDatepicker" formControlName="apoDateAutorisation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="apoDateAutorisationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateDemandeAutorisation" for="field_apoDateDemandeAutorisation">Apo Date Demande Autorisation</label>
+                    <div class="input-group">
+                        <input id="field_apoDateDemandeAutorisation" type="text" class="form-control" name="apoDateDemandeAutorisation" ngbDatepicker #apoDateDemandeAutorisationDp="ngbDatepicker" formControlName="apoDateDemandeAutorisation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="apoDateDemandeAutorisationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateRejet" for="field_apoDateRejet">Apo Date Rejet</label>
+                    <div class="input-group">
+                        <input id="field_apoDateRejet" type="text" class="form-control" name="apoDateRejet" ngbDatepicker #apoDateRejetDp="ngbDatepicker" formControlName="apoDateRejet"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="apoDateRejetDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateMiseAutorisation" for="field_apoDateMiseAutorisation">Apo Date Mise Autorisation</label>
+                    <div class="input-group">
+                        <input id="field_apoDateMiseAutorisation" type="text" class="form-control" name="apoDateMiseAutorisation" ngbDatepicker #apoDateMiseAutorisationDp="ngbDatepicker" formControlName="apoDateMiseAutorisation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="apoDateMiseAutorisationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.dateStopProcedure" for="field_dateStopProcedure">Date Stop Procedure</label>
+                    <div class="input-group">
+                        <input id="field_dateStopProcedure" type="text" class="form-control" name="dateStopProcedure" ngbDatepicker #dateStopProcedureDp="ngbDatepicker" formControlName="dateStopProcedure"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateStopProcedureDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.dateAffectationDossier" for="field_dateAffectationDossier">Date Affectation Dossier</label>
+                    <div class="input-group">
+                        <input id="field_dateAffectationDossier" type="text" class="form-control" name="dateAffectationDossier" ngbDatepicker #dateAffectationDossierDp="ngbDatepicker" formControlName="dateAffectationDossier"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateAffectationDossierDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDatePVOuverturepli" for="field_apoDatePVOuverturepli">Apo Date PV Ouverturepli</label>
+                    <div class="input-group">
+                        <input id="field_apoDatePVOuverturepli" type="text" class="form-control" name="apoDatePVOuverturepli" ngbDatepicker #apoDatePVOuverturepliDp="ngbDatepicker" formControlName="apoDatePVOuverturepli"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="apoDatePVOuverturepliDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateVersement" for="field_apoDateVersement">Apo Date Versement</label>
+                    <div class="input-group">
+                        <input id="field_apoDateVersement" type="text" class="form-control" name="apoDateVersement" ngbDatepicker #apoDateVersementDp="ngbDatepicker" formControlName="apoDateVersement"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="apoDateVersementDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.datePubListeRestreinte" for="field_datePubListeRestreinte">Date Pub Liste Restreinte</label>
+                    <div class="input-group">
+                        <input id="field_datePubListeRestreinte" type="text" class="form-control" name="datePubListeRestreinte" ngbDatepicker #datePubListeRestreinteDp="ngbDatepicker" formControlName="datePubListeRestreinte"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datePubListeRestreinteDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoProjet" for="field_apoProjet">Apo Projet</label>
+                    <input type="text" class="form-control" name="apoProjet" id="field_apoProjet"
+                           formControlName="apoProjet"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoObjet" for="field_apoObjet">Apo Objet</label>
+                    <input type="text" class="form-control" name="apoObjet" id="field_apoObjet"
+                           formControlName="apoObjet"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReference" for="field_apoReference">Apo Reference</label>
+                    <input type="text" class="form-control" name="apoReference" id="field_apoReference"
+                           formControlName="apoReference"/>
+                    <div *ngIf="editForm.get('apoReference')!.invalid && (editForm.get('apoReference')!.dirty || editForm.get('apoReference')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('apoReference')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoNumeroPretCredit" for="field_apoNumeroPretCredit">Apo Numero Pret Credit</label>
+                    <input type="text" class="form-control" name="apoNumeroPretCredit" id="field_apoNumeroPretCredit"
+                           formControlName="apoNumeroPretCredit"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoCommentaireAutorisation" for="field_apoCommentaireAutorisation">Apo Commentaire Autorisation</label>
+                    <input type="text" class="form-control" name="apoCommentaireAutorisation" id="field_apoCommentaireAutorisation"
+                           formControlName="apoCommentaireAutorisation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierMiseAutorisation" for="field_apoFichierMiseAutorisation">Apo Fichier Mise Autorisation</label>
+                    <input type="text" class="form-control" name="apoFichierMiseAutorisation" id="field_apoFichierMiseAutorisation"
+                           formControlName="apoFichierMiseAutorisation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.numeroMarche" for="field_numeroMarche">Numero Marche</label>
+                    <input type="text" class="form-control" name="numeroMarche" id="field_numeroMarche"
+                           formControlName="numeroMarche"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.motifStopProcedure" for="field_motifStopProcedure">Motif Stop Procedure</label>
+                    <input type="text" class="form-control" name="motifStopProcedure" id="field_motifStopProcedure"
+                           formControlName="motifStopProcedure"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierPV" for="field_apoFichierPV">Apo Fichier PV</label>
+                    <input type="text" class="form-control" name="apoFichierPV" id="field_apoFichierPV"
+                           formControlName="apoFichierPV"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierValidation" for="field_apoFichierValidation">Apo Fichier Validation</label>
+                    <input type="text" class="form-control" name="apoFichierValidation" id="field_apoFichierValidation"
+                           formControlName="apoFichierValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoAutorisationPrealable" for="field_apoAutorisationPrealable">Apo Autorisation Prealable</label>
+                    <input type="text" class="form-control" name="apoAutorisationPrealable" id="field_apoAutorisationPrealable"
+                           formControlName="apoAutorisationPrealable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierAutorisationPrealable" for="field_apoFichierAutorisationPrealable">Apo Fichier Autorisation Prealable</label>
+                    <input type="text" class="form-control" name="apoFichierAutorisationPrealable" id="field_apoFichierAutorisationPrealable"
+                           formControlName="apoFichierAutorisationPrealable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReferenceRequeteAc" for="field_apoReferenceRequeteAc">Apo Reference Requete Ac</label>
+                    <input type="text" class="form-control" name="apoReferenceRequeteAc" id="field_apoReferenceRequeteAc"
+                           formControlName="apoReferenceRequeteAc"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoRapportSpecial" for="field_apoRapportSpecial">Apo Rapport Special</label>
+                    <input type="text" class="form-control" name="apoRapportSpecial" id="field_apoRapportSpecial"
+                           formControlName="apoRapportSpecial"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReferenceCommunication" for="field_apoReferenceCommunication">Apo Reference Communication</label>
+                    <input type="text" class="form-control" name="apoReferenceCommunication" id="field_apoReferenceCommunication"
+                           formControlName="apoReferenceCommunication"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReleveConseil" for="field_apoReleveConseil">Apo Releve Conseil</label>
+                    <input type="text" class="form-control" name="apoReleveConseil" id="field_apoReleveConseil"
+                           formControlName="apoReleveConseil"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierRapportSpecial" for="field_apoFichierRapportSpecial">Apo Fichier Rapport Special</label>
+                    <input type="text" class="form-control" name="apoFichierRapportSpecial" id="field_apoFichierRapportSpecial"
+                           formControlName="apoFichierRapportSpecial"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierReleveConseil" for="field_apoFichierReleveConseil">Apo Fichier Releve Conseil</label>
+                    <input type="text" class="form-control" name="apoFichierReleveConseil" id="field_apoFichierReleveConseil"
+                           formControlName="apoFichierReleveConseil"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.pubListeRestreinte" for="field_pubListeRestreinte">Pub Liste Restreinte</label>
+                    <input type="text" class="form-control" name="pubListeRestreinte" id="field_pubListeRestreinte"
+                           formControlName="pubListeRestreinte"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.fichierListeRestreinte" for="field_fichierListeRestreinte">Fichier Liste Restreinte</label>
+                    <input type="text" class="form-control" name="fichierListeRestreinte" id="field_fichierListeRestreinte"
+                           formControlName="fichierListeRestreinte"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoMontantEstime" for="field_apoMontantEstime">Apo Montant Estime</label>
+                    <input type="number" class="form-control" name="apoMontantEstime" id="field_apoMontantEstime"
+                           formControlName="apoMontantEstime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoMontantVersement" for="field_apoMontantVersement">Apo Montant Versement</label>
+                    <input type="number" class="form-control" name="apoMontantVersement" id="field_apoMontantVersement"
+                           formControlName="apoMontantVersement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoResponsableDCMP" for="field_apoResponsableDCMP">Apo Responsable DCMP</label>
+                    <input type="number" class="form-control" name="apoResponsableDCMP" id="field_apoResponsableDCMP"
+                           formControlName="apoResponsableDCMP"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.etatSeuil" for="field_etatSeuil">Etat Seuil</label>
+                    <input type="number" class="form-control" name="etatSeuil" id="field_etatSeuil"
+                           formControlName="etatSeuil"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoStatut" for="field_apoStatut">Apo Statut</label>
+                    <input type="text" class="form-control" name="apoStatut" id="field_apoStatut"
+                           formControlName="apoStatut"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoValide" for="field_apoValide">Apo Valide</label>
+                    <input type="text" class="form-control" name="apoValide" id="field_apoValide"
+                           formControlName="apoValide"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoNbreDAO" for="field_apoNbreDAO">Apo Nbre DAO</label>
+                    <input type="number" class="form-control" name="apoNbreDAO" id="field_apoNbreDAO"
+                           formControlName="apoNbreDAO"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoNbreDC" for="field_apoNbreDC">Apo Nbre DC</label>
+                    <input type="number" class="form-control" name="apoNbreDC" id="field_apoNbreDC"
+                           formControlName="apoNbreDC"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoEtatValidation" for="field_apoEtatValidation">Apo Etat Validation</label>
+                    <input type="number" class="form-control" name="apoEtatValidation" id="field_apoEtatValidation"
+                           formControlName="apoEtatValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.autiriteId" for="field_autiriteId">Autirite Id</label>
+                    <input type="number" class="form-control" name="autiriteId" id="field_autiriteId"
+                           formControlName="autiriteId"/>
+                    <div *ngIf="editForm.get('autiriteId')!.invalid && (editForm.get('autiriteId')!.dirty || editForm.get('autiriteId')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('autiriteId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('autiriteId')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.realisationId" for="field_realisationId">Realisation Id</label>
+                    <input type="number" class="form-control" name="realisationId" id="field_realisationId"
+                           formControlName="realisationId"/>
+                    <div *ngIf="editForm.get('realisationId')!.invalid && (editForm.get('realisationId')!.dirty || editForm.get('realisationId')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('realisationId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('realisationId')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.modepassationId" for="field_modepassationId">Modepassation Id</label>
+                    <input type="number" class="form-control" name="modepassationId" id="field_modepassationId"
+                           formControlName="modepassationId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.typemarcheId" for="field_typemarcheId">Typemarche Id</label>
+                    <input type="number" class="form-control" name="typemarcheId" id="field_typemarcheId"
+                           formControlName="typemarcheId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.modeselectionId" for="field_modeselectionId">Modeselection Id</label>
+                    <input type="number" class="form-control" name="modeselectionId" id="field_modeselectionId"
+                           formControlName="modeselectionId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.categorieAppelOffre" for="field_categorieAppelOffre">Categorie Appel Offre</label>
+                    <select class="form-control" id="field_categorieAppelOffre" name="categorieAppelOffre" formControlName="categorieAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="categorieAppelOffreOption.id" *ngFor="let categorieAppelOffreOption of categorieappeloffres; trackBy: trackById">{{ categorieAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

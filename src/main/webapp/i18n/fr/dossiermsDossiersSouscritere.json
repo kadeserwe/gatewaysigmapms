@@ -1,0 +1,29 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsDossiersSouscritere": {
+      "home": {
+        "title": "DossiersSouscriteres",
+        "createLabel": "Créer un nouveau Dossiers Souscritere",
+        "createOrEditLabel": "Créer ou éditer un Dossiers Souscritere",
+        "notFound": "Aucun Dossiers Souscritere trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Dossiers Souscritere {{ id }} ?"
+      },
+      "detail": {
+        "title": "Dossiers Souscritere"
+      },
+      "note": "Note",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "lot": "Lot",
+      "critere": "Critere"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsDossiersSouscritere": {
+      "created": "Un nouveau Dossiers Souscritere a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Dossiers Souscritere avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Dossiers Souscritere avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

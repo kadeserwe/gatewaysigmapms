@@ -1,0 +1,256 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dossierAppelOffre">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.detail.title">Dossier Appel Offre</span> {{ dossierAppelOffre.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosLieuDepotDossier">Dos Lieu Depot Dossier</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosLieuDepotDossier }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosReference">Dos Reference</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosReference }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosAdresseRetrait">Dos Adresse Retrait</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosAdresseRetrait }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosConditionAcquistion">Dos Condition Acquistion</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosConditionAcquistion }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosAllotissement">Dos Allotissement</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosAllotissement }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosLotDivisible">Dos Lot Divisible</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosLotDivisible }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireMiseValidation">Dos Commentaire Mise Validation</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosCommentaireMiseValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireValidation">Dos Commentaire Validation</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosCommentaireValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierValidation">Dos Fichier Validation</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosFichierValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentairePublicationProvisoire">Dos Commentaire Publication Provisoire</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosCommentairePublicationProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentairesPublicationDefinitive">Dos Commentaires Publication Definitive</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosCommentairesPublicationDefinitive }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentairePublication">Dos Commentaire Publication</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosCommentairePublication }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentSignature">Dos Comment Signature</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosCommentSignature }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosRefSignature">Dos Ref Signature</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosRefSignature }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentApprobation">Dos Comment Approbation</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosCommentApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosRefApprobation">Dos Ref Approbation</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosRefApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateDebutRetrait">Dos Date Debut Retrait</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateDebutRetrait }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateLimiteDepot">Dos Date Limite Depot</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateLimiteDepot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosHeurelimitedepot">Dos Heurelimitedepot</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosHeurelimitedepot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateCreation">Dos Date Creation</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateCreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateRejet">Dos Date Rejet</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateRejet }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDatePublicationProvisoire">Dos Date Publication Provisoire</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDatePublicationProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDatePublicationDefinitive">Dos Date Publication Definitive</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDatePublicationDefinitive }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateDemandePublication">Dos Date Demande Publication</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateDemandePublication }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireDemandePublication">Dos Commentaire Demande Publication</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosCommentaireDemandePublication }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierDemandePublication">Dos Fichier Demande Publication</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosFichierDemandePublication }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosLieuAcquisitionDAO">Dos Lieu Acquisition DAO</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosLieuAcquisitionDAO }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.telechargerDAO">Telecharger DAO</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.telechargerDAO }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateOuvertueDesplis">Dos Date Ouvertue Desplis</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateOuvertueDesplis }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosHeureOuvertureDesPlis">Dos Heure Ouverture Des Plis</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosHeureOuvertureDesPlis }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDatePublication">Dos Date Publication</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDatePublication }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFicchierPublication">Dos Ficchier Publication</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosFicchierPublication }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.autiriteId">Autirite Id</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.autiriteId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosMontantGarantie">Dos Montant Garantie</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosMontantGarantie }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosMontantDao">Dos Montant Dao</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosMontantDao }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosMontantEstime">Dos Montant Estime</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosMontantEstime }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosIncidents">Dos Incidents</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosIncidents }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dateRemiseDossierTechnique">Date Remise Dossier Technique</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dateRemiseDossierTechnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dateLimiteDossierTechnique">Date Limite Dossier Technique</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dateLimiteDossierTechnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.commentaireDelaiTechnique">Commentaire Delai Technique</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.commentaireDelaiTechnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateMiseValidationAttribution">Dos Date Mise Validation Attribution</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateMiseValidationAttribution }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosEtatValidation">Dos Etat Validation</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosEtatValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosBordereau">Dos Bordereau</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosBordereau }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierMiseValidationPrequalif">Dos Fichier Mise Validation Prequalif</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosFichierMiseValidationPrequalif }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosfichierSignature">Dosfichier Signature</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosfichierSignature }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateSignature">Dos Date Signature</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateSignature }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateMiseValidationSignature">Dos Date Mise Validation Signature</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateMiseValidationSignature }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateAttributionDefinitive">Dos Date Attribution Definitive</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateAttributionDefinitive }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateDemandeApprobation">Dos Date Demande Approbation</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateDemandeApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentDemandeApprobation">Dos Comment Demande Approbation</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosCommentDemandeApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.fichierApprobation">Fichier Approbation</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.fichierApprobation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosDateNotification">Dos Date Notification</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosDateNotification }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentNotification">Dos Comment Notification</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosCommentNotification }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosRefNotification">Dos Ref Notification</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosRefNotification }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosFichierNotification">Dos Fichier Notification</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosFichierNotification }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.dosCommentaireAttributionDefinitive">Dos Commentaire Attribution Definitive</span></dt>
+                <dd>
+                    <span>{{ dossierAppelOffre.dosCommentaireAttributionDefinitive }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossierAppelOffre.appelOffre">Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="dossierAppelOffre.appelOffreId">
+                        <a [routerLink]="['/appel-offre', dossierAppelOffre.appelOffreId, 'view']">{{ dossierAppelOffre.appelOffreId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dossier-appel-offre', dossierAppelOffre.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsDossiersCommissionsMarche": {
+      "home": {
+        "title": "DossiersCommissionsMarches",
+        "createLabel": "Créer un nouveau Dossiers Commissions Marche",
+        "createOrEditLabel": "Créer ou éditer un Dossiers Commissions Marche",
+        "notFound": "Aucun Dossiers Commissions Marche trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Dossiers Commissions Marche {{ id }} ?"
+      },
+      "detail": {
+        "title": "Dossiers Commissions Marche"
+      },
+      "flagPresenceEvaluation": "Flag Presence Evaluation",
+      "etapePI": "Etape PI",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "membresCommissionsMarche": "Membres Commissions Marche"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsDossiersCommissionsMarche": {
+      "created": "Un nouveau Dossiers Commissions Marche a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Dossiers Commissions Marche avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Dossiers Commissions Marche avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsPiecesPlisOuverture": {
+      "home": {
+        "title": "PiecesPlisOuvertures",
+        "createLabel": "Créer un nouveau Pieces Plis Ouverture",
+        "createOrEditLabel": "Créer ou éditer un Pieces Plis Ouverture",
+        "notFound": "Aucun Pieces Plis Ouverture trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pieces Plis Ouverture {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pieces Plis Ouverture"
+      },
+      "etat": "Etat",
+      "libelle": "Libelle",
+      "etatConforme": "Etat Conforme",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "plisOuverture": "Plis Ouverture",
+      "piece": "Piece"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsPiecesPlisOuverture": {
+      "created": "Un nouveau Pieces Plis Ouverture a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pieces Plis Ouverture avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pieces Plis Ouverture avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

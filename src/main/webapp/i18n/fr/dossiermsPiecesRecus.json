@@ -1,0 +1,28 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsPiecesRecus": {
+      "home": {
+        "title": "PiecesRecuses",
+        "createLabel": "Créer un nouveau Pieces Recus",
+        "createOrEditLabel": "Créer ou éditer un Pieces Recus",
+        "notFound": "Aucun Pieces Recus trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pieces Recus {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pieces Recus"
+      },
+      "libelle": "Libelle",
+      "description": "Description",
+      "garantie": "Garantie"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsPiecesRecus": {
+      "created": "Un nouveau Pieces Recus a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pieces Recus avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pieces Recus avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="devise">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsDevise.detail.title">Devise</span> {{ devise.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDevise.devTauxConversion">Dev Taux Conversion</span></dt>
+                <dd>
+                    <span>{{ devise.devTauxConversion }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDevise.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="devise.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', devise.dossierAppelOffreId, 'view']">{{ devise.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDevise.monnaieOffre">Monnaie Offre</span></dt>
+                <dd>
+                    <div *ngIf="devise.monnaieOffreId">
+                        <a [routerLink]="['/monnaie-offre', devise.monnaieOffreId, 'view']">{{ devise.monnaieOffreId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/devise', devise.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

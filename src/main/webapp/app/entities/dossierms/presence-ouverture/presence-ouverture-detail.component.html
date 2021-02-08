@@ -1,0 +1,76 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="presenceOuverture">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.detail.title">Presence Ouverture</span> {{ presenceOuverture.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.supplementaire">Supplementaire</span></dt>
+                <dd>
+                    <span>{{ presenceOuverture.supplementaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.email">Email</span></dt>
+                <dd>
+                    <span>{{ presenceOuverture.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ presenceOuverture.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.nomRepresentant">Nom Representant</span></dt>
+                <dd>
+                    <span>{{ presenceOuverture.nomRepresentant }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.prenomRepresentant">Prenom Representant</span></dt>
+                <dd>
+                    <span>{{ presenceOuverture.prenomRepresentant }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.nomStructure">Nom Structure</span></dt>
+                <dd>
+                    <span>{{ presenceOuverture.nomStructure }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.qualite">Qualite</span></dt>
+                <dd>
+                    <span>{{ presenceOuverture.qualite }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.etapePI">Etape PI</span></dt>
+                <dd>
+                    <span>{{ presenceOuverture.etapePI }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="presenceOuverture.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', presenceOuverture.dossierAppelOffreId, 'view']">{{ presenceOuverture.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.appelOffre">Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="presenceOuverture.appelOffreId">
+                        <a [routerLink]="['/appel-offre', presenceOuverture.appelOffreId, 'view']">{{ presenceOuverture.appelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPresenceOuverture.plisOuverture">Plis Ouverture</span></dt>
+                <dd>
+                    <div *ngIf="presenceOuverture.plisOuvertureId">
+                        <a [routerLink]="['/plis-ouverture', presenceOuverture.plisOuvertureId, 'view']">{{ presenceOuverture.plisOuvertureId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/presence-ouverture', presenceOuverture.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

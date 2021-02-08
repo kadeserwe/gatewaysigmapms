@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="retraitRegistreDAO">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.detail.title">Retrait Registre DAO</span> {{ retraitRegistreDAO.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.nomSoumissionnaire">Nom Soumissionnaire</span></dt>
+                <dd>
+                    <span>{{ retraitRegistreDAO.nomSoumissionnaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ retraitRegistreDAO.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.email">Email</span></dt>
+                <dd>
+                    <span>{{ retraitRegistreDAO.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.modePaiement">Mode Paiement</span></dt>
+                <dd>
+                    <span>{{ retraitRegistreDAO.modePaiement }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.ninea">Ninea</span></dt>
+                <dd>
+                    <span>{{ retraitRegistreDAO.ninea }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.montantVerse">Montant Verse</span></dt>
+                <dd>
+                    <span>{{ retraitRegistreDAO.montantVerse }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.dateRetrait">Date Retrait</span></dt>
+                <dd>
+                    <span>{{ retraitRegistreDAO.dateRetrait }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="retraitRegistreDAO.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', retraitRegistreDAO.dossierAppelOffreId, 'view']">{{ retraitRegistreDAO.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.fournisseur">Fournisseur</span></dt>
+                <dd>
+                    <div *ngIf="retraitRegistreDAO.fournisseurId">
+                        <a [routerLink]="['/fournisseur', retraitRegistreDAO.fournisseurId, 'view']">{{ retraitRegistreDAO.fournisseurId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.pays">Pays</span></dt>
+                <dd>
+                    <div *ngIf="retraitRegistreDAO.paysId">
+                        <a [routerLink]="['/pays', retraitRegistreDAO.paysId, 'view']">{{ retraitRegistreDAO.paysId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/retrait-registre-dao', retraitRegistreDAO.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

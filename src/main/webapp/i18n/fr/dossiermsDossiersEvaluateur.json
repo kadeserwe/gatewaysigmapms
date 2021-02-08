@@ -1,0 +1,34 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsDossiersEvaluateur": {
+      "home": {
+        "title": "DossiersEvaluateurs",
+        "createLabel": "Créer un nouveau Dossiers Evaluateur",
+        "createOrEditLabel": "Créer ou éditer un Dossiers Evaluateur",
+        "notFound": "Aucun Dossiers Evaluateur trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Dossiers Evaluateur {{ id }} ?"
+      },
+      "detail": {
+        "title": "Dossiers Evaluateur"
+      },
+      "commission": "Commission",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "telephone": "Telephone",
+      "email": "Email",
+      "fonction": "Fonction",
+      "dateRemise": "Date Remise",
+      "dateLimite": "Date Limite",
+      "dossierAppelOffre": "Dossier Appel Offre"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsDossiersEvaluateur": {
+      "created": "Un nouveau Dossiers Evaluateur a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Dossiers Evaluateur avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Dossiers Evaluateur avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

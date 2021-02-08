@@ -1,0 +1,241 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsContrat.home.title">Contrats</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-contrat" [routerLink]="['/contrat/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsContrat.home.createLabel">
+            Create a new Contrat
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="contrats?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsContrat.home.notFound">No contrats found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="contrats && contrats.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montant"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.montant">Montant</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantVerse"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.montantVerse">Montant Verse</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conDateSignature"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateSignature">Con Date Signature</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conDateApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateApprobation">Con Date Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conDateNotification"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateNotification">Con Date Notification</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conDateRecepProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateRecepProvisoire">Con Date Recep Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conDateRecepDefinitive"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateRecepDefinitive">Con Date Recep Definitive</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conDateOrdreDemarrage"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateOrdreDemarrage">Con Date Ordre Demarrage</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="condateAttributionProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.condateAttributionProvisoire">Condate Attribution Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="condateAttributionDefinitive"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.condateAttributionDefinitive">Condate Attribution Definitive</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conDatePaiement"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDatePaiement">Con Date Paiement</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateDemandeImmatriculation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.dateDemandeImmatriculation">Date Demande Immatriculation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateImmatriculation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.dateImmatriculation">Date Immatriculation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="datePub"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.datePub">Date Pub</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateDemandePubContrat"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.dateDemandePubContrat">Date Demande Pub Contrat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conDateCreation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateCreation">Con Date Creation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontDateDemandeAutorisation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateDemandeAutorisation">Renouvcont Date Demande Autorisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontDateautorisation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateautorisation">Renouvcont Dateautorisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontDateDemandeExamenJuridique"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateDemandeExamenJuridique">Renouvcont Date Demande Examen Juridique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontDateExamenJuridique"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateExamenJuridique">Renouvcont Date Examen Juridique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontDateDemandeApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateDemandeApprobation">Renouvcont Date Demande Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontDateApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateApprobation">Renouvcont Date Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontDateRejet"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateRejet">Renouvcont Date Rejet</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontDateRetourApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateRetourApprobation">Renouvcont Date Retour Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conCommentSignature"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentSignature">Con Comment Signature</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conRefSignature"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefSignature">Con Ref Signature</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conCommentApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentApprobation">Con Comment Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conRefApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefApprobation">Con Ref Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conCommentNotification"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentNotification">Con Comment Notification</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conRefNotification"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefNotification">Con Ref Notification</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conFichierRecepProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conFichierRecepProvisoire">Con Fichier Recep Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conCommentRecepProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentRecepProvisoire">Con Comment Recep Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conFichierRecepDefinitive"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conFichierRecepDefinitive">Con Fichier Recep Definitive</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conCommentRecepDefinitive"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentRecepDefinitive">Con Comment Recep Definitive</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conFichierOrdreDemarrage"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conFichierOrdreDemarrage">Con Fichier Ordre Demarrage</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conCommentOrdreDemarrage"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentOrdreDemarrage">Con Comment Ordre Demarrage</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conRefAttributionProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefAttributionProvisoire">Con Ref Attribution Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conCommentaireAttributionProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireAttributionProvisoire">Con Commentaire Attribution Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conRefAttributionDefinitive"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefAttributionDefinitive">Con Ref Attribution Definitive</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conCommentaireAttributionDefinitive"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireAttributionDefinitive">Con Commentaire Attribution Definitive</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conStatut"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conStatut">Con Statut</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="numMatriculation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.numMatriculation">Num Matriculation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conCommentaireDmdmat"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireDmdmat">Con Commentaire Dmdmat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conCommentaireMatriculation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireMatriculation">Con Commentaire Matriculation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="concSituation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.concSituation">Conc Situation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nationnalite"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.nationnalite">Nationnalite</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierImmatricule"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.fichierImmatricule">Fichier Immatricule</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierJustificatif"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.fichierJustificatif">Fichier Justificatif</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commentairePub"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.commentairePub">Commentaire Pub</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierContrat"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.fichierContrat">Fichier Contrat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conCommentDemandePub"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentDemandePub">Con Comment Demande Pub</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontFichierAutorisationPrealable"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierAutorisationPrealable">Renouvcont Fichier Autorisation Prealable</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontFichierExamenJuridique"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierExamenJuridique">Renouvcont Fichier Examen Juridique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontFichierContratSigne"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierContratSigne">Renouvcont Fichier Contrat Signe</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontFichierPageGarde"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierPageGarde">Renouvcont Fichier Page Garde</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontFichierPageSignature"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierPageSignature">Renouvcont Fichier Page Signature</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontFichierRapportMotivation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierRapportMotivation">Renouvcont Fichier Rapport Motivation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontFichierProjetContrat"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierProjetContrat">Renouvcont Fichier Projet Contrat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontCommentAutorisation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontCommentAutorisation">Renouvcont Comment Autorisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontCommentDemandeApprobation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontCommentDemandeApprobation">Renouvcont Comment Demande Approbation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontCommentExamenJuridique"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontCommentExamenJuridique">Renouvcont Comment Examen Juridique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="autoriteId"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.autoriteId">Autorite Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="serviceId"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.serviceId">Service Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="modePassationId"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.modePassationId">Mode Passation Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="typeMarcheId"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.typeMarcheId">Type Marche Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="immatriculation"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.immatriculation">Immatriculation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="delai"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.delai">Delai</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontImmatStatut"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontImmatStatut">Renouvcont Immat Statut</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontPubStatut"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontPubStatut">Renouvcont Pub Statut</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontAutorisationStatut"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontAutorisationStatut">Renouvcont Autorisation Statut</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontExamenJuridiqueStatut"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontExamenJuridiqueStatut">Renouvcont Examen Juridique Statut</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="renouvcontApprobationStatut"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontApprobationStatut">Renouvcont Approbation Statut</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etatContratdebase"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.etatContratdebase">Etat Contratdebase</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="libelleLot"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.libelleLot">Libelle Lot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossierAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.dossierAppelOffre">Dossier Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lotId"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.lot">Lot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fournisseurId"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.fournisseur">Fournisseur</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="plisOuvertureId"><span jhiTranslate="gatewaysigmapApp.dossiermsContrat.plisOuverture">Plis Ouverture</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let contrat of contrats ;trackBy: trackId">
+                    <td><a [routerLink]="['/contrat', contrat.id, 'view']">{{ contrat.id }}</a></td>
+                    <td>{{ contrat.montant }}</td>
+                    <td>{{ contrat.montantVerse }}</td>
+                    <td>{{ contrat.conDateSignature | date:'mediumDate' }}</td>
+                    <td>{{ contrat.conDateApprobation | date:'mediumDate' }}</td>
+                    <td>{{ contrat.conDateNotification | date:'mediumDate' }}</td>
+                    <td>{{ contrat.conDateRecepProvisoire | date:'mediumDate' }}</td>
+                    <td>{{ contrat.conDateRecepDefinitive | date:'mediumDate' }}</td>
+                    <td>{{ contrat.conDateOrdreDemarrage | date:'mediumDate' }}</td>
+                    <td>{{ contrat.condateAttributionProvisoire | date:'mediumDate' }}</td>
+                    <td>{{ contrat.condateAttributionDefinitive | date:'mediumDate' }}</td>
+                    <td>{{ contrat.conDatePaiement | date:'mediumDate' }}</td>
+                    <td>{{ contrat.dateDemandeImmatriculation | date:'mediumDate' }}</td>
+                    <td>{{ contrat.dateImmatriculation | date:'mediumDate' }}</td>
+                    <td>{{ contrat.datePub | date:'mediumDate' }}</td>
+                    <td>{{ contrat.dateDemandePubContrat | date:'mediumDate' }}</td>
+                    <td>{{ contrat.conDateCreation | date:'mediumDate' }}</td>
+                    <td>{{ contrat.renouvcontDateDemandeAutorisation | date:'mediumDate' }}</td>
+                    <td>{{ contrat.renouvcontDateautorisation | date:'mediumDate' }}</td>
+                    <td>{{ contrat.renouvcontDateDemandeExamenJuridique | date:'mediumDate' }}</td>
+                    <td>{{ contrat.renouvcontDateExamenJuridique | date:'mediumDate' }}</td>
+                    <td>{{ contrat.renouvcontDateDemandeApprobation | date:'mediumDate' }}</td>
+                    <td>{{ contrat.renouvcontDateApprobation | date:'mediumDate' }}</td>
+                    <td>{{ contrat.renouvcontDateRejet | date:'mediumDate' }}</td>
+                    <td>{{ contrat.renouvcontDateRetourApprobation | date:'mediumDate' }}</td>
+                    <td>{{ contrat.conCommentSignature }}</td>
+                    <td>{{ contrat.conRefSignature }}</td>
+                    <td>{{ contrat.conCommentApprobation }}</td>
+                    <td>{{ contrat.conRefApprobation }}</td>
+                    <td>{{ contrat.conCommentNotification }}</td>
+                    <td>{{ contrat.conRefNotification }}</td>
+                    <td>{{ contrat.conFichierRecepProvisoire }}</td>
+                    <td>{{ contrat.conCommentRecepProvisoire }}</td>
+                    <td>{{ contrat.conFichierRecepDefinitive }}</td>
+                    <td>{{ contrat.conCommentRecepDefinitive }}</td>
+                    <td>{{ contrat.conFichierOrdreDemarrage }}</td>
+                    <td>{{ contrat.conCommentOrdreDemarrage }}</td>
+                    <td>{{ contrat.conRefAttributionProvisoire }}</td>
+                    <td>{{ contrat.conCommentaireAttributionProvisoire }}</td>
+                    <td>{{ contrat.conRefAttributionDefinitive }}</td>
+                    <td>{{ contrat.conCommentaireAttributionDefinitive }}</td>
+                    <td>{{ contrat.conStatut }}</td>
+                    <td>{{ contrat.numMatriculation }}</td>
+                    <td>{{ contrat.conCommentaireDmdmat }}</td>
+                    <td>{{ contrat.conCommentaireMatriculation }}</td>
+                    <td>{{ contrat.concSituation }}</td>
+                    <td>{{ contrat.nationnalite }}</td>
+                    <td>{{ contrat.fichierImmatricule }}</td>
+                    <td>{{ contrat.fichierJustificatif }}</td>
+                    <td>{{ contrat.commentairePub }}</td>
+                    <td>{{ contrat.fichierContrat }}</td>
+                    <td>{{ contrat.conCommentDemandePub }}</td>
+                    <td>{{ contrat.renouvcontFichierAutorisationPrealable }}</td>
+                    <td>{{ contrat.renouvcontFichierExamenJuridique }}</td>
+                    <td>{{ contrat.renouvcontFichierContratSigne }}</td>
+                    <td>{{ contrat.renouvcontFichierPageGarde }}</td>
+                    <td>{{ contrat.renouvcontFichierPageSignature }}</td>
+                    <td>{{ contrat.renouvcontFichierRapportMotivation }}</td>
+                    <td>{{ contrat.renouvcontFichierProjetContrat }}</td>
+                    <td>{{ contrat.renouvcontCommentAutorisation }}</td>
+                    <td>{{ contrat.renouvcontCommentDemandeApprobation }}</td>
+                    <td>{{ contrat.renouvcontCommentExamenJuridique }}</td>
+                    <td>{{ contrat.autoriteId }}</td>
+                    <td>{{ contrat.serviceId }}</td>
+                    <td>{{ contrat.modePassationId }}</td>
+                    <td>{{ contrat.typeMarcheId }}</td>
+                    <td>{{ contrat.immatriculation }}</td>
+                    <td>{{ contrat.delai }}</td>
+                    <td>{{ contrat.renouvcontImmatStatut }}</td>
+                    <td>{{ contrat.renouvcontPubStatut }}</td>
+                    <td>{{ contrat.renouvcontAutorisationStatut }}</td>
+                    <td>{{ contrat.renouvcontExamenJuridiqueStatut }}</td>
+                    <td>{{ contrat.renouvcontApprobationStatut }}</td>
+                    <td>{{ contrat.etatContratdebase }}</td>
+                    <td>{{ contrat.libelleLot }}</td>
+                    <td>
+                        <div *ngIf="contrat.dossierAppelOffreId">
+                            <a [routerLink]="['/dossier-appel-offre', contrat.dossierAppelOffreId , 'view']" >{{ contrat.dossierAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="contrat.lotId">
+                            <a [routerLink]="['/lot', contrat.lotId , 'view']" >{{ contrat.lotId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="contrat.fournisseurId">
+                            <a [routerLink]="['/fournisseur', contrat.fournisseurId , 'view']" >{{ contrat.fournisseurId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="contrat.plisOuvertureId">
+                            <a [routerLink]="['/plis-ouverture', contrat.plisOuvertureId , 'view']" >{{ contrat.plisOuvertureId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/contrat', contrat.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/contrat', contrat.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(contrat)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="contrats && contrats.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

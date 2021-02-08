@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="piecesPlisOuverture">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsPiecesPlisOuverture.detail.title">Pieces Plis Ouverture</span> {{ piecesPlisOuverture.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPiecesPlisOuverture.etat">Etat</span></dt>
+                <dd>
+                    <span>{{ piecesPlisOuverture.etat }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPiecesPlisOuverture.libelle">Libelle</span></dt>
+                <dd>
+                    <span>{{ piecesPlisOuverture.libelle }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPiecesPlisOuverture.etatConforme">Etat Conforme</span></dt>
+                <dd>
+                    <span>{{ piecesPlisOuverture.etatConforme }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPiecesPlisOuverture.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="piecesPlisOuverture.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', piecesPlisOuverture.dossierAppelOffreId, 'view']">{{ piecesPlisOuverture.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPiecesPlisOuverture.plisOuverture">Plis Ouverture</span></dt>
+                <dd>
+                    <div *ngIf="piecesPlisOuverture.plisOuvertureId">
+                        <a [routerLink]="['/plis-ouverture', piecesPlisOuverture.plisOuvertureId, 'view']">{{ piecesPlisOuverture.plisOuvertureId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsPiecesPlisOuverture.piece">Piece</span></dt>
+                <dd>
+                    <div *ngIf="piecesPlisOuverture.pieceId">
+                        <a [routerLink]="['/piece', piecesPlisOuverture.pieceId, 'view']">{{ piecesPlisOuverture.pieceId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pieces-plis-ouverture', piecesPlisOuverture.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

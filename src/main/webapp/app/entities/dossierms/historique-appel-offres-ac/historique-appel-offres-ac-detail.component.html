@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="historiqueAppelOffresAC">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.detail.title">Historique Appel Offres AC</span> {{ historiqueAppelOffresAC.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacValidation">Histoac Validation</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoacValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacCommentaire">Histoac Commentaire</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoacCommentaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacFichiervalidation">Histoac Fichiervalidation</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoacFichiervalidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacBorderau">Histoac Borderau</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoacBorderau }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoValidation">Histo Validation</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoCommentaire">Histo Commentaire</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoCommentaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoFichiervalidation">Histo Fichiervalidation</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoFichiervalidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.daoFichier">Dao Fichier</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.daoFichier }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.origine">Origine</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.origine }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacDatevalidation">Histoac Datevalidation</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoacDatevalidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacDatecreationdossier">Histoac Datecreationdossier</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoacDatecreationdossier }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoDatevalidation">Histo Datevalidation</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoDatevalidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacAttribution">Histoac Attribution</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoacAttribution }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacAc">Histoac Ac</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.histoacAc }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.validerparNom">Validerpar Nom</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.validerparNom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.validerparPrenom">Validerpar Prenom</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.validerparPrenom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.userId">User Id</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.userId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.autiriteId">Autirite Id</span></dt>
+                <dd>
+                    <span>{{ historiqueAppelOffresAC.autiriteId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="historiqueAppelOffresAC.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', historiqueAppelOffresAC.dossierAppelOffreId, 'view']">{{ historiqueAppelOffresAC.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/historique-appel-offres-ac', historiqueAppelOffresAC.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

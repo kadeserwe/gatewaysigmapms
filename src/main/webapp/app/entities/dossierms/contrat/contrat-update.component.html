@@ -1,0 +1,590 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-contrat-heading" jhiTranslate="gatewaysigmapApp.dossiermsContrat.home.createOrEditLabel">Create or edit a Contrat</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.montant" for="field_montant">Montant</label>
+                    <input type="number" class="form-control" name="montant" id="field_montant"
+                           formControlName="montant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.montantVerse" for="field_montantVerse">Montant Verse</label>
+                    <input type="number" class="form-control" name="montantVerse" id="field_montantVerse"
+                           formControlName="montantVerse"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateSignature" for="field_conDateSignature">Con Date Signature</label>
+                    <div class="input-group">
+                        <input id="field_conDateSignature" type="text" class="form-control" name="conDateSignature" ngbDatepicker #conDateSignatureDp="ngbDatepicker" formControlName="conDateSignature"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="conDateSignatureDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateApprobation" for="field_conDateApprobation">Con Date Approbation</label>
+                    <div class="input-group">
+                        <input id="field_conDateApprobation" type="text" class="form-control" name="conDateApprobation" ngbDatepicker #conDateApprobationDp="ngbDatepicker" formControlName="conDateApprobation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="conDateApprobationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateNotification" for="field_conDateNotification">Con Date Notification</label>
+                    <div class="input-group">
+                        <input id="field_conDateNotification" type="text" class="form-control" name="conDateNotification" ngbDatepicker #conDateNotificationDp="ngbDatepicker" formControlName="conDateNotification"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="conDateNotificationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateRecepProvisoire" for="field_conDateRecepProvisoire">Con Date Recep Provisoire</label>
+                    <div class="input-group">
+                        <input id="field_conDateRecepProvisoire" type="text" class="form-control" name="conDateRecepProvisoire" ngbDatepicker #conDateRecepProvisoireDp="ngbDatepicker" formControlName="conDateRecepProvisoire"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="conDateRecepProvisoireDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateRecepDefinitive" for="field_conDateRecepDefinitive">Con Date Recep Definitive</label>
+                    <div class="input-group">
+                        <input id="field_conDateRecepDefinitive" type="text" class="form-control" name="conDateRecepDefinitive" ngbDatepicker #conDateRecepDefinitiveDp="ngbDatepicker" formControlName="conDateRecepDefinitive"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="conDateRecepDefinitiveDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateOrdreDemarrage" for="field_conDateOrdreDemarrage">Con Date Ordre Demarrage</label>
+                    <div class="input-group">
+                        <input id="field_conDateOrdreDemarrage" type="text" class="form-control" name="conDateOrdreDemarrage" ngbDatepicker #conDateOrdreDemarrageDp="ngbDatepicker" formControlName="conDateOrdreDemarrage"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="conDateOrdreDemarrageDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.condateAttributionProvisoire" for="field_condateAttributionProvisoire">Condate Attribution Provisoire</label>
+                    <div class="input-group">
+                        <input id="field_condateAttributionProvisoire" type="text" class="form-control" name="condateAttributionProvisoire" ngbDatepicker #condateAttributionProvisoireDp="ngbDatepicker" formControlName="condateAttributionProvisoire"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="condateAttributionProvisoireDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.condateAttributionDefinitive" for="field_condateAttributionDefinitive">Condate Attribution Definitive</label>
+                    <div class="input-group">
+                        <input id="field_condateAttributionDefinitive" type="text" class="form-control" name="condateAttributionDefinitive" ngbDatepicker #condateAttributionDefinitiveDp="ngbDatepicker" formControlName="condateAttributionDefinitive"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="condateAttributionDefinitiveDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDatePaiement" for="field_conDatePaiement">Con Date Paiement</label>
+                    <div class="input-group">
+                        <input id="field_conDatePaiement" type="text" class="form-control" name="conDatePaiement" ngbDatepicker #conDatePaiementDp="ngbDatepicker" formControlName="conDatePaiement"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="conDatePaiementDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.dateDemandeImmatriculation" for="field_dateDemandeImmatriculation">Date Demande Immatriculation</label>
+                    <div class="input-group">
+                        <input id="field_dateDemandeImmatriculation" type="text" class="form-control" name="dateDemandeImmatriculation" ngbDatepicker #dateDemandeImmatriculationDp="ngbDatepicker" formControlName="dateDemandeImmatriculation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDemandeImmatriculationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.dateImmatriculation" for="field_dateImmatriculation">Date Immatriculation</label>
+                    <div class="input-group">
+                        <input id="field_dateImmatriculation" type="text" class="form-control" name="dateImmatriculation" ngbDatepicker #dateImmatriculationDp="ngbDatepicker" formControlName="dateImmatriculation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateImmatriculationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.datePub" for="field_datePub">Date Pub</label>
+                    <div class="input-group">
+                        <input id="field_datePub" type="text" class="form-control" name="datePub" ngbDatepicker #datePubDp="ngbDatepicker" formControlName="datePub"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datePubDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.dateDemandePubContrat" for="field_dateDemandePubContrat">Date Demande Pub Contrat</label>
+                    <div class="input-group">
+                        <input id="field_dateDemandePubContrat" type="text" class="form-control" name="dateDemandePubContrat" ngbDatepicker #dateDemandePubContratDp="ngbDatepicker" formControlName="dateDemandePubContrat"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDemandePubContratDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conDateCreation" for="field_conDateCreation">Con Date Creation</label>
+                    <div class="input-group">
+                        <input id="field_conDateCreation" type="text" class="form-control" name="conDateCreation" ngbDatepicker #conDateCreationDp="ngbDatepicker" formControlName="conDateCreation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="conDateCreationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateDemandeAutorisation" for="field_renouvcontDateDemandeAutorisation">Renouvcont Date Demande Autorisation</label>
+                    <div class="input-group">
+                        <input id="field_renouvcontDateDemandeAutorisation" type="text" class="form-control" name="renouvcontDateDemandeAutorisation" ngbDatepicker #renouvcontDateDemandeAutorisationDp="ngbDatepicker" formControlName="renouvcontDateDemandeAutorisation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="renouvcontDateDemandeAutorisationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateautorisation" for="field_renouvcontDateautorisation">Renouvcont Dateautorisation</label>
+                    <div class="input-group">
+                        <input id="field_renouvcontDateautorisation" type="text" class="form-control" name="renouvcontDateautorisation" ngbDatepicker #renouvcontDateautorisationDp="ngbDatepicker" formControlName="renouvcontDateautorisation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="renouvcontDateautorisationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateDemandeExamenJuridique" for="field_renouvcontDateDemandeExamenJuridique">Renouvcont Date Demande Examen Juridique</label>
+                    <div class="input-group">
+                        <input id="field_renouvcontDateDemandeExamenJuridique" type="text" class="form-control" name="renouvcontDateDemandeExamenJuridique" ngbDatepicker #renouvcontDateDemandeExamenJuridiqueDp="ngbDatepicker" formControlName="renouvcontDateDemandeExamenJuridique"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="renouvcontDateDemandeExamenJuridiqueDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateExamenJuridique" for="field_renouvcontDateExamenJuridique">Renouvcont Date Examen Juridique</label>
+                    <div class="input-group">
+                        <input id="field_renouvcontDateExamenJuridique" type="text" class="form-control" name="renouvcontDateExamenJuridique" ngbDatepicker #renouvcontDateExamenJuridiqueDp="ngbDatepicker" formControlName="renouvcontDateExamenJuridique"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="renouvcontDateExamenJuridiqueDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateDemandeApprobation" for="field_renouvcontDateDemandeApprobation">Renouvcont Date Demande Approbation</label>
+                    <div class="input-group">
+                        <input id="field_renouvcontDateDemandeApprobation" type="text" class="form-control" name="renouvcontDateDemandeApprobation" ngbDatepicker #renouvcontDateDemandeApprobationDp="ngbDatepicker" formControlName="renouvcontDateDemandeApprobation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="renouvcontDateDemandeApprobationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateApprobation" for="field_renouvcontDateApprobation">Renouvcont Date Approbation</label>
+                    <div class="input-group">
+                        <input id="field_renouvcontDateApprobation" type="text" class="form-control" name="renouvcontDateApprobation" ngbDatepicker #renouvcontDateApprobationDp="ngbDatepicker" formControlName="renouvcontDateApprobation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="renouvcontDateApprobationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateRejet" for="field_renouvcontDateRejet">Renouvcont Date Rejet</label>
+                    <div class="input-group">
+                        <input id="field_renouvcontDateRejet" type="text" class="form-control" name="renouvcontDateRejet" ngbDatepicker #renouvcontDateRejetDp="ngbDatepicker" formControlName="renouvcontDateRejet"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="renouvcontDateRejetDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontDateRetourApprobation" for="field_renouvcontDateRetourApprobation">Renouvcont Date Retour Approbation</label>
+                    <div class="input-group">
+                        <input id="field_renouvcontDateRetourApprobation" type="text" class="form-control" name="renouvcontDateRetourApprobation" ngbDatepicker #renouvcontDateRetourApprobationDp="ngbDatepicker" formControlName="renouvcontDateRetourApprobation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="renouvcontDateRetourApprobationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentSignature" for="field_conCommentSignature">Con Comment Signature</label>
+                    <input type="text" class="form-control" name="conCommentSignature" id="field_conCommentSignature"
+                           formControlName="conCommentSignature"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefSignature" for="field_conRefSignature">Con Ref Signature</label>
+                    <input type="text" class="form-control" name="conRefSignature" id="field_conRefSignature"
+                           formControlName="conRefSignature"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentApprobation" for="field_conCommentApprobation">Con Comment Approbation</label>
+                    <input type="text" class="form-control" name="conCommentApprobation" id="field_conCommentApprobation"
+                           formControlName="conCommentApprobation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefApprobation" for="field_conRefApprobation">Con Ref Approbation</label>
+                    <input type="text" class="form-control" name="conRefApprobation" id="field_conRefApprobation"
+                           formControlName="conRefApprobation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentNotification" for="field_conCommentNotification">Con Comment Notification</label>
+                    <input type="text" class="form-control" name="conCommentNotification" id="field_conCommentNotification"
+                           formControlName="conCommentNotification"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefNotification" for="field_conRefNotification">Con Ref Notification</label>
+                    <input type="text" class="form-control" name="conRefNotification" id="field_conRefNotification"
+                           formControlName="conRefNotification"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conFichierRecepProvisoire" for="field_conFichierRecepProvisoire">Con Fichier Recep Provisoire</label>
+                    <input type="text" class="form-control" name="conFichierRecepProvisoire" id="field_conFichierRecepProvisoire"
+                           formControlName="conFichierRecepProvisoire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentRecepProvisoire" for="field_conCommentRecepProvisoire">Con Comment Recep Provisoire</label>
+                    <input type="text" class="form-control" name="conCommentRecepProvisoire" id="field_conCommentRecepProvisoire"
+                           formControlName="conCommentRecepProvisoire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conFichierRecepDefinitive" for="field_conFichierRecepDefinitive">Con Fichier Recep Definitive</label>
+                    <input type="text" class="form-control" name="conFichierRecepDefinitive" id="field_conFichierRecepDefinitive"
+                           formControlName="conFichierRecepDefinitive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentRecepDefinitive" for="field_conCommentRecepDefinitive">Con Comment Recep Definitive</label>
+                    <input type="text" class="form-control" name="conCommentRecepDefinitive" id="field_conCommentRecepDefinitive"
+                           formControlName="conCommentRecepDefinitive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conFichierOrdreDemarrage" for="field_conFichierOrdreDemarrage">Con Fichier Ordre Demarrage</label>
+                    <input type="text" class="form-control" name="conFichierOrdreDemarrage" id="field_conFichierOrdreDemarrage"
+                           formControlName="conFichierOrdreDemarrage"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentOrdreDemarrage" for="field_conCommentOrdreDemarrage">Con Comment Ordre Demarrage</label>
+                    <input type="text" class="form-control" name="conCommentOrdreDemarrage" id="field_conCommentOrdreDemarrage"
+                           formControlName="conCommentOrdreDemarrage"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefAttributionProvisoire" for="field_conRefAttributionProvisoire">Con Ref Attribution Provisoire</label>
+                    <input type="text" class="form-control" name="conRefAttributionProvisoire" id="field_conRefAttributionProvisoire"
+                           formControlName="conRefAttributionProvisoire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireAttributionProvisoire" for="field_conCommentaireAttributionProvisoire">Con Commentaire Attribution Provisoire</label>
+                    <input type="text" class="form-control" name="conCommentaireAttributionProvisoire" id="field_conCommentaireAttributionProvisoire"
+                           formControlName="conCommentaireAttributionProvisoire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conRefAttributionDefinitive" for="field_conRefAttributionDefinitive">Con Ref Attribution Definitive</label>
+                    <input type="text" class="form-control" name="conRefAttributionDefinitive" id="field_conRefAttributionDefinitive"
+                           formControlName="conRefAttributionDefinitive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireAttributionDefinitive" for="field_conCommentaireAttributionDefinitive">Con Commentaire Attribution Definitive</label>
+                    <input type="text" class="form-control" name="conCommentaireAttributionDefinitive" id="field_conCommentaireAttributionDefinitive"
+                           formControlName="conCommentaireAttributionDefinitive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conStatut" for="field_conStatut">Con Statut</label>
+                    <input type="text" class="form-control" name="conStatut" id="field_conStatut"
+                           formControlName="conStatut"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.numMatriculation" for="field_numMatriculation">Num Matriculation</label>
+                    <input type="text" class="form-control" name="numMatriculation" id="field_numMatriculation"
+                           formControlName="numMatriculation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireDmdmat" for="field_conCommentaireDmdmat">Con Commentaire Dmdmat</label>
+                    <input type="text" class="form-control" name="conCommentaireDmdmat" id="field_conCommentaireDmdmat"
+                           formControlName="conCommentaireDmdmat"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentaireMatriculation" for="field_conCommentaireMatriculation">Con Commentaire Matriculation</label>
+                    <input type="text" class="form-control" name="conCommentaireMatriculation" id="field_conCommentaireMatriculation"
+                           formControlName="conCommentaireMatriculation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.concSituation" for="field_concSituation">Conc Situation</label>
+                    <input type="text" class="form-control" name="concSituation" id="field_concSituation"
+                           formControlName="concSituation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.nationnalite" for="field_nationnalite">Nationnalite</label>
+                    <input type="text" class="form-control" name="nationnalite" id="field_nationnalite"
+                           formControlName="nationnalite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.fichierImmatricule" for="field_fichierImmatricule">Fichier Immatricule</label>
+                    <input type="text" class="form-control" name="fichierImmatricule" id="field_fichierImmatricule"
+                           formControlName="fichierImmatricule"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.fichierJustificatif" for="field_fichierJustificatif">Fichier Justificatif</label>
+                    <input type="text" class="form-control" name="fichierJustificatif" id="field_fichierJustificatif"
+                           formControlName="fichierJustificatif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.commentairePub" for="field_commentairePub">Commentaire Pub</label>
+                    <input type="text" class="form-control" name="commentairePub" id="field_commentairePub"
+                           formControlName="commentairePub"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.fichierContrat" for="field_fichierContrat">Fichier Contrat</label>
+                    <input type="text" class="form-control" name="fichierContrat" id="field_fichierContrat"
+                           formControlName="fichierContrat"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.conCommentDemandePub" for="field_conCommentDemandePub">Con Comment Demande Pub</label>
+                    <input type="text" class="form-control" name="conCommentDemandePub" id="field_conCommentDemandePub"
+                           formControlName="conCommentDemandePub"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierAutorisationPrealable" for="field_renouvcontFichierAutorisationPrealable">Renouvcont Fichier Autorisation Prealable</label>
+                    <input type="text" class="form-control" name="renouvcontFichierAutorisationPrealable" id="field_renouvcontFichierAutorisationPrealable"
+                           formControlName="renouvcontFichierAutorisationPrealable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierExamenJuridique" for="field_renouvcontFichierExamenJuridique">Renouvcont Fichier Examen Juridique</label>
+                    <input type="text" class="form-control" name="renouvcontFichierExamenJuridique" id="field_renouvcontFichierExamenJuridique"
+                           formControlName="renouvcontFichierExamenJuridique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierContratSigne" for="field_renouvcontFichierContratSigne">Renouvcont Fichier Contrat Signe</label>
+                    <input type="text" class="form-control" name="renouvcontFichierContratSigne" id="field_renouvcontFichierContratSigne"
+                           formControlName="renouvcontFichierContratSigne"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierPageGarde" for="field_renouvcontFichierPageGarde">Renouvcont Fichier Page Garde</label>
+                    <input type="text" class="form-control" name="renouvcontFichierPageGarde" id="field_renouvcontFichierPageGarde"
+                           formControlName="renouvcontFichierPageGarde"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierPageSignature" for="field_renouvcontFichierPageSignature">Renouvcont Fichier Page Signature</label>
+                    <input type="text" class="form-control" name="renouvcontFichierPageSignature" id="field_renouvcontFichierPageSignature"
+                           formControlName="renouvcontFichierPageSignature"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierRapportMotivation" for="field_renouvcontFichierRapportMotivation">Renouvcont Fichier Rapport Motivation</label>
+                    <input type="text" class="form-control" name="renouvcontFichierRapportMotivation" id="field_renouvcontFichierRapportMotivation"
+                           formControlName="renouvcontFichierRapportMotivation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontFichierProjetContrat" for="field_renouvcontFichierProjetContrat">Renouvcont Fichier Projet Contrat</label>
+                    <input type="text" class="form-control" name="renouvcontFichierProjetContrat" id="field_renouvcontFichierProjetContrat"
+                           formControlName="renouvcontFichierProjetContrat"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontCommentAutorisation" for="field_renouvcontCommentAutorisation">Renouvcont Comment Autorisation</label>
+                    <input type="text" class="form-control" name="renouvcontCommentAutorisation" id="field_renouvcontCommentAutorisation"
+                           formControlName="renouvcontCommentAutorisation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontCommentDemandeApprobation" for="field_renouvcontCommentDemandeApprobation">Renouvcont Comment Demande Approbation</label>
+                    <input type="text" class="form-control" name="renouvcontCommentDemandeApprobation" id="field_renouvcontCommentDemandeApprobation"
+                           formControlName="renouvcontCommentDemandeApprobation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontCommentExamenJuridique" for="field_renouvcontCommentExamenJuridique">Renouvcont Comment Examen Juridique</label>
+                    <input type="text" class="form-control" name="renouvcontCommentExamenJuridique" id="field_renouvcontCommentExamenJuridique"
+                           formControlName="renouvcontCommentExamenJuridique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.autoriteId" for="field_autoriteId">Autorite Id</label>
+                    <input type="number" class="form-control" name="autoriteId" id="field_autoriteId"
+                           formControlName="autoriteId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.serviceId" for="field_serviceId">Service Id</label>
+                    <input type="number" class="form-control" name="serviceId" id="field_serviceId"
+                           formControlName="serviceId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.modePassationId" for="field_modePassationId">Mode Passation Id</label>
+                    <input type="number" class="form-control" name="modePassationId" id="field_modePassationId"
+                           formControlName="modePassationId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.typeMarcheId" for="field_typeMarcheId">Type Marche Id</label>
+                    <input type="number" class="form-control" name="typeMarcheId" id="field_typeMarcheId"
+                           formControlName="typeMarcheId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.immatriculation" for="field_immatriculation">Immatriculation</label>
+                    <input type="number" class="form-control" name="immatriculation" id="field_immatriculation"
+                           formControlName="immatriculation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.delai" for="field_delai">Delai</label>
+                    <input type="number" class="form-control" name="delai" id="field_delai"
+                           formControlName="delai"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontImmatStatut" for="field_renouvcontImmatStatut">Renouvcont Immat Statut</label>
+                    <input type="checkbox" class="form-control" name="renouvcontImmatStatut" id="field_renouvcontImmatStatut"
+                           formControlName="renouvcontImmatStatut"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontPubStatut" for="field_renouvcontPubStatut">Renouvcont Pub Statut</label>
+                    <input type="checkbox" class="form-control" name="renouvcontPubStatut" id="field_renouvcontPubStatut"
+                           formControlName="renouvcontPubStatut"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontAutorisationStatut" for="field_renouvcontAutorisationStatut">Renouvcont Autorisation Statut</label>
+                    <input type="number" class="form-control" name="renouvcontAutorisationStatut" id="field_renouvcontAutorisationStatut"
+                           formControlName="renouvcontAutorisationStatut"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontExamenJuridiqueStatut" for="field_renouvcontExamenJuridiqueStatut">Renouvcont Examen Juridique Statut</label>
+                    <input type="number" class="form-control" name="renouvcontExamenJuridiqueStatut" id="field_renouvcontExamenJuridiqueStatut"
+                           formControlName="renouvcontExamenJuridiqueStatut"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.renouvcontApprobationStatut" for="field_renouvcontApprobationStatut">Renouvcont Approbation Statut</label>
+                    <input type="number" class="form-control" name="renouvcontApprobationStatut" id="field_renouvcontApprobationStatut"
+                           formControlName="renouvcontApprobationStatut"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.etatContratdebase" for="field_etatContratdebase">Etat Contratdebase</label>
+                    <input type="text" class="form-control" name="etatContratdebase" id="field_etatContratdebase"
+                           formControlName="etatContratdebase"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.libelleLot" for="field_libelleLot">Libelle Lot</label>
+                    <input type="text" class="form-control" name="libelleLot" id="field_libelleLot"
+                           formControlName="libelleLot"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.dossierAppelOffre" for="field_dossierAppelOffre">Dossier Appel Offre</label>
+                    <select class="form-control" id="field_dossierAppelOffre" name="dossierAppelOffre" formControlName="dossierAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dossierAppelOffreOption.id" *ngFor="let dossierAppelOffreOption of dossierappeloffres; trackBy: trackById">{{ dossierAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.lot" for="field_lot">Lot</label>
+                    <select class="form-control" id="field_lot" name="lot" formControlName="lotId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="lotOption.id" *ngFor="let lotOption of lots; trackBy: trackById">{{ lotOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.fournisseur" for="field_fournisseur">Fournisseur</label>
+                    <select class="form-control" id="field_fournisseur" name="fournisseur" formControlName="fournisseurId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fournisseurOption.id" *ngFor="let fournisseurOption of fournisseurs; trackBy: trackById">{{ fournisseurOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsContrat.plisOuverture" for="field_plisOuverture">Plis Ouverture</label>
+                    <select class="form-control" id="field_plisOuverture" name="plisOuverture" formControlName="plisOuvertureId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="plisOuvertureOption.id" *ngFor="let plisOuvertureOption of plisouvertures; trackBy: trackById">{{ plisOuvertureOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

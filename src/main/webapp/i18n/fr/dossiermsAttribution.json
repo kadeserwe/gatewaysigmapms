@@ -1,0 +1,43 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsAttribution": {
+      "home": {
+        "title": "Attributions",
+        "createLabel": "Créer un nouveau Attribution",
+        "createOrEditLabel": "Créer ou éditer un Attribution",
+        "notFound": "Aucun Attribution trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Attribution {{ id }} ?"
+      },
+      "detail": {
+        "title": "Attribution"
+      },
+      "referencePlandePassation": "Reference Plande Passation",
+      "referenceAvisGeneral": "Reference Avis General",
+      "attributaireProvisoire": "Attributaire Provisoire",
+      "commentaire": "Commentaire",
+      "commentaireDefinitif": "Commentaire Definitif",
+      "nomFichierDef": "Nom Fichier Def",
+      "attriType": "Attri Type",
+      "montantMarche": "Montant Marche",
+      "montantdefinitif": "Montantdefinitif",
+      "moisExecution": "Mois Execution",
+      "semaineExecution": "Semaine Execution",
+      "joursExecution": "Jours Execution",
+      "datePublicationProvisoire": "Date Publication Provisoire",
+      "datePublicationDefinitive": "Date Publication Definitive",
+      "dateattribution": "Dateattribution",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "plisOuverture": "Plis Ouverture",
+      "lot": "Lot"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsAttribution": {
+      "created": "Un nouveau Attribution a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Attribution avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Attribution avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

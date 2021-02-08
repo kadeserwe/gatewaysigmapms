@@ -1,0 +1,210 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-document-heading" jhiTranslate="gatewaysigmapApp.dossiermsDocument.home.createOrEditLabel">Create or edit a Document</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.typeDocument" for="field_typeDocument">Type Document</label>
+                    <input type="text" class="form-control" name="typeDocument" id="field_typeDocument"
+                           formControlName="typeDocument"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.textPVOuverture" for="field_textPVOuverture">Text PV Ouverture</label>
+                    <input type="text" class="form-control" name="textPVOuverture" id="field_textPVOuverture"
+                           formControlName="textPVOuverture"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.nomFichier" for="field_nomFichier">Nom Fichier</label>
+                    <input type="text" class="form-control" name="nomFichier" id="field_nomFichier"
+                           formControlName="nomFichier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.libelle" for="field_libelle">Libelle</label>
+                    <input type="text" class="form-control" name="libelle" id="field_libelle"
+                           formControlName="libelle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.reference" for="field_reference">Reference</label>
+                    <input type="text" class="form-control" name="reference" id="field_reference"
+                           formControlName="reference"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.objet" for="field_objet">Objet</label>
+                    <input type="text" class="form-control" name="objet" id="field_objet"
+                           formControlName="objet"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.origine" for="field_origine">Origine</label>
+                    <input type="text" class="form-control" name="origine" id="field_origine"
+                           formControlName="origine"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.lieuAcquisitionDAO" for="field_lieuAcquisitionDAO">Lieu Acquisition DAO</label>
+                    <input type="text" class="form-control" name="lieuAcquisitionDAO" id="field_lieuAcquisitionDAO"
+                           formControlName="lieuAcquisitionDAO"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.fichierDemandePublication" for="field_fichierDemandePublication">Fichier Demande Publication</label>
+                    <input type="text" class="form-control" name="fichierDemandePublication" id="field_fichierDemandePublication"
+                           formControlName="fichierDemandePublication"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.fichierDC" for="field_fichierDC">Fichier DC</label>
+                    <input type="text" class="form-control" name="fichierDC" id="field_fichierDC"
+                           formControlName="fichierDC"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.fichierAR" for="field_fichierAR">Fichier AR</label>
+                    <input type="text" class="form-control" name="fichierAR" id="field_fichierAR"
+                           formControlName="fichierAR"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.date" for="field_date">Date</label>
+                    <div class="input-group">
+                        <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker #dateDp="ngbDatepicker" formControlName="date"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.heure" for="field_heure">Heure</label>
+                    <div class="input-group">
+                        <input id="field_heure" type="text" class="form-control" name="heure" ngbDatepicker #heureDp="ngbDatepicker" formControlName="heure"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="heureDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.dateDemandePublication" for="field_dateDemandePublication">Date Demande Publication</label>
+                    <div class="input-group">
+                        <input id="field_dateDemandePublication" type="text" class="form-control" name="dateDemandePublication" ngbDatepicker #dateDemandePublicationDp="ngbDatepicker" formControlName="dateDemandePublication"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDemandePublicationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.dateLimiteDepot" for="field_dateLimiteDepot">Date Limite Depot</label>
+                    <div class="input-group">
+                        <input id="field_dateLimiteDepot" type="text" class="form-control" name="dateLimiteDepot" ngbDatepicker #dateLimiteDepotDp="ngbDatepicker" formControlName="dateLimiteDepot"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateLimiteDepotDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.heureLimiteDepot" for="field_heureLimiteDepot">Heure Limite Depot</label>
+                    <div class="input-group">
+                        <input id="field_heureLimiteDepot" type="text" class="form-control" name="heureLimiteDepot" ngbDatepicker #heureLimiteDepotDp="ngbDatepicker" formControlName="heureLimiteDepot"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="heureLimiteDepotDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.dateOuvertueDesplis" for="field_dateOuvertueDesplis">Date Ouvertue Desplis</label>
+                    <div class="input-group">
+                        <input id="field_dateOuvertueDesplis" type="text" class="form-control" name="dateOuvertueDesplis" ngbDatepicker #dateOuvertueDesplisDp="ngbDatepicker" formControlName="dateOuvertueDesplis"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateOuvertueDesplisDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.heureOuvertureDesPlis" for="field_heureOuvertureDesPlis">Heure Ouverture Des Plis</label>
+                    <div class="input-group">
+                        <input id="field_heureOuvertureDesPlis" type="text" class="form-control" name="heureOuvertureDesPlis" ngbDatepicker #heureOuvertureDesPlisDp="ngbDatepicker" formControlName="heureOuvertureDesPlis"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="heureOuvertureDesPlisDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.autoriteId" for="field_autoriteId">Autorite Id</label>
+                    <input type="number" class="form-control" name="autoriteId" id="field_autoriteId"
+                           formControlName="autoriteId"/>
+                    <div *ngIf="editForm.get('autoriteId')!.invalid && (editForm.get('autoriteId')!.dirty || editForm.get('autoriteId')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('autoriteId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('autoriteId')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.dossierAppelOffre" for="field_dossierAppelOffre">Dossier Appel Offre</label>
+                    <select class="form-control" id="field_dossierAppelOffre" name="dossierAppelOffre" formControlName="dossierAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dossierAppelOffreOption.id" *ngFor="let dossierAppelOffreOption of dossierappeloffres; trackBy: trackById">{{ dossierAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.appelOffre" for="field_appelOffre">Appel Offre</label>
+                    <select class="form-control" id="field_appelOffre" name="appelOffre" formControlName="appelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="appelOffreOption.id" *ngFor="let appelOffreOption of appeloffres; trackBy: trackById">{{ appelOffreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.plisOuverture" for="field_plisOuverture">Plis Ouverture</label>
+                    <select class="form-control" id="field_plisOuverture" name="plisOuverture" formControlName="plisOuvertureId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="plisOuvertureOption.id" *ngFor="let plisOuvertureOption of plisouvertures; trackBy: trackById">{{ plisOuvertureOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsDocument.lot" for="field_lot">Lot</label>
+                    <select class="form-control" id="field_lot" name="lot" formControlName="lotId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="lotOption.id" *ngFor="let lotOption of lots; trackBy: trackById">{{ lotOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

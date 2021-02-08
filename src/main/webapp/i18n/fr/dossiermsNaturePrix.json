@@ -1,0 +1,27 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsNaturePrix": {
+      "home": {
+        "title": "NaturePrixes",
+        "createLabel": "Créer un nouveau Nature Prix",
+        "createOrEditLabel": "Créer ou éditer un Nature Prix",
+        "notFound": "Aucun Nature Prix trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Nature Prix {{ id }} ?"
+      },
+      "detail": {
+        "title": "Nature Prix"
+      },
+      "natCode": "Nat Code",
+      "natLibelle": "Nat Libelle"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsNaturePrix": {
+      "created": "Un nouveau Nature Prix a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Nature Prix avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Nature Prix avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

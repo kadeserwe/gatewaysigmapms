@@ -1,0 +1,27 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsMonnaieOffre": {
+      "home": {
+        "title": "MonnaieOffres",
+        "createLabel": "Créer un nouveau Monnaie Offre",
+        "createOrEditLabel": "Créer ou éditer un Monnaie Offre",
+        "notFound": "Aucun Monnaie Offre trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Monnaie Offre {{ id }} ?"
+      },
+      "detail": {
+        "title": "Monnaie Offre"
+      },
+      "monCode": "Mon Code",
+      "monLibelle": "Mon Libelle"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsMonnaieOffre": {
+      "created": "Un nouveau Monnaie Offre a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Monnaie Offre avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Monnaie Offre avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

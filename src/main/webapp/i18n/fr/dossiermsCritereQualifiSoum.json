@@ -1,0 +1,32 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsCritereQualifiSoum": {
+      "home": {
+        "title": "CritereQualifiSoums",
+        "createLabel": "Créer un nouveau Critere Qualifi Soum",
+        "createOrEditLabel": "Créer ou éditer un Critere Qualifi Soum",
+        "notFound": "Aucun Critere Qualifi Soum trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Critere Qualifi Soum {{ id }} ?"
+      },
+      "detail": {
+        "title": "Critere Qualifi Soum"
+      },
+      "conforme": "Conforme",
+      "libelle": "Libelle",
+      "libelleLot": "Libelle Lot",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "plisOuverture": "Plis Ouverture",
+      "lot": "Lot",
+      "dossiersSosuscritere": "Dossiers Sosuscritere"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsCritereQualifiSoum": {
+      "created": "Un nouveau Critere Qualifi Soum a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Critere Qualifi Soum avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Critere Qualifi Soum avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

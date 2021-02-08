@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-garanties-soumissionnaire-heading" jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.home.createOrEditLabel">Create or edit a Garanties Soumissionnaire</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.fournie" for="field_fournie">Fournie</label>
+                    <input type="text" class="form-control" name="fournie" id="field_fournie"
+                           formControlName="fournie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.libelle" for="field_libelle">Libelle</label>
+                    <input type="text" class="form-control" name="libelle" id="field_libelle"
+                           formControlName="libelle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.observations" for="field_observations">Observations</label>
+                    <input type="text" class="form-control" name="observations" id="field_observations"
+                           formControlName="observations"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.libellelot" for="field_libellelot">Libellelot</label>
+                    <input type="text" class="form-control" name="libellelot" id="field_libellelot"
+                           formControlName="libellelot"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.montant" for="field_montant">Montant</label>
+                    <input type="number" class="form-control" name="montant" id="field_montant"
+                           formControlName="montant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.dossierAppelOffre" for="field_dossierAppelOffre">Dossier Appel Offre</label>
+                    <select class="form-control" id="field_dossierAppelOffre" name="dossierAppelOffre" formControlName="dossierAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dossierAppelOffreOption.id" *ngFor="let dossierAppelOffreOption of dossierappeloffres; trackBy: trackById">{{ dossierAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.garantiesDossier" for="field_garantiesDossier">Garanties Dossier</label>
+                    <select class="form-control" id="field_garantiesDossier" name="garantiesDossier" formControlName="garantiesDossierId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="garantiesDossierOption.id" *ngFor="let garantiesDossierOption of garantiesdossiers; trackBy: trackById">{{ garantiesDossierOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.plisOuverture" for="field_plisOuverture">Plis Ouverture</label>
+                    <select class="form-control" id="field_plisOuverture" name="plisOuverture" formControlName="plisOuvertureId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="plisOuvertureOption.id" *ngFor="let plisOuvertureOption of plisouvertures; trackBy: trackById">{{ plisOuvertureOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsGarantiesSoumissionnaire.naturesGarantie" for="field_naturesGarantie">Natures Garantie</label>
+                    <select class="form-control" id="field_naturesGarantie" name="naturesGarantie" formControlName="naturesGarantieId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="naturesGarantieOption.id" *ngFor="let naturesGarantieOption of naturesgaranties; trackBy: trackById">{{ naturesGarantieOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

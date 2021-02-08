@@ -1,0 +1,250 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-taches-effectue-heading" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.home.createOrEditLabel">Create or edit a Taches Effectue</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.allotissement" for="field_allotissement">Allotissement</label>
+                    <input type="number" class="form-control" name="allotissement" id="field_allotissement"
+                           formControlName="allotissement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.garantie" for="field_garantie">Garantie</label>
+                    <input type="number" class="form-control" name="garantie" id="field_garantie"
+                           formControlName="garantie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.pieceAdministrative" for="field_pieceAdministrative">Piece Administrative</label>
+                    <input type="number" class="form-control" name="pieceAdministrative" id="field_pieceAdministrative"
+                           formControlName="pieceAdministrative"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.critereQualification" for="field_critereQualification">Critere Qualification</label>
+                    <input type="number" class="form-control" name="critereQualification" id="field_critereQualification"
+                           formControlName="critereQualification"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.devise" for="field_devise">Devise</label>
+                    <input type="number" class="form-control" name="devise" id="field_devise"
+                           formControlName="devise"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.financement" for="field_financement">Financement</label>
+                    <input type="number" class="form-control" name="financement" id="field_financement"
+                           formControlName="financement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.registreRetrait" for="field_registreRetrait">Registre Retrait</label>
+                    <input type="number" class="form-control" name="registreRetrait" id="field_registreRetrait"
+                           formControlName="registreRetrait"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.registreDepot" for="field_registreDepot">Registre Depot</label>
+                    <input type="number" class="form-control" name="registreDepot" id="field_registreDepot"
+                           formControlName="registreDepot"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.lotsSoumis" for="field_lotsSoumis">Lots Soumis</label>
+                    <input type="number" class="form-control" name="lotsSoumis" id="field_lotsSoumis"
+                           formControlName="lotsSoumis"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.commissionsPassation" for="field_commissionsPassation">Commissions Passation</label>
+                    <input type="number" class="form-control" name="commissionsPassation" id="field_commissionsPassation"
+                           formControlName="commissionsPassation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.representantsSoumis" for="field_representantsSoumis">Representants Soumis</label>
+                    <input type="number" class="form-control" name="representantsSoumis" id="field_representantsSoumis"
+                           formControlName="representantsSoumis"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.servicesTechniques" for="field_servicesTechniques">Services Techniques</label>
+                    <input type="number" class="form-control" name="servicesTechniques" id="field_servicesTechniques"
+                           formControlName="servicesTechniques"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.observateurs" for="field_observateurs">Observateurs</label>
+                    <input type="number" class="form-control" name="observateurs" id="field_observateurs"
+                           formControlName="observateurs"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.garantieSoum" for="field_garantieSoum">Garantie Soum</label>
+                    <input type="number" class="form-control" name="garantieSoum" id="field_garantieSoum"
+                           formControlName="garantieSoum"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.piecesSoumis" for="field_piecesSoumis">Pieces Soumis</label>
+                    <input type="number" class="form-control" name="piecesSoumis" id="field_piecesSoumis"
+                           formControlName="piecesSoumis"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.lectureOffre" for="field_lectureOffre">Lecture Offre</label>
+                    <input type="number" class="form-control" name="lectureOffre" id="field_lectureOffre"
+                           formControlName="lectureOffre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.commissionTecnique" for="field_commissionTecnique">Commission Tecnique</label>
+                    <input type="number" class="form-control" name="commissionTecnique" id="field_commissionTecnique"
+                           formControlName="commissionTecnique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.document" for="field_document">Document</label>
+                    <input type="number" class="form-control" name="document" id="field_document"
+                           formControlName="document"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenGarantie" for="field_examenGarantie">Examen Garantie</label>
+                    <input type="number" class="form-control" name="examenGarantie" id="field_examenGarantie"
+                           formControlName="examenGarantie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenExhaustivite" for="field_examenExhaustivite">Examen Exhaustivite</label>
+                    <input type="number" class="form-control" name="examenExhaustivite" id="field_examenExhaustivite"
+                           formControlName="examenExhaustivite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenSignatureOffre" for="field_examenSignatureOffre">Examen Signature Offre</label>
+                    <input type="number" class="form-control" name="examenSignatureOffre" id="field_examenSignatureOffre"
+                           formControlName="examenSignatureOffre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenConformite" for="field_examenConformite">Examen Conformite</label>
+                    <input type="number" class="form-control" name="examenConformite" id="field_examenConformite"
+                           formControlName="examenConformite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.verificationCritere" for="field_verificationCritere">Verification Critere</label>
+                    <input type="number" class="form-control" name="verificationCritere" id="field_verificationCritere"
+                           formControlName="verificationCritere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.attributionProvisoire" for="field_attributionProvisoire">Attribution Provisoire</label>
+                    <input type="number" class="form-control" name="attributionProvisoire" id="field_attributionProvisoire"
+                           formControlName="attributionProvisoire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.termeReference" for="field_termeReference">Terme Reference</label>
+                    <input type="number" class="form-control" name="termeReference" id="field_termeReference"
+                           formControlName="termeReference"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.depotCandidature" for="field_depotCandidature">Depot Candidature</label>
+                    <input type="number" class="form-control" name="depotCandidature" id="field_depotCandidature"
+                           formControlName="depotCandidature"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.preselection" for="field_preselection">Preselection</label>
+                    <input type="number" class="form-control" name="preselection" id="field_preselection"
+                           formControlName="preselection"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.notification" for="field_notification">Notification</label>
+                    <input type="number" class="form-control" name="notification" id="field_notification"
+                           formControlName="notification"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.commissionsPassationPI" for="field_commissionsPassationPI">Commissions Passation PI</label>
+                    <input type="number" class="form-control" name="commissionsPassationPI" id="field_commissionsPassationPI"
+                           formControlName="commissionsPassationPI"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.representantsSoumisPI" for="field_representantsSoumisPI">Representants Soumis PI</label>
+                    <input type="number" class="form-control" name="representantsSoumisPI" id="field_representantsSoumisPI"
+                           formControlName="representantsSoumisPI"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.notesTechnique" for="field_notesTechnique">Notes Technique</label>
+                    <input type="number" class="form-control" name="notesTechnique" id="field_notesTechnique"
+                           formControlName="notesTechnique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.offresFinanciere" for="field_offresFinanciere">Offres Financiere</label>
+                    <input type="number" class="form-control" name="offresFinanciere" id="field_offresFinanciere"
+                           formControlName="offresFinanciere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.prixEvalue" for="field_prixEvalue">Prix Evalue</label>
+                    <input type="number" class="form-control" name="prixEvalue" id="field_prixEvalue"
+                           formControlName="prixEvalue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.registreDepotPI" for="field_registreDepotPI">Registre Depot PI</label>
+                    <input type="number" class="form-control" name="registreDepotPI" id="field_registreDepotPI"
+                           formControlName="registreDepotPI"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.critereProvenance" for="field_critereProvenance">Critere Provenance</label>
+                    <input type="number" class="form-control" name="critereProvenance" id="field_critereProvenance"
+                           formControlName="critereProvenance"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.procesVerbale" for="field_procesVerbale">Proces Verbale</label>
+                    <input type="number" class="form-control" name="procesVerbale" id="field_procesVerbale"
+                           formControlName="procesVerbale"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.dossierAppelOffre" for="field_dossierAppelOffre">Dossier Appel Offre</label>
+                    <select class="form-control" id="field_dossierAppelOffre" name="dossierAppelOffre" formControlName="dossierAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dossierAppelOffreOption.id" *ngFor="let dossierAppelOffreOption of dossierappeloffres; trackBy: trackById">{{ dossierAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsPlisOuverture": {
+      "home": {
+        "title": "PlisOuvertures",
+        "createLabel": "Créer un nouveau Plis Ouverture",
+        "createOrEditLabel": "Créer ou éditer un Plis Ouverture",
+        "notFound": "Aucun Plis Ouverture trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Plis Ouverture {{ id }} ?"
+      },
+      "detail": {
+        "title": "Plis Ouverture"
+      },
+      "raisonSociale": "Raison Sociale",
+      "adresseMail": "Adresse Mail",
+      "commentaire": "Commentaire",
+      "rang": "Rang",
+      "ninea": "Ninea",
+      "natCode": "Nat Code",
+      "monCode": "Mon Code",
+      "pvOffreFinanciere": "Pv Offre Financiere",
+      "negociation": "Negociation",
+      "montantOffert": "Montant Offert",
+      "scoreFinancier": "Score Financier",
+      "prixEvalue": "Prix Evalue",
+      "scoreTechniquePondere": "Score Technique Pondere",
+      "scoreFinancierPondere": "Score Financier Pondere",
+      "scoreFinal": "Score Final",
+      "montantDefinitif": "Montant Definitif",
+      "montantTVA": "Montant TVA",
+      "montantDouane": "Montant Douane",
+      "dateDepot": "Date Depot",
+      "heuredepot": "Heuredepot",
+      "rabais": "Rabais",
+      "scoreTechnique": "Score Technique",
+      "seuilAtteint": "Seuil Atteint",
+      "classemenTechnique": "Classemen Technique",
+      "classementGeneral": "Classement General",
+      "candidatRestreintID": "Candidat Restreint ID",
+      "etatPreselection": "Etat Preselection",
+      "etatExamenPreliminaire": "Etat Examen Preliminaire",
+      "critereQualification": "Critere Qualification",
+      "attributaireProvisoire": "Attributaire Provisoire",
+      "offreTechnique": "Offre Technique",
+      "offreFinanciere": "Offre Financiere",
+      "lettreSoumission": "Lettre Soumission",
+      "valide": "Valide",
+      "numero": "Numero",
+      "garantie": "Garantie",
+      "pieceRequise": "Piece Requise",
+      "observationsOffres": "Observations Offres",
+      "observationsCandidats": "Observations Candidats",
+      "modeReception": "Mode Reception",
+      "notifie": "Notifie",
+      "signatureOffre": "Signature Offre",
+      "exhaustivite": "Exhaustivite",
+      "garantieSoumission": "Garantie Soumission",
+      "conformite": "Conformite",
+      "critereProvenance": "Critere Provenance",
+      "notePreselectionne": "Note Preselectionne",
+      "autoriteId": "Autorite Id",
+      "ajustement": "Ajustement",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "retraitRegistreDAO": "Retrait Registre DAO",
+      "fournisseur": "Fournisseur"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsPlisOuverture": {
+      "created": "Un nouveau Plis Ouverture a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Plis Ouverture avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Plis Ouverture avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

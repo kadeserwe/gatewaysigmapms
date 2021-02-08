@@ -1,0 +1,111 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.home.title">Historique Appel Offres ACS</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-historique-appel-offres-ac" [routerLink]="['/historique-appel-offres-ac/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.home.createLabel">
+            Create a new Historique Appel Offres AC
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="historiqueAppelOffresACS?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.home.notFound">No historiqueAppelOffresACS found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="historiqueAppelOffresACS && historiqueAppelOffresACS.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoacValidation"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacValidation">Histoac Validation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoacCommentaire"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacCommentaire">Histoac Commentaire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoacFichiervalidation"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacFichiervalidation">Histoac Fichiervalidation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoacBorderau"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacBorderau">Histoac Borderau</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoValidation"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoValidation">Histo Validation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoCommentaire"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoCommentaire">Histo Commentaire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoFichiervalidation"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoFichiervalidation">Histo Fichiervalidation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="daoFichier"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.daoFichier">Dao Fichier</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="origine"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.origine">Origine</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoacDatevalidation"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacDatevalidation">Histoac Datevalidation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoacDatecreationdossier"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacDatecreationdossier">Histoac Datecreationdossier</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoDatevalidation"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoDatevalidation">Histo Datevalidation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoacAttribution"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacAttribution">Histoac Attribution</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="histoacAc"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.histoacAc">Histoac Ac</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="validerparNom"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.validerparNom">Validerpar Nom</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="validerparPrenom"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.validerparPrenom">Validerpar Prenom</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="userId"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.userId">User Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="autiriteId"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.autiriteId">Autirite Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossierAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsHistoriqueAppelOffresAc.dossierAppelOffre">Dossier Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let historiqueAppelOffresAC of historiqueAppelOffresACS ;trackBy: trackId">
+                    <td><a [routerLink]="['/historique-appel-offres-ac', historiqueAppelOffresAC.id, 'view']">{{ historiqueAppelOffresAC.id }}</a></td>
+                    <td>{{ historiqueAppelOffresAC.histoacValidation }}</td>
+                    <td>{{ historiqueAppelOffresAC.histoacCommentaire }}</td>
+                    <td>{{ historiqueAppelOffresAC.histoacFichiervalidation }}</td>
+                    <td>{{ historiqueAppelOffresAC.histoacBorderau }}</td>
+                    <td>{{ historiqueAppelOffresAC.histoValidation }}</td>
+                    <td>{{ historiqueAppelOffresAC.histoCommentaire }}</td>
+                    <td>{{ historiqueAppelOffresAC.histoFichiervalidation }}</td>
+                    <td>{{ historiqueAppelOffresAC.daoFichier }}</td>
+                    <td>{{ historiqueAppelOffresAC.origine }}</td>
+                    <td>{{ historiqueAppelOffresAC.histoacDatevalidation | date:'mediumDate' }}</td>
+                    <td>{{ historiqueAppelOffresAC.histoacDatecreationdossier | date:'mediumDate' }}</td>
+                    <td>{{ historiqueAppelOffresAC.histoDatevalidation | date:'mediumDate' }}</td>
+                    <td>{{ historiqueAppelOffresAC.histoacAttribution }}</td>
+                    <td>{{ historiqueAppelOffresAC.histoacAc }}</td>
+                    <td>{{ historiqueAppelOffresAC.validerparNom }}</td>
+                    <td>{{ historiqueAppelOffresAC.validerparPrenom }}</td>
+                    <td>{{ historiqueAppelOffresAC.userId }}</td>
+                    <td>{{ historiqueAppelOffresAC.autiriteId }}</td>
+                    <td>
+                        <div *ngIf="historiqueAppelOffresAC.dossierAppelOffreId">
+                            <a [routerLink]="['/dossier-appel-offre', historiqueAppelOffresAC.dossierAppelOffreId , 'view']" >{{ historiqueAppelOffresAC.dossierAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/historique-appel-offres-ac', historiqueAppelOffresAC.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/historique-appel-offres-ac', historiqueAppelOffresAC.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(historiqueAppelOffresAC)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="historiqueAppelOffresACS && historiqueAppelOffresACS.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

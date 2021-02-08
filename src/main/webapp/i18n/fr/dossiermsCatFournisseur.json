@@ -1,0 +1,27 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsCatFournisseur": {
+      "home": {
+        "title": "CatFournisseurs",
+        "createLabel": "Créer un nouveau Cat Fournisseur",
+        "createOrEditLabel": "Créer ou éditer un Cat Fournisseur",
+        "notFound": "Aucun Cat Fournisseur trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Cat Fournisseur {{ id }} ?"
+      },
+      "detail": {
+        "title": "Cat Fournisseur"
+      },
+      "libelle": "Libelle",
+      "description": "Description"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsCatFournisseur": {
+      "created": "Un nouveau Cat Fournisseur a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Cat Fournisseur avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Cat Fournisseur avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

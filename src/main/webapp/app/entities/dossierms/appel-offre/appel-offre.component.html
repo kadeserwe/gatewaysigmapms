@@ -1,0 +1,163 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.home.title">Appel Offres</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-appel-offre" [routerLink]="['/appel-offre/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.home.createLabel">
+            Create a new Appel Offre
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="appelOffres?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.home.notFound">No appelOffres found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="appelOffres && appelOffres.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoDatecreation"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDatecreation">Apo Datecreation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoDateAutorisation"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateAutorisation">Apo Date Autorisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoDateDemandeAutorisation"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateDemandeAutorisation">Apo Date Demande Autorisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoDateRejet"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateRejet">Apo Date Rejet</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoDateMiseAutorisation"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateMiseAutorisation">Apo Date Mise Autorisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateStopProcedure"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.dateStopProcedure">Date Stop Procedure</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateAffectationDossier"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.dateAffectationDossier">Date Affectation Dossier</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoDatePVOuverturepli"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDatePVOuverturepli">Apo Date PV Ouverturepli</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoDateVersement"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateVersement">Apo Date Versement</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="datePubListeRestreinte"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.datePubListeRestreinte">Date Pub Liste Restreinte</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoProjet"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoProjet">Apo Projet</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoObjet"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoObjet">Apo Objet</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoReference"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReference">Apo Reference</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoNumeroPretCredit"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoNumeroPretCredit">Apo Numero Pret Credit</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoCommentaireAutorisation"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoCommentaireAutorisation">Apo Commentaire Autorisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoFichierMiseAutorisation"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierMiseAutorisation">Apo Fichier Mise Autorisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="numeroMarche"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.numeroMarche">Numero Marche</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="motifStopProcedure"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.motifStopProcedure">Motif Stop Procedure</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoFichierPV"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierPV">Apo Fichier PV</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoFichierValidation"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierValidation">Apo Fichier Validation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoAutorisationPrealable"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoAutorisationPrealable">Apo Autorisation Prealable</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoFichierAutorisationPrealable"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierAutorisationPrealable">Apo Fichier Autorisation Prealable</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoReferenceRequeteAc"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReferenceRequeteAc">Apo Reference Requete Ac</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoRapportSpecial"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoRapportSpecial">Apo Rapport Special</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoReferenceCommunication"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReferenceCommunication">Apo Reference Communication</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoReleveConseil"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReleveConseil">Apo Releve Conseil</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoFichierRapportSpecial"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierRapportSpecial">Apo Fichier Rapport Special</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoFichierReleveConseil"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierReleveConseil">Apo Fichier Releve Conseil</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="pubListeRestreinte"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.pubListeRestreinte">Pub Liste Restreinte</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierListeRestreinte"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.fichierListeRestreinte">Fichier Liste Restreinte</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoMontantEstime"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoMontantEstime">Apo Montant Estime</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoMontantVersement"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoMontantVersement">Apo Montant Versement</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoResponsableDCMP"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoResponsableDCMP">Apo Responsable DCMP</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etatSeuil"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.etatSeuil">Etat Seuil</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoStatut"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoStatut">Apo Statut</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoValide"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoValide">Apo Valide</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoNbreDAO"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoNbreDAO">Apo Nbre DAO</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoNbreDC"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoNbreDC">Apo Nbre DC</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apoEtatValidation"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoEtatValidation">Apo Etat Validation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="autiriteId"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.autiriteId">Autirite Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="realisationId"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.realisationId">Realisation Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="modepassationId"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.modepassationId">Modepassation Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="typemarcheId"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.typemarcheId">Typemarche Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="modeselectionId"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.modeselectionId">Modeselection Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="categorieAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.categorieAppelOffre">Categorie Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let appelOffre of appelOffres ;trackBy: trackId">
+                    <td><a [routerLink]="['/appel-offre', appelOffre.id, 'view']">{{ appelOffre.id }}</a></td>
+                    <td>{{ appelOffre.apoDatecreation | date:'mediumDate' }}</td>
+                    <td>{{ appelOffre.apoDateAutorisation | date:'mediumDate' }}</td>
+                    <td>{{ appelOffre.apoDateDemandeAutorisation | date:'mediumDate' }}</td>
+                    <td>{{ appelOffre.apoDateRejet | date:'mediumDate' }}</td>
+                    <td>{{ appelOffre.apoDateMiseAutorisation | date:'mediumDate' }}</td>
+                    <td>{{ appelOffre.dateStopProcedure | date:'mediumDate' }}</td>
+                    <td>{{ appelOffre.dateAffectationDossier | date:'mediumDate' }}</td>
+                    <td>{{ appelOffre.apoDatePVOuverturepli | date:'mediumDate' }}</td>
+                    <td>{{ appelOffre.apoDateVersement | date:'mediumDate' }}</td>
+                    <td>{{ appelOffre.datePubListeRestreinte | date:'mediumDate' }}</td>
+                    <td>{{ appelOffre.apoProjet }}</td>
+                    <td>{{ appelOffre.apoObjet }}</td>
+                    <td>{{ appelOffre.apoReference }}</td>
+                    <td>{{ appelOffre.apoNumeroPretCredit }}</td>
+                    <td>{{ appelOffre.apoCommentaireAutorisation }}</td>
+                    <td>{{ appelOffre.apoFichierMiseAutorisation }}</td>
+                    <td>{{ appelOffre.numeroMarche }}</td>
+                    <td>{{ appelOffre.motifStopProcedure }}</td>
+                    <td>{{ appelOffre.apoFichierPV }}</td>
+                    <td>{{ appelOffre.apoFichierValidation }}</td>
+                    <td>{{ appelOffre.apoAutorisationPrealable }}</td>
+                    <td>{{ appelOffre.apoFichierAutorisationPrealable }}</td>
+                    <td>{{ appelOffre.apoReferenceRequeteAc }}</td>
+                    <td>{{ appelOffre.apoRapportSpecial }}</td>
+                    <td>{{ appelOffre.apoReferenceCommunication }}</td>
+                    <td>{{ appelOffre.apoReleveConseil }}</td>
+                    <td>{{ appelOffre.apoFichierRapportSpecial }}</td>
+                    <td>{{ appelOffre.apoFichierReleveConseil }}</td>
+                    <td>{{ appelOffre.pubListeRestreinte }}</td>
+                    <td>{{ appelOffre.fichierListeRestreinte }}</td>
+                    <td>{{ appelOffre.apoMontantEstime }}</td>
+                    <td>{{ appelOffre.apoMontantVersement }}</td>
+                    <td>{{ appelOffre.apoResponsableDCMP }}</td>
+                    <td>{{ appelOffre.etatSeuil }}</td>
+                    <td>{{ appelOffre.apoStatut }}</td>
+                    <td>{{ appelOffre.apoValide }}</td>
+                    <td>{{ appelOffre.apoNbreDAO }}</td>
+                    <td>{{ appelOffre.apoNbreDC }}</td>
+                    <td>{{ appelOffre.apoEtatValidation }}</td>
+                    <td>{{ appelOffre.autiriteId }}</td>
+                    <td>{{ appelOffre.realisationId }}</td>
+                    <td>{{ appelOffre.modepassationId }}</td>
+                    <td>{{ appelOffre.typemarcheId }}</td>
+                    <td>{{ appelOffre.modeselectionId }}</td>
+                    <td>
+                        <div *ngIf="appelOffre.categorieAppelOffreId">
+                            <a [routerLink]="['/categorie-appel-offre', appelOffre.categorieAppelOffreId , 'view']" >{{ appelOffre.categorieAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/appel-offre', appelOffre.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/appel-offre', appelOffre.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(appelOffre)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="appelOffres && appelOffres.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,198 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="lotsSoumissionnaire">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.detail.title">Lots Soumissionnaire</span> {{ lotsSoumissionnaire.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.raisonsociale">Raisonsociale</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.raisonsociale }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.numero">Numero</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.numero }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.email">Email</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.commentaire">Commentaire</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.commentaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lotsoumis">Lotsoumis</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.lotsoumis }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lotrecu">Lotrecu</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.lotrecu }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.libelle">Libelle</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.libelle }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.elimine">Elimine</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.elimine }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantOffert">Montant Offert</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.montantOffert }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantDefinitif">Montant Definitif</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.montantDefinitif }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantGarantie">Montant Garantie</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.montantGarantie }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantTVA">Montant TVA</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.montantTVA }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantDouane">Montant Douane</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.montantDouane }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantTTC">Montant TTC</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.montantTTC }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.rabais">Rabais</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.rabais }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.rang">Rang</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.rang }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreTechnique">Score Technique</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.scoreTechnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreFinancier">Score Financier</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.scoreFinancier }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.prixEvalue">Prix Evalue</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.prixEvalue }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreTechniquePondere">Score Technique Pondere</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.scoreTechniquePondere }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreFinancierPondere">Score Financier Pondere</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.scoreFinancierPondere }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreFinal">Score Final</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.scoreFinal }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.dateDepot">Date Depot</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.dateDepot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.classementGeneral">Classement General</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.classementGeneral }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.classemenTechnique">Classemen Technique</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.classemenTechnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.etatPreselection">Etat Preselection</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.etatPreselection }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.etatExamenPreliminaire">Etat Examen Preliminaire</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.etatExamenPreliminaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.critereQualification">Critere Qualification</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.critereQualification }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.attributaireProvisoire">Attributaire Provisoire</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.attributaireProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.plilValide">Plil Valide</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.plilValide }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lettreSoumission">Lettre Soumission</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.lettreSoumission }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.offreTechnique">Offre Technique</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.offreTechnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.offreFinanciere">Offre Financiere</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.offreFinanciere }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.plinumero">Plinumero</span></dt>
+                <dd>
+                    <span>{{ lotsSoumissionnaire.plinumero }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="lotsSoumissionnaire.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', lotsSoumissionnaire.dossierAppelOffreId, 'view']">{{ lotsSoumissionnaire.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lot">Lot</span></dt>
+                <dd>
+                    <div *ngIf="lotsSoumissionnaire.lotId">
+                        <a [routerLink]="['/lot', lotsSoumissionnaire.lotId, 'view']">{{ lotsSoumissionnaire.lotId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.plisOuverture">Plis Ouverture</span></dt>
+                <dd>
+                    <div *ngIf="lotsSoumissionnaire.plisOuvertureId">
+                        <a [routerLink]="['/plis-ouverture', lotsSoumissionnaire.plisOuvertureId, 'view']">{{ lotsSoumissionnaire.plisOuvertureId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.monnaieOffre">Monnaie Offre</span></dt>
+                <dd>
+                    <div *ngIf="lotsSoumissionnaire.monnaieOffreId">
+                        <a [routerLink]="['/monnaie-offre', lotsSoumissionnaire.monnaieOffreId, 'view']">{{ lotsSoumissionnaire.monnaieOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.naturePrix">Nature Prix</span></dt>
+                <dd>
+                    <div *ngIf="lotsSoumissionnaire.naturePrixId">
+                        <a [routerLink]="['/nature-prix', lotsSoumissionnaire.naturePrixId, 'view']">{{ lotsSoumissionnaire.naturePrixId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.pays">Pays</span></dt>
+                <dd>
+                    <div *ngIf="lotsSoumissionnaire.paysId">
+                        <a [routerLink]="['/pays', lotsSoumissionnaire.paysId, 'view']">{{ lotsSoumissionnaire.paysId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/lots-soumissionnaire', lotsSoumissionnaire.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

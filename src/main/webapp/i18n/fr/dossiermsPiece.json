@@ -1,0 +1,31 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsPiece": {
+      "home": {
+        "title": "Pieces",
+        "createLabel": "Créer un nouveau Piece",
+        "createOrEditLabel": "Créer ou éditer un Piece",
+        "notFound": "Aucun Piece trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Piece {{ id }} ?"
+      },
+      "detail": {
+        "title": "Piece"
+      },
+      "libelle": "Libelle",
+      "description": "Description",
+      "codepiece": "Codepiece",
+      "localisation": "Localisation",
+      "type": "Type",
+      "autoriteId": "Autorite Id"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsPiece": {
+      "created": "Un nouveau Piece a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Piece avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Piece avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

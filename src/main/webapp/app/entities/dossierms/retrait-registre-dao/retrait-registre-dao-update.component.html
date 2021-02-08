@@ -1,0 +1,96 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-retrait-registre-dao-heading" jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.home.createOrEditLabel">Create or edit a Retrait Registre DAO</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.nomSoumissionnaire" for="field_nomSoumissionnaire">Nom Soumissionnaire</label>
+                    <input type="text" class="form-control" name="nomSoumissionnaire" id="field_nomSoumissionnaire"
+                           formControlName="nomSoumissionnaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.telephone" for="field_telephone">Telephone</label>
+                    <input type="text" class="form-control" name="telephone" id="field_telephone"
+                           formControlName="telephone"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.modePaiement" for="field_modePaiement">Mode Paiement</label>
+                    <input type="text" class="form-control" name="modePaiement" id="field_modePaiement"
+                           formControlName="modePaiement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.ninea" for="field_ninea">Ninea</label>
+                    <input type="text" class="form-control" name="ninea" id="field_ninea"
+                           formControlName="ninea"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.montantVerse" for="field_montantVerse">Montant Verse</label>
+                    <input type="number" class="form-control" name="montantVerse" id="field_montantVerse"
+                           formControlName="montantVerse"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.dateRetrait" for="field_dateRetrait">Date Retrait</label>
+                    <div class="input-group">
+                        <input id="field_dateRetrait" type="text" class="form-control" name="dateRetrait" ngbDatepicker #dateRetraitDp="ngbDatepicker" formControlName="dateRetrait"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRetraitDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.dossierAppelOffre" for="field_dossierAppelOffre">Dossier Appel Offre</label>
+                    <select class="form-control" id="field_dossierAppelOffre" name="dossierAppelOffre" formControlName="dossierAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dossierAppelOffreOption.id" *ngFor="let dossierAppelOffreOption of dossierappeloffres; trackBy: trackById">{{ dossierAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.fournisseur" for="field_fournisseur">Fournisseur</label>
+                    <select class="form-control" id="field_fournisseur" name="fournisseur" formControlName="fournisseurId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fournisseurOption.id" *ngFor="let fournisseurOption of fournisseurs; trackBy: trackById">{{ fournisseurOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsRetraitRegistreDao.pays" for="field_pays">Pays</label>
+                    <select class="form-control" id="field_pays" name="pays" formControlName="paysId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="paysOption.id" *ngFor="let paysOption of pays; trackBy: trackById">{{ paysOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

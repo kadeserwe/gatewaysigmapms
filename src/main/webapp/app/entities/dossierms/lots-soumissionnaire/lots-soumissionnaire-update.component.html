@@ -1,0 +1,282 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-lots-soumissionnaire-heading" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.home.createOrEditLabel">Create or edit a Lots Soumissionnaire</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.raisonsociale" for="field_raisonsociale">Raisonsociale</label>
+                    <input type="text" class="form-control" name="raisonsociale" id="field_raisonsociale"
+                           formControlName="raisonsociale"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.numero" for="field_numero">Numero</label>
+                    <input type="text" class="form-control" name="numero" id="field_numero"
+                           formControlName="numero"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.commentaire" for="field_commentaire">Commentaire</label>
+                    <input type="text" class="form-control" name="commentaire" id="field_commentaire"
+                           formControlName="commentaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lotsoumis" for="field_lotsoumis">Lotsoumis</label>
+                    <input type="text" class="form-control" name="lotsoumis" id="field_lotsoumis"
+                           formControlName="lotsoumis"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lotrecu" for="field_lotrecu">Lotrecu</label>
+                    <input type="text" class="form-control" name="lotrecu" id="field_lotrecu"
+                           formControlName="lotrecu"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.libelle" for="field_libelle">Libelle</label>
+                    <input type="text" class="form-control" name="libelle" id="field_libelle"
+                           formControlName="libelle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.elimine" for="field_elimine">Elimine</label>
+                    <input type="text" class="form-control" name="elimine" id="field_elimine"
+                           formControlName="elimine"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantOffert" for="field_montantOffert">Montant Offert</label>
+                    <input type="number" class="form-control" name="montantOffert" id="field_montantOffert"
+                           formControlName="montantOffert"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantDefinitif" for="field_montantDefinitif">Montant Definitif</label>
+                    <input type="number" class="form-control" name="montantDefinitif" id="field_montantDefinitif"
+                           formControlName="montantDefinitif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantGarantie" for="field_montantGarantie">Montant Garantie</label>
+                    <input type="number" class="form-control" name="montantGarantie" id="field_montantGarantie"
+                           formControlName="montantGarantie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantTVA" for="field_montantTVA">Montant TVA</label>
+                    <input type="number" class="form-control" name="montantTVA" id="field_montantTVA"
+                           formControlName="montantTVA"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantDouane" for="field_montantDouane">Montant Douane</label>
+                    <input type="number" class="form-control" name="montantDouane" id="field_montantDouane"
+                           formControlName="montantDouane"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.montantTTC" for="field_montantTTC">Montant TTC</label>
+                    <input type="number" class="form-control" name="montantTTC" id="field_montantTTC"
+                           formControlName="montantTTC"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.rabais" for="field_rabais">Rabais</label>
+                    <input type="number" class="form-control" name="rabais" id="field_rabais"
+                           formControlName="rabais"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.rang" for="field_rang">Rang</label>
+                    <input type="number" class="form-control" name="rang" id="field_rang"
+                           formControlName="rang"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreTechnique" for="field_scoreTechnique">Score Technique</label>
+                    <input type="number" class="form-control" name="scoreTechnique" id="field_scoreTechnique"
+                           formControlName="scoreTechnique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreFinancier" for="field_scoreFinancier">Score Financier</label>
+                    <input type="number" class="form-control" name="scoreFinancier" id="field_scoreFinancier"
+                           formControlName="scoreFinancier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.prixEvalue" for="field_prixEvalue">Prix Evalue</label>
+                    <input type="number" class="form-control" name="prixEvalue" id="field_prixEvalue"
+                           formControlName="prixEvalue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreTechniquePondere" for="field_scoreTechniquePondere">Score Technique Pondere</label>
+                    <input type="number" class="form-control" name="scoreTechniquePondere" id="field_scoreTechniquePondere"
+                           formControlName="scoreTechniquePondere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreFinancierPondere" for="field_scoreFinancierPondere">Score Financier Pondere</label>
+                    <input type="number" class="form-control" name="scoreFinancierPondere" id="field_scoreFinancierPondere"
+                           formControlName="scoreFinancierPondere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.scoreFinal" for="field_scoreFinal">Score Final</label>
+                    <input type="number" class="form-control" name="scoreFinal" id="field_scoreFinal"
+                           formControlName="scoreFinal"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.dateDepot" for="field_dateDepot">Date Depot</label>
+                    <div class="input-group">
+                        <input id="field_dateDepot" type="text" class="form-control" name="dateDepot" ngbDatepicker #dateDepotDp="ngbDatepicker" formControlName="dateDepot"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDepotDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.classementGeneral" for="field_classementGeneral">Classement General</label>
+                    <input type="number" class="form-control" name="classementGeneral" id="field_classementGeneral"
+                           formControlName="classementGeneral"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.classemenTechnique" for="field_classemenTechnique">Classemen Technique</label>
+                    <input type="number" class="form-control" name="classemenTechnique" id="field_classemenTechnique"
+                           formControlName="classemenTechnique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.etatPreselection" for="field_etatPreselection">Etat Preselection</label>
+                    <input type="number" class="form-control" name="etatPreselection" id="field_etatPreselection"
+                           formControlName="etatPreselection"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.etatExamenPreliminaire" for="field_etatExamenPreliminaire">Etat Examen Preliminaire</label>
+                    <input type="number" class="form-control" name="etatExamenPreliminaire" id="field_etatExamenPreliminaire"
+                           formControlName="etatExamenPreliminaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.critereQualification" for="field_critereQualification">Critere Qualification</label>
+                    <input type="number" class="form-control" name="critereQualification" id="field_critereQualification"
+                           formControlName="critereQualification"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.attributaireProvisoire" for="field_attributaireProvisoire">Attributaire Provisoire</label>
+                    <input type="number" class="form-control" name="attributaireProvisoire" id="field_attributaireProvisoire"
+                           formControlName="attributaireProvisoire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.plilValide" for="field_plilValide">Plil Valide</label>
+                    <input type="number" class="form-control" name="plilValide" id="field_plilValide"
+                           formControlName="plilValide"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lettreSoumission" for="field_lettreSoumission">Lettre Soumission</label>
+                    <input type="number" class="form-control" name="lettreSoumission" id="field_lettreSoumission"
+                           formControlName="lettreSoumission"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.offreTechnique" for="field_offreTechnique">Offre Technique</label>
+                    <input type="number" class="form-control" name="offreTechnique" id="field_offreTechnique"
+                           formControlName="offreTechnique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.offreFinanciere" for="field_offreFinanciere">Offre Financiere</label>
+                    <input type="number" class="form-control" name="offreFinanciere" id="field_offreFinanciere"
+                           formControlName="offreFinanciere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.plinumero" for="field_plinumero">Plinumero</label>
+                    <input type="number" class="form-control" name="plinumero" id="field_plinumero"
+                           formControlName="plinumero"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.dossierAppelOffre" for="field_dossierAppelOffre">Dossier Appel Offre</label>
+                    <select class="form-control" id="field_dossierAppelOffre" name="dossierAppelOffre" formControlName="dossierAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dossierAppelOffreOption.id" *ngFor="let dossierAppelOffreOption of dossierappeloffres; trackBy: trackById">{{ dossierAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.lot" for="field_lot">Lot</label>
+                    <select class="form-control" id="field_lot" name="lot" formControlName="lotId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="lotOption.id" *ngFor="let lotOption of lots; trackBy: trackById">{{ lotOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.plisOuverture" for="field_plisOuverture">Plis Ouverture</label>
+                    <select class="form-control" id="field_plisOuverture" name="plisOuverture" formControlName="plisOuvertureId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="plisOuvertureOption.id" *ngFor="let plisOuvertureOption of plisouvertures; trackBy: trackById">{{ plisOuvertureOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.monnaieOffre" for="field_monnaieOffre">Monnaie Offre</label>
+                    <select class="form-control" id="field_monnaieOffre" name="monnaieOffre" formControlName="monnaieOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="monnaieOffreOption.id" *ngFor="let monnaieOffreOption of monnaieoffres; trackBy: trackById">{{ monnaieOffreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.naturePrix" for="field_naturePrix">Nature Prix</label>
+                    <select class="form-control" id="field_naturePrix" name="naturePrix" formControlName="naturePrixId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="naturePrixOption.id" *ngFor="let naturePrixOption of natureprixes; trackBy: trackById">{{ naturePrixOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsLotsSoumissionnaire.pays" for="field_pays">Pays</label>
+                    <select class="form-control" id="field_pays" name="pays" formControlName="paysId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="paysOption.id" *ngFor="let paysOption of pays; trackBy: trackById">{{ paysOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

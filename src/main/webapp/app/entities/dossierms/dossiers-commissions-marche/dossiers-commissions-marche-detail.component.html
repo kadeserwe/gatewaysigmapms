@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dossiersCommissionsMarche">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersCommissionsMarche.detail.title">Dossiers Commissions Marche</span> {{ dossiersCommissionsMarche.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersCommissionsMarche.flagPresenceEvaluation">Flag Presence Evaluation</span></dt>
+                <dd>
+                    <span>{{ dossiersCommissionsMarche.flagPresenceEvaluation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersCommissionsMarche.etapePI">Etape PI</span></dt>
+                <dd>
+                    <span>{{ dossiersCommissionsMarche.etapePI }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersCommissionsMarche.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="dossiersCommissionsMarche.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', dossiersCommissionsMarche.dossierAppelOffreId, 'view']">{{ dossiersCommissionsMarche.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersCommissionsMarche.membresCommissionsMarche">Membres Commissions Marche</span></dt>
+                <dd>
+                    <div *ngIf="dossiersCommissionsMarche.membresCommissionsMarcheId">
+                        <a [routerLink]="['/membres-commissions-marche', dossiersCommissionsMarche.membresCommissionsMarcheId, 'view']">{{ dossiersCommissionsMarche.membresCommissionsMarcheId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dossiers-commissions-marche', dossiersCommissionsMarche.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

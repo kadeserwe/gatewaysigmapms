@@ -1,0 +1,196 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fournisseur">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.detail.title">Fournisseur</span> {{ fournisseur.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ fournisseur.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.adresse">Adresse</span></dt>
+                <dd>
+                    <span>{{ fournisseur.adresse }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.email">Email</span></dt>
+                <dd>
+                    <span>{{ fournisseur.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ fournisseur.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.numeroRegistreCommerce">Numero Registre Commerce</span></dt>
+                <dd>
+                    <span>{{ fournisseur.numeroRegistreCommerce }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.piecejointe">Piecejointe</span></dt>
+                <dd>
+                    <span>{{ fournisseur.piecejointe }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.code">Code</span></dt>
+                <dd>
+                    <span>{{ fournisseur.code }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.activite">Activite</span></dt>
+                <dd>
+                    <span>{{ fournisseur.activite }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.adressecomptable">Adressecomptable</span></dt>
+                <dd>
+                    <span>{{ fournisseur.adressecomptable }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.adressedirigeant">Adressedirigeant</span></dt>
+                <dd>
+                    <span>{{ fournisseur.adressedirigeant }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.autredenomination">Autredenomination</span></dt>
+                <dd>
+                    <span>{{ fournisseur.autredenomination }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.autreformejuridique">Autreformejuridique</span></dt>
+                <dd>
+                    <span>{{ fournisseur.autreformejuridique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.bpcomptable">Bpcomptable</span></dt>
+                <dd>
+                    <span>{{ fournisseur.bpcomptable }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.bpdeux">Bpdeux</span></dt>
+                <dd>
+                    <span>{{ fournisseur.bpdeux }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.bptrois">Bptrois</span></dt>
+                <dd>
+                    <span>{{ fournisseur.bptrois }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.bpun">Bpun</span></dt>
+                <dd>
+                    <span>{{ fournisseur.bpun }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.bpsecondaire">Bpsecondaire</span></dt>
+                <dd>
+                    <span>{{ fournisseur.bpsecondaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.centreimpot">Centreimpot</span></dt>
+                <dd>
+                    <span>{{ fournisseur.centreimpot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.comptable">Comptable</span></dt>
+                <dd>
+                    <span>{{ fournisseur.comptable }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.dirigeant">Dirigeant</span></dt>
+                <dd>
+                    <span>{{ fournisseur.dirigeant }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.enseigne">Enseigne</span></dt>
+                <dd>
+                    <span>{{ fournisseur.enseigne }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.etssecondaire">Etssecondaire</span></dt>
+                <dd>
+                    <span>{{ fournisseur.etssecondaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.insae">Insae</span></dt>
+                <dd>
+                    <span>{{ fournisseur.insae }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.formejuridique">Formejuridique</span></dt>
+                <dd>
+                    <span>{{ fournisseur.formejuridique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.proprietairesiege">Proprietairesiege</span></dt>
+                <dd>
+                    <span>{{ fournisseur.proprietairesiege }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.quartier">Quartier</span></dt>
+                <dd>
+                    <span>{{ fournisseur.quartier }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.numeroenregistrement">Numeroenregistrement</span></dt>
+                <dd>
+                    <span>{{ fournisseur.numeroenregistrement }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.serviceencharge">Serviceencharge</span></dt>
+                <dd>
+                    <span>{{ fournisseur.serviceencharge }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.siege">Siege</span></dt>
+                <dd>
+                    <span>{{ fournisseur.siege }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.sigle">Sigle</span></dt>
+                <dd>
+                    <span>{{ fournisseur.sigle }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.telcomptable">Telcomptable</span></dt>
+                <dd>
+                    <span>{{ fournisseur.telcomptable }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.teldeux">Teldeux</span></dt>
+                <dd>
+                    <span>{{ fournisseur.teldeux }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.teldirigeant">Teldirigeant</span></dt>
+                <dd>
+                    <span>{{ fournisseur.teldirigeant }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.telsecondaire">Telsecondaire</span></dt>
+                <dd>
+                    <span>{{ fournisseur.telsecondaire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.teltrois">Teltrois</span></dt>
+                <dd>
+                    <span>{{ fournisseur.teltrois }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.telun">Telun</span></dt>
+                <dd>
+                    <span>{{ fournisseur.telun }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.ville">Ville</span></dt>
+                <dd>
+                    <span>{{ fournisseur.ville }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.typedge">Typedge</span></dt>
+                <dd>
+                    <span>{{ fournisseur.typedge }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.type">Type</span></dt>
+                <dd>
+                    <span>{{ fournisseur.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.utilisateurLogin">Utilisateur Login</span></dt>
+                <dd>
+                    <span>{{ fournisseur.utilisateurLogin }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.fax">Fax</span></dt>
+                <dd>
+                    <span>{{ fournisseur.fax }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.catFournisseur">Cat Fournisseur</span></dt>
+                <dd>
+                    <div *ngIf="fournisseur.catFournisseurId">
+                        <a [routerLink]="['/cat-fournisseur', fournisseur.catFournisseurId, 'view']">{{ fournisseur.catFournisseurId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fournisseur', fournisseur.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

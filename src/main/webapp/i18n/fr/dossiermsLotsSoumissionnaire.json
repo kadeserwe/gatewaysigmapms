@@ -1,0 +1,65 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsLotsSoumissionnaire": {
+      "home": {
+        "title": "LotsSoumissionnaires",
+        "createLabel": "Créer un nouveau Lots Soumissionnaire",
+        "createOrEditLabel": "Créer ou éditer un Lots Soumissionnaire",
+        "notFound": "Aucun Lots Soumissionnaire trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Lots Soumissionnaire {{ id }} ?"
+      },
+      "detail": {
+        "title": "Lots Soumissionnaire"
+      },
+      "raisonsociale": "Raisonsociale",
+      "numero": "Numero",
+      "email": "Email",
+      "commentaire": "Commentaire",
+      "lotsoumis": "Lotsoumis",
+      "lotrecu": "Lotrecu",
+      "libelle": "Libelle",
+      "elimine": "Elimine",
+      "montantOffert": "Montant Offert",
+      "montantDefinitif": "Montant Definitif",
+      "montantGarantie": "Montant Garantie",
+      "montantTVA": "Montant TVA",
+      "montantDouane": "Montant Douane",
+      "montantTTC": "Montant TTC",
+      "rabais": "Rabais",
+      "rang": "Rang",
+      "scoreTechnique": "Score Technique",
+      "scoreFinancier": "Score Financier",
+      "prixEvalue": "Prix Evalue",
+      "scoreTechniquePondere": "Score Technique Pondere",
+      "scoreFinancierPondere": "Score Financier Pondere",
+      "scoreFinal": "Score Final",
+      "dateDepot": "Date Depot",
+      "classementGeneral": "Classement General",
+      "classemenTechnique": "Classemen Technique",
+      "etatPreselection": "Etat Preselection",
+      "etatExamenPreliminaire": "Etat Examen Preliminaire",
+      "critereQualification": "Critere Qualification",
+      "attributaireProvisoire": "Attributaire Provisoire",
+      "plilValide": "Plil Valide",
+      "lettreSoumission": "Lettre Soumission",
+      "offreTechnique": "Offre Technique",
+      "offreFinanciere": "Offre Financiere",
+      "plinumero": "Plinumero",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "lot": "Lot",
+      "plisOuverture": "Plis Ouverture",
+      "monnaieOffre": "Monnaie Offre",
+      "naturePrix": "Nature Prix",
+      "pays": "Pays"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsLotsSoumissionnaire": {
+      "created": "Un nouveau Lots Soumissionnaire a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Lots Soumissionnaire avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Lots Soumissionnaire avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

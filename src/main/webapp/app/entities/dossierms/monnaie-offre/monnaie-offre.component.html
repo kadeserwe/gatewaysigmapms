@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsMonnaieOffre.home.title">Monnaie Offres</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-monnaie-offre" [routerLink]="['/monnaie-offre/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsMonnaieOffre.home.createLabel">
+            Create a new Monnaie Offre
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="monnaieOffres?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsMonnaieOffre.home.notFound">No monnaieOffres found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="monnaieOffres && monnaieOffres.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="monCode"><span jhiTranslate="gatewaysigmapApp.dossiermsMonnaieOffre.monCode">Mon Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="monLibelle"><span jhiTranslate="gatewaysigmapApp.dossiermsMonnaieOffre.monLibelle">Mon Libelle</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let monnaieOffre of monnaieOffres ;trackBy: trackId">
+                    <td><a [routerLink]="['/monnaie-offre', monnaieOffre.id, 'view']">{{ monnaieOffre.id }}</a></td>
+                    <td>{{ monnaieOffre.monCode }}</td>
+                    <td>{{ monnaieOffre.monLibelle }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/monnaie-offre', monnaieOffre.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/monnaie-offre', monnaieOffre.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(monnaieOffre)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="monnaieOffres && monnaieOffres.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

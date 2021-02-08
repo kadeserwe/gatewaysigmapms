@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.home.title">Garanties Dossiers</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-garanties-dossier" [routerLink]="['/garanties-dossier/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.home.createLabel">
+            Create a new Garanties Dossier
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="garantiesDossiers?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.home.notFound">No garantiesDossiers found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="garantiesDossiers && garantiesDossiers.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="pourcentage"><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.pourcentage">Pourcentage</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montant"><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.montant">Montant</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="autiriteId"><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.autiriteId">Autirite Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossierAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.dossierAppelOffre">Dossier Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lotId"><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.lot">Lot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="piecesRecusId"><span jhiTranslate="gatewaysigmapApp.dossiermsGarantiesDossier.piecesRecus">Pieces Recus</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let garantiesDossier of garantiesDossiers ;trackBy: trackId">
+                    <td><a [routerLink]="['/garanties-dossier', garantiesDossier.id, 'view']">{{ garantiesDossier.id }}</a></td>
+                    <td>{{ garantiesDossier.pourcentage }}</td>
+                    <td>{{ garantiesDossier.montant }}</td>
+                    <td>{{ garantiesDossier.autiriteId }}</td>
+                    <td>
+                        <div *ngIf="garantiesDossier.dossierAppelOffreId">
+                            <a [routerLink]="['/dossier-appel-offre', garantiesDossier.dossierAppelOffreId , 'view']" >{{ garantiesDossier.dossierAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="garantiesDossier.lotId">
+                            <a [routerLink]="['/lot', garantiesDossier.lotId , 'view']" >{{ garantiesDossier.lotId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="garantiesDossier.piecesRecusId">
+                            <a [routerLink]="['/pieces-recus', garantiesDossier.piecesRecusId , 'view']" >{{ garantiesDossier.piecesRecusId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/garanties-dossier', garantiesDossier.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/garanties-dossier', garantiesDossier.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(garantiesDossier)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="garantiesDossiers && garantiesDossiers.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

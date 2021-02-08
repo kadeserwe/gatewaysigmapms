@@ -1,0 +1,44 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsHistoriqueAppelOffresAc": {
+      "home": {
+        "title": "HistoriqueAppelOffresACS",
+        "createLabel": "Créer un nouveau Historique Appel Offres AC",
+        "createOrEditLabel": "Créer ou éditer un Historique Appel Offres AC",
+        "notFound": "Aucun Historique Appel Offres AC trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Historique Appel Offres AC {{ id }} ?"
+      },
+      "detail": {
+        "title": "Historique Appel Offres AC"
+      },
+      "histoacValidation": "Histoac Validation",
+      "histoacCommentaire": "Histoac Commentaire",
+      "histoacFichiervalidation": "Histoac Fichiervalidation",
+      "histoacBorderau": "Histoac Borderau",
+      "histoValidation": "Histo Validation",
+      "histoCommentaire": "Histo Commentaire",
+      "histoFichiervalidation": "Histo Fichiervalidation",
+      "daoFichier": "Dao Fichier",
+      "origine": "Origine",
+      "histoacDatevalidation": "Histoac Datevalidation",
+      "histoacDatecreationdossier": "Histoac Datecreationdossier",
+      "histoDatevalidation": "Histo Datevalidation",
+      "histoacAttribution": "Histoac Attribution",
+      "histoacAc": "Histoac Ac",
+      "validerparNom": "Validerpar Nom",
+      "validerparPrenom": "Validerpar Prenom",
+      "userId": "User Id",
+      "autiriteId": "Autirite Id",
+      "dossierAppelOffre": "Dossier Appel Offre"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsHistoriqueAppelOffresAc": {
+      "created": "Un nouveau Historique Appel Offres AC a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Historique Appel Offres AC avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Historique Appel Offres AC avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

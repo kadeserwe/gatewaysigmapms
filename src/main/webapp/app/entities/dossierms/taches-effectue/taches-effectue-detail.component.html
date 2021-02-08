@@ -1,0 +1,176 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tachesEffectue">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.detail.title">Taches Effectue</span> {{ tachesEffectue.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.allotissement">Allotissement</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.allotissement }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.garantie">Garantie</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.garantie }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.pieceAdministrative">Piece Administrative</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.pieceAdministrative }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.critereQualification">Critere Qualification</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.critereQualification }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.devise">Devise</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.devise }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.financement">Financement</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.financement }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.registreRetrait">Registre Retrait</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.registreRetrait }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.registreDepot">Registre Depot</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.registreDepot }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.lotsSoumis">Lots Soumis</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.lotsSoumis }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.commissionsPassation">Commissions Passation</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.commissionsPassation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.representantsSoumis">Representants Soumis</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.representantsSoumis }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.servicesTechniques">Services Techniques</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.servicesTechniques }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.observateurs">Observateurs</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.observateurs }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.garantieSoum">Garantie Soum</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.garantieSoum }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.piecesSoumis">Pieces Soumis</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.piecesSoumis }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.lectureOffre">Lecture Offre</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.lectureOffre }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.commissionTecnique">Commission Tecnique</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.commissionTecnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.document">Document</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.document }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenGarantie">Examen Garantie</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.examenGarantie }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenExhaustivite">Examen Exhaustivite</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.examenExhaustivite }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenSignatureOffre">Examen Signature Offre</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.examenSignatureOffre }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.examenConformite">Examen Conformite</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.examenConformite }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.verificationCritere">Verification Critere</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.verificationCritere }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.attributionProvisoire">Attribution Provisoire</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.attributionProvisoire }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.termeReference">Terme Reference</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.termeReference }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.depotCandidature">Depot Candidature</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.depotCandidature }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.preselection">Preselection</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.preselection }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.notification">Notification</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.notification }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.commissionsPassationPI">Commissions Passation PI</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.commissionsPassationPI }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.representantsSoumisPI">Representants Soumis PI</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.representantsSoumisPI }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.notesTechnique">Notes Technique</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.notesTechnique }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.offresFinanciere">Offres Financiere</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.offresFinanciere }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.prixEvalue">Prix Evalue</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.prixEvalue }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.registreDepotPI">Registre Depot PI</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.registreDepotPI }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.critereProvenance">Critere Provenance</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.critereProvenance }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.procesVerbale">Proces Verbale</span></dt>
+                <dd>
+                    <span>{{ tachesEffectue.procesVerbale }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsTachesEffectue.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="tachesEffectue.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', tachesEffectue.dossierAppelOffreId, 'view']">{{ tachesEffectue.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/taches-effectue', tachesEffectue.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,352 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-plis-ouverture-heading" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.home.createOrEditLabel">Create or edit a Plis Ouverture</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.raisonSociale" for="field_raisonSociale">Raison Sociale</label>
+                    <input type="text" class="form-control" name="raisonSociale" id="field_raisonSociale"
+                           formControlName="raisonSociale"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.adresseMail" for="field_adresseMail">Adresse Mail</label>
+                    <input type="text" class="form-control" name="adresseMail" id="field_adresseMail"
+                           formControlName="adresseMail"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.commentaire" for="field_commentaire">Commentaire</label>
+                    <input type="text" class="form-control" name="commentaire" id="field_commentaire"
+                           formControlName="commentaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.rang" for="field_rang">Rang</label>
+                    <input type="text" class="form-control" name="rang" id="field_rang"
+                           formControlName="rang"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.ninea" for="field_ninea">Ninea</label>
+                    <input type="text" class="form-control" name="ninea" id="field_ninea"
+                           formControlName="ninea"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.natCode" for="field_natCode">Nat Code</label>
+                    <input type="text" class="form-control" name="natCode" id="field_natCode"
+                           formControlName="natCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.monCode" for="field_monCode">Mon Code</label>
+                    <input type="text" class="form-control" name="monCode" id="field_monCode"
+                           formControlName="monCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.pvOffreFinanciere" for="field_pvOffreFinanciere">Pv Offre Financiere</label>
+                    <input type="text" class="form-control" name="pvOffreFinanciere" id="field_pvOffreFinanciere"
+                           formControlName="pvOffreFinanciere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.negociation" for="field_negociation">Negociation</label>
+                    <input type="text" class="form-control" name="negociation" id="field_negociation"
+                           formControlName="negociation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantOffert" for="field_montantOffert">Montant Offert</label>
+                    <input type="number" class="form-control" name="montantOffert" id="field_montantOffert"
+                           formControlName="montantOffert"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreFinancier" for="field_scoreFinancier">Score Financier</label>
+                    <input type="number" class="form-control" name="scoreFinancier" id="field_scoreFinancier"
+                           formControlName="scoreFinancier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.prixEvalue" for="field_prixEvalue">Prix Evalue</label>
+                    <input type="number" class="form-control" name="prixEvalue" id="field_prixEvalue"
+                           formControlName="prixEvalue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreTechniquePondere" for="field_scoreTechniquePondere">Score Technique Pondere</label>
+                    <input type="number" class="form-control" name="scoreTechniquePondere" id="field_scoreTechniquePondere"
+                           formControlName="scoreTechniquePondere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreFinancierPondere" for="field_scoreFinancierPondere">Score Financier Pondere</label>
+                    <input type="number" class="form-control" name="scoreFinancierPondere" id="field_scoreFinancierPondere"
+                           formControlName="scoreFinancierPondere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreFinal" for="field_scoreFinal">Score Final</label>
+                    <input type="number" class="form-control" name="scoreFinal" id="field_scoreFinal"
+                           formControlName="scoreFinal"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantDefinitif" for="field_montantDefinitif">Montant Definitif</label>
+                    <input type="number" class="form-control" name="montantDefinitif" id="field_montantDefinitif"
+                           formControlName="montantDefinitif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantTVA" for="field_montantTVA">Montant TVA</label>
+                    <input type="number" class="form-control" name="montantTVA" id="field_montantTVA"
+                           formControlName="montantTVA"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantDouane" for="field_montantDouane">Montant Douane</label>
+                    <input type="number" class="form-control" name="montantDouane" id="field_montantDouane"
+                           formControlName="montantDouane"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.dateDepot" for="field_dateDepot">Date Depot</label>
+                    <div class="input-group">
+                        <input id="field_dateDepot" type="text" class="form-control" name="dateDepot" ngbDatepicker #dateDepotDp="ngbDatepicker" formControlName="dateDepot"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDepotDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.heuredepot" for="field_heuredepot">Heuredepot</label>
+                    <div class="input-group">
+                        <input id="field_heuredepot" type="text" class="form-control" name="heuredepot" ngbDatepicker #heuredepotDp="ngbDatepicker" formControlName="heuredepot"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="heuredepotDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.rabais" for="field_rabais">Rabais</label>
+                    <input type="number" class="form-control" name="rabais" id="field_rabais"
+                           formControlName="rabais"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreTechnique" for="field_scoreTechnique">Score Technique</label>
+                    <input type="number" class="form-control" name="scoreTechnique" id="field_scoreTechnique"
+                           formControlName="scoreTechnique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.seuilAtteint" for="field_seuilAtteint">Seuil Atteint</label>
+                    <input type="number" class="form-control" name="seuilAtteint" id="field_seuilAtteint"
+                           formControlName="seuilAtteint"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.classemenTechnique" for="field_classemenTechnique">Classemen Technique</label>
+                    <input type="number" class="form-control" name="classemenTechnique" id="field_classemenTechnique"
+                           formControlName="classemenTechnique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.classementGeneral" for="field_classementGeneral">Classement General</label>
+                    <input type="number" class="form-control" name="classementGeneral" id="field_classementGeneral"
+                           formControlName="classementGeneral"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.candidatRestreintID" for="field_candidatRestreintID">Candidat Restreint ID</label>
+                    <input type="number" class="form-control" name="candidatRestreintID" id="field_candidatRestreintID"
+                           formControlName="candidatRestreintID"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.etatPreselection" for="field_etatPreselection">Etat Preselection</label>
+                    <input type="number" class="form-control" name="etatPreselection" id="field_etatPreselection"
+                           formControlName="etatPreselection"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.etatExamenPreliminaire" for="field_etatExamenPreliminaire">Etat Examen Preliminaire</label>
+                    <input type="number" class="form-control" name="etatExamenPreliminaire" id="field_etatExamenPreliminaire"
+                           formControlName="etatExamenPreliminaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.critereQualification" for="field_critereQualification">Critere Qualification</label>
+                    <input type="number" class="form-control" name="critereQualification" id="field_critereQualification"
+                           formControlName="critereQualification"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.attributaireProvisoire" for="field_attributaireProvisoire">Attributaire Provisoire</label>
+                    <input type="number" class="form-control" name="attributaireProvisoire" id="field_attributaireProvisoire"
+                           formControlName="attributaireProvisoire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.offreTechnique" for="field_offreTechnique">Offre Technique</label>
+                    <input type="number" class="form-control" name="offreTechnique" id="field_offreTechnique"
+                           formControlName="offreTechnique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.offreFinanciere" for="field_offreFinanciere">Offre Financiere</label>
+                    <input type="number" class="form-control" name="offreFinanciere" id="field_offreFinanciere"
+                           formControlName="offreFinanciere"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.lettreSoumission" for="field_lettreSoumission">Lettre Soumission</label>
+                    <input type="number" class="form-control" name="lettreSoumission" id="field_lettreSoumission"
+                           formControlName="lettreSoumission"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.valide" for="field_valide">Valide</label>
+                    <input type="number" class="form-control" name="valide" id="field_valide"
+                           formControlName="valide"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.numero" for="field_numero">Numero</label>
+                    <input type="number" class="form-control" name="numero" id="field_numero"
+                           formControlName="numero"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.garantie" for="field_garantie">Garantie</label>
+                    <input type="number" class="form-control" name="garantie" id="field_garantie"
+                           formControlName="garantie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.pieceRequise" for="field_pieceRequise">Piece Requise</label>
+                    <input type="number" class="form-control" name="pieceRequise" id="field_pieceRequise"
+                           formControlName="pieceRequise"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.observationsOffres" for="field_observationsOffres">Observations Offres</label>
+                    <input type="text" class="form-control" name="observationsOffres" id="field_observationsOffres"
+                           formControlName="observationsOffres"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.observationsCandidats" for="field_observationsCandidats">Observations Candidats</label>
+                    <input type="text" class="form-control" name="observationsCandidats" id="field_observationsCandidats"
+                           formControlName="observationsCandidats"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.modeReception" for="field_modeReception">Mode Reception</label>
+                    <input type="text" class="form-control" name="modeReception" id="field_modeReception"
+                           formControlName="modeReception"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.notifie" for="field_notifie">Notifie</label>
+                    <input type="text" class="form-control" name="notifie" id="field_notifie"
+                           formControlName="notifie"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.signatureOffre" for="field_signatureOffre">Signature Offre</label>
+                    <input type="text" class="form-control" name="signatureOffre" id="field_signatureOffre"
+                           formControlName="signatureOffre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.exhaustivite" for="field_exhaustivite">Exhaustivite</label>
+                    <input type="text" class="form-control" name="exhaustivite" id="field_exhaustivite"
+                           formControlName="exhaustivite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.garantieSoumission" for="field_garantieSoumission">Garantie Soumission</label>
+                    <input type="text" class="form-control" name="garantieSoumission" id="field_garantieSoumission"
+                           formControlName="garantieSoumission"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.conformite" for="field_conformite">Conformite</label>
+                    <input type="text" class="form-control" name="conformite" id="field_conformite"
+                           formControlName="conformite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.critereProvenance" for="field_critereProvenance">Critere Provenance</label>
+                    <input type="text" class="form-control" name="critereProvenance" id="field_critereProvenance"
+                           formControlName="critereProvenance"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.notePreselectionne" for="field_notePreselectionne">Note Preselectionne</label>
+                    <input type="number" class="form-control" name="notePreselectionne" id="field_notePreselectionne"
+                           formControlName="notePreselectionne"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.autoriteId" for="field_autoriteId">Autorite Id</label>
+                    <input type="number" class="form-control" name="autoriteId" id="field_autoriteId"
+                           formControlName="autoriteId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.ajustement" for="field_ajustement">Ajustement</label>
+                    <input type="number" class="form-control" name="ajustement" id="field_ajustement"
+                           formControlName="ajustement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.dossierAppelOffre" for="field_dossierAppelOffre">Dossier Appel Offre</label>
+                    <select class="form-control" id="field_dossierAppelOffre" name="dossierAppelOffre" formControlName="dossierAppelOffreId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="dossierAppelOffreOption.id" *ngFor="let dossierAppelOffreOption of dossierappeloffres; trackBy: trackById">{{ dossierAppelOffreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.retraitRegistreDAO" for="field_retraitRegistreDAO">Retrait Registre DAO</label>
+                    <select class="form-control" id="field_retraitRegistreDAO" name="retraitRegistreDAO" formControlName="retraitRegistreDAOId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="retraitRegistreDAOOption.id" *ngFor="let retraitRegistreDAOOption of retraitregistredaos; trackBy: trackById">{{ retraitRegistreDAOOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.fournisseur" for="field_fournisseur">Fournisseur</label>
+                    <select class="form-control" id="field_fournisseur" name="fournisseur" formControlName="fournisseurId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="fournisseurOption.id" *ngFor="let fournisseurOption of fournisseurs; trackBy: trackById">{{ fournisseurOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,280 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-fournisseur-heading" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.home.createOrEditLabel">Create or edit a Fournisseur</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                           formControlName="nom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.adresse" for="field_adresse">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="field_adresse"
+                           formControlName="adresse"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.telephone" for="field_telephone">Telephone</label>
+                    <input type="number" class="form-control" name="telephone" id="field_telephone"
+                           formControlName="telephone"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.numeroRegistreCommerce" for="field_numeroRegistreCommerce">Numero Registre Commerce</label>
+                    <input type="number" class="form-control" name="numeroRegistreCommerce" id="field_numeroRegistreCommerce"
+                           formControlName="numeroRegistreCommerce"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.piecejointe" for="field_piecejointe">Piecejointe</label>
+                    <input type="text" class="form-control" name="piecejointe" id="field_piecejointe"
+                           formControlName="piecejointe"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.activite" for="field_activite">Activite</label>
+                    <input type="text" class="form-control" name="activite" id="field_activite"
+                           formControlName="activite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.adressecomptable" for="field_adressecomptable">Adressecomptable</label>
+                    <input type="text" class="form-control" name="adressecomptable" id="field_adressecomptable"
+                           formControlName="adressecomptable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.adressedirigeant" for="field_adressedirigeant">Adressedirigeant</label>
+                    <input type="text" class="form-control" name="adressedirigeant" id="field_adressedirigeant"
+                           formControlName="adressedirigeant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.autredenomination" for="field_autredenomination">Autredenomination</label>
+                    <input type="text" class="form-control" name="autredenomination" id="field_autredenomination"
+                           formControlName="autredenomination"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.autreformejuridique" for="field_autreformejuridique">Autreformejuridique</label>
+                    <input type="text" class="form-control" name="autreformejuridique" id="field_autreformejuridique"
+                           formControlName="autreformejuridique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.bpcomptable" for="field_bpcomptable">Bpcomptable</label>
+                    <input type="text" class="form-control" name="bpcomptable" id="field_bpcomptable"
+                           formControlName="bpcomptable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.bpdeux" for="field_bpdeux">Bpdeux</label>
+                    <input type="text" class="form-control" name="bpdeux" id="field_bpdeux"
+                           formControlName="bpdeux"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.bptrois" for="field_bptrois">Bptrois</label>
+                    <input type="text" class="form-control" name="bptrois" id="field_bptrois"
+                           formControlName="bptrois"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.bpun" for="field_bpun">Bpun</label>
+                    <input type="text" class="form-control" name="bpun" id="field_bpun"
+                           formControlName="bpun"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.bpsecondaire" for="field_bpsecondaire">Bpsecondaire</label>
+                    <input type="text" class="form-control" name="bpsecondaire" id="field_bpsecondaire"
+                           formControlName="bpsecondaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.centreimpot" for="field_centreimpot">Centreimpot</label>
+                    <input type="text" class="form-control" name="centreimpot" id="field_centreimpot"
+                           formControlName="centreimpot"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.comptable" for="field_comptable">Comptable</label>
+                    <input type="text" class="form-control" name="comptable" id="field_comptable"
+                           formControlName="comptable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.dirigeant" for="field_dirigeant">Dirigeant</label>
+                    <input type="text" class="form-control" name="dirigeant" id="field_dirigeant"
+                           formControlName="dirigeant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.enseigne" for="field_enseigne">Enseigne</label>
+                    <input type="text" class="form-control" name="enseigne" id="field_enseigne"
+                           formControlName="enseigne"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.etssecondaire" for="field_etssecondaire">Etssecondaire</label>
+                    <input type="text" class="form-control" name="etssecondaire" id="field_etssecondaire"
+                           formControlName="etssecondaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.insae" for="field_insae">Insae</label>
+                    <input type="text" class="form-control" name="insae" id="field_insae"
+                           formControlName="insae"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.formejuridique" for="field_formejuridique">Formejuridique</label>
+                    <input type="text" class="form-control" name="formejuridique" id="field_formejuridique"
+                           formControlName="formejuridique"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.proprietairesiege" for="field_proprietairesiege">Proprietairesiege</label>
+                    <input type="text" class="form-control" name="proprietairesiege" id="field_proprietairesiege"
+                           formControlName="proprietairesiege"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.quartier" for="field_quartier">Quartier</label>
+                    <input type="text" class="form-control" name="quartier" id="field_quartier"
+                           formControlName="quartier"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.numeroenregistrement" for="field_numeroenregistrement">Numeroenregistrement</label>
+                    <input type="text" class="form-control" name="numeroenregistrement" id="field_numeroenregistrement"
+                           formControlName="numeroenregistrement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.serviceencharge" for="field_serviceencharge">Serviceencharge</label>
+                    <input type="text" class="form-control" name="serviceencharge" id="field_serviceencharge"
+                           formControlName="serviceencharge"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.siege" for="field_siege">Siege</label>
+                    <input type="text" class="form-control" name="siege" id="field_siege"
+                           formControlName="siege"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.sigle" for="field_sigle">Sigle</label>
+                    <input type="text" class="form-control" name="sigle" id="field_sigle"
+                           formControlName="sigle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.telcomptable" for="field_telcomptable">Telcomptable</label>
+                    <input type="text" class="form-control" name="telcomptable" id="field_telcomptable"
+                           formControlName="telcomptable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.teldeux" for="field_teldeux">Teldeux</label>
+                    <input type="text" class="form-control" name="teldeux" id="field_teldeux"
+                           formControlName="teldeux"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.teldirigeant" for="field_teldirigeant">Teldirigeant</label>
+                    <input type="text" class="form-control" name="teldirigeant" id="field_teldirigeant"
+                           formControlName="teldirigeant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.telsecondaire" for="field_telsecondaire">Telsecondaire</label>
+                    <input type="text" class="form-control" name="telsecondaire" id="field_telsecondaire"
+                           formControlName="telsecondaire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.teltrois" for="field_teltrois">Teltrois</label>
+                    <input type="text" class="form-control" name="teltrois" id="field_teltrois"
+                           formControlName="teltrois"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.telun" for="field_telun">Telun</label>
+                    <input type="text" class="form-control" name="telun" id="field_telun"
+                           formControlName="telun"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.ville" for="field_ville">Ville</label>
+                    <input type="text" class="form-control" name="ville" id="field_ville"
+                           formControlName="ville"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.typedge" for="field_typedge">Typedge</label>
+                    <input type="text" class="form-control" name="typedge" id="field_typedge"
+                           formControlName="typedge"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.type" for="field_type">Type</label>
+                    <input type="text" class="form-control" name="type" id="field_type"
+                           formControlName="type"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.utilisateurLogin" for="field_utilisateurLogin">Utilisateur Login</label>
+                    <input type="text" class="form-control" name="utilisateurLogin" id="field_utilisateurLogin"
+                           formControlName="utilisateurLogin"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.fax" for="field_fax">Fax</label>
+                    <input type="text" class="form-control" name="fax" id="field_fax"
+                           formControlName="fax"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.dossiermsFournisseur.catFournisseur" for="field_catFournisseur">Cat Fournisseur</label>
+                    <select class="form-control" id="field_catFournisseur" name="catFournisseur" formControlName="catFournisseurId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="catFournisseurOption.id" *ngFor="let catFournisseurOption of catfournisseurs; trackBy: trackById">{{ catFournisseurOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dossiersEvaluateur">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersEvaluateur.detail.title">Dossiers Evaluateur</span> {{ dossiersEvaluateur.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersEvaluateur.commission">Commission</span></dt>
+                <dd>
+                    <span>{{ dossiersEvaluateur.commission }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersEvaluateur.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ dossiersEvaluateur.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersEvaluateur.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{ dossiersEvaluateur.prenom }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersEvaluateur.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{ dossiersEvaluateur.telephone }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersEvaluateur.email">Email</span></dt>
+                <dd>
+                    <span>{{ dossiersEvaluateur.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersEvaluateur.fonction">Fonction</span></dt>
+                <dd>
+                    <span>{{ dossiersEvaluateur.fonction }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersEvaluateur.dateRemise">Date Remise</span></dt>
+                <dd>
+                    <span>{{ dossiersEvaluateur.dateRemise }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersEvaluateur.dateLimite">Date Limite</span></dt>
+                <dd>
+                    <span>{{ dossiersEvaluateur.dateLimite }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsDossiersEvaluateur.dossierAppelOffre">Dossier Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="dossiersEvaluateur.dossierAppelOffreId">
+                        <a [routerLink]="['/dossier-appel-offre', dossiersEvaluateur.dossierAppelOffreId, 'view']">{{ dossiersEvaluateur.dossierAppelOffreId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dossiers-evaluateur', dossiersEvaluateur.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

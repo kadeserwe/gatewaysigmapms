@@ -1,0 +1,99 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.home.title">Critere Qualifi Soums</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-critere-qualifi-soum" [routerLink]="['/critere-qualifi-soum/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.home.createLabel">
+            Create a new Critere Qualifi Soum
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="critereQualifiSoums?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.home.notFound">No critereQualifiSoums found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="critereQualifiSoums && critereQualifiSoums.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conforme"><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.conforme">Conforme</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="libelle"><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.libelle">Libelle</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="libelleLot"><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.libelleLot">Libelle Lot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossierAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.dossierAppelOffre">Dossier Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="plisOuvertureId"><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.plisOuverture">Plis Ouverture</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lotId"><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.lot">Lot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossiersSosuscritereId"><span jhiTranslate="gatewaysigmapApp.dossiermsCritereQualifiSoum.dossiersSosuscritere">Dossiers Sosuscritere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let critereQualifiSoum of critereQualifiSoums ;trackBy: trackId">
+                    <td><a [routerLink]="['/critere-qualifi-soum', critereQualifiSoum.id, 'view']">{{ critereQualifiSoum.id }}</a></td>
+                    <td>{{ critereQualifiSoum.conforme }}</td>
+                    <td>{{ critereQualifiSoum.libelle }}</td>
+                    <td>{{ critereQualifiSoum.libelleLot }}</td>
+                    <td>
+                        <div *ngIf="critereQualifiSoum.dossierAppelOffreId">
+                            <a [routerLink]="['/dossier-appel-offre', critereQualifiSoum.dossierAppelOffreId , 'view']" >{{ critereQualifiSoum.dossierAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="critereQualifiSoum.plisOuvertureId">
+                            <a [routerLink]="['/plis-ouverture', critereQualifiSoum.plisOuvertureId , 'view']" >{{ critereQualifiSoum.plisOuvertureId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="critereQualifiSoum.lotId">
+                            <a [routerLink]="['/lot', critereQualifiSoum.lotId , 'view']" >{{ critereQualifiSoum.lotId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="critereQualifiSoum.dossiersSosuscritereId">
+                            <a [routerLink]="['/dossiers-souscritere', critereQualifiSoum.dossiersSosuscritereId , 'view']" >{{ critereQualifiSoum.dossiersSosuscritereId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/critere-qualifi-soum', critereQualifiSoum.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/critere-qualifi-soum', critereQualifiSoum.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(critereQualifiSoum)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="critereQualifiSoums && critereQualifiSoums.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

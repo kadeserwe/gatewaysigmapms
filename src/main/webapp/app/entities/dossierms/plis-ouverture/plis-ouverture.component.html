@@ -1,0 +1,185 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.home.title">Plis Ouvertures</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-plis-ouverture" [routerLink]="['/plis-ouverture/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.home.createLabel">
+            Create a new Plis Ouverture
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="plisOuvertures?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.home.notFound">No plisOuvertures found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="plisOuvertures && plisOuvertures.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="raisonSociale"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.raisonSociale">Raison Sociale</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="adresseMail"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.adresseMail">Adresse Mail</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commentaire"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.commentaire">Commentaire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="rang"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.rang">Rang</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="ninea"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.ninea">Ninea</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="natCode"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.natCode">Nat Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="monCode"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.monCode">Mon Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="pvOffreFinanciere"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.pvOffreFinanciere">Pv Offre Financiere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="negociation"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.negociation">Negociation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantOffert"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantOffert">Montant Offert</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="scoreFinancier"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreFinancier">Score Financier</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prixEvalue"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.prixEvalue">Prix Evalue</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="scoreTechniquePondere"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreTechniquePondere">Score Technique Pondere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="scoreFinancierPondere"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreFinancierPondere">Score Financier Pondere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="scoreFinal"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreFinal">Score Final</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantDefinitif"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantDefinitif">Montant Definitif</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantTVA"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantTVA">Montant TVA</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montantDouane"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.montantDouane">Montant Douane</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateDepot"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.dateDepot">Date Depot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="heuredepot"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.heuredepot">Heuredepot</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="rabais"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.rabais">Rabais</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="scoreTechnique"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.scoreTechnique">Score Technique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="seuilAtteint"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.seuilAtteint">Seuil Atteint</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="classemenTechnique"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.classemenTechnique">Classemen Technique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="classementGeneral"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.classementGeneral">Classement General</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="candidatRestreintID"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.candidatRestreintID">Candidat Restreint ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etatPreselection"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.etatPreselection">Etat Preselection</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etatExamenPreliminaire"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.etatExamenPreliminaire">Etat Examen Preliminaire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="critereQualification"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.critereQualification">Critere Qualification</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="attributaireProvisoire"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.attributaireProvisoire">Attributaire Provisoire</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="offreTechnique"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.offreTechnique">Offre Technique</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="offreFinanciere"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.offreFinanciere">Offre Financiere</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lettreSoumission"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.lettreSoumission">Lettre Soumission</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="valide"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.valide">Valide</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="numero"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.numero">Numero</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="garantie"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.garantie">Garantie</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="pieceRequise"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.pieceRequise">Piece Requise</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="observationsOffres"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.observationsOffres">Observations Offres</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="observationsCandidats"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.observationsCandidats">Observations Candidats</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="modeReception"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.modeReception">Mode Reception</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="notifie"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.notifie">Notifie</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="signatureOffre"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.signatureOffre">Signature Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="exhaustivite"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.exhaustivite">Exhaustivite</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="garantieSoumission"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.garantieSoumission">Garantie Soumission</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conformite"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.conformite">Conformite</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="critereProvenance"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.critereProvenance">Critere Provenance</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="notePreselectionne"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.notePreselectionne">Note Preselectionne</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="autoriteId"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.autoriteId">Autorite Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="ajustement"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.ajustement">Ajustement</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dossierAppelOffreId"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.dossierAppelOffre">Dossier Appel Offre</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="retraitRegistreDAOId"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.retraitRegistreDAO">Retrait Registre DAO</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fournisseurId"><span jhiTranslate="gatewaysigmapApp.dossiermsPlisOuverture.fournisseur">Fournisseur</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let plisOuverture of plisOuvertures ;trackBy: trackId">
+                    <td><a [routerLink]="['/plis-ouverture', plisOuverture.id, 'view']">{{ plisOuverture.id }}</a></td>
+                    <td>{{ plisOuverture.raisonSociale }}</td>
+                    <td>{{ plisOuverture.adresseMail }}</td>
+                    <td>{{ plisOuverture.commentaire }}</td>
+                    <td>{{ plisOuverture.rang }}</td>
+                    <td>{{ plisOuverture.ninea }}</td>
+                    <td>{{ plisOuverture.natCode }}</td>
+                    <td>{{ plisOuverture.monCode }}</td>
+                    <td>{{ plisOuverture.pvOffreFinanciere }}</td>
+                    <td>{{ plisOuverture.negociation }}</td>
+                    <td>{{ plisOuverture.montantOffert }}</td>
+                    <td>{{ plisOuverture.scoreFinancier }}</td>
+                    <td>{{ plisOuverture.prixEvalue }}</td>
+                    <td>{{ plisOuverture.scoreTechniquePondere }}</td>
+                    <td>{{ plisOuverture.scoreFinancierPondere }}</td>
+                    <td>{{ plisOuverture.scoreFinal }}</td>
+                    <td>{{ plisOuverture.montantDefinitif }}</td>
+                    <td>{{ plisOuverture.montantTVA }}</td>
+                    <td>{{ plisOuverture.montantDouane }}</td>
+                    <td>{{ plisOuverture.dateDepot | date:'mediumDate' }}</td>
+                    <td>{{ plisOuverture.heuredepot | date:'mediumDate' }}</td>
+                    <td>{{ plisOuverture.rabais }}</td>
+                    <td>{{ plisOuverture.scoreTechnique }}</td>
+                    <td>{{ plisOuverture.seuilAtteint }}</td>
+                    <td>{{ plisOuverture.classemenTechnique }}</td>
+                    <td>{{ plisOuverture.classementGeneral }}</td>
+                    <td>{{ plisOuverture.candidatRestreintID }}</td>
+                    <td>{{ plisOuverture.etatPreselection }}</td>
+                    <td>{{ plisOuverture.etatExamenPreliminaire }}</td>
+                    <td>{{ plisOuverture.critereQualification }}</td>
+                    <td>{{ plisOuverture.attributaireProvisoire }}</td>
+                    <td>{{ plisOuverture.offreTechnique }}</td>
+                    <td>{{ plisOuverture.offreFinanciere }}</td>
+                    <td>{{ plisOuverture.lettreSoumission }}</td>
+                    <td>{{ plisOuverture.valide }}</td>
+                    <td>{{ plisOuverture.numero }}</td>
+                    <td>{{ plisOuverture.garantie }}</td>
+                    <td>{{ plisOuverture.pieceRequise }}</td>
+                    <td>{{ plisOuverture.observationsOffres }}</td>
+                    <td>{{ plisOuverture.observationsCandidats }}</td>
+                    <td>{{ plisOuverture.modeReception }}</td>
+                    <td>{{ plisOuverture.notifie }}</td>
+                    <td>{{ plisOuverture.signatureOffre }}</td>
+                    <td>{{ plisOuverture.exhaustivite }}</td>
+                    <td>{{ plisOuverture.garantieSoumission }}</td>
+                    <td>{{ plisOuverture.conformite }}</td>
+                    <td>{{ plisOuverture.critereProvenance }}</td>
+                    <td>{{ plisOuverture.notePreselectionne }}</td>
+                    <td>{{ plisOuverture.autoriteId }}</td>
+                    <td>{{ plisOuverture.ajustement }}</td>
+                    <td>
+                        <div *ngIf="plisOuverture.dossierAppelOffreId">
+                            <a [routerLink]="['/dossier-appel-offre', plisOuverture.dossierAppelOffreId , 'view']" >{{ plisOuverture.dossierAppelOffreId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="plisOuverture.retraitRegistreDAOId">
+                            <a [routerLink]="['/retrait-registre-dao', plisOuverture.retraitRegistreDAOId , 'view']" >{{ plisOuverture.retraitRegistreDAOId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="plisOuverture.fournisseurId">
+                            <a [routerLink]="['/fournisseur', plisOuverture.fournisseurId , 'view']" >{{ plisOuverture.fournisseurId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/plis-ouverture', plisOuverture.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/plis-ouverture', plisOuverture.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(plisOuverture)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="plisOuvertures && plisOuvertures.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

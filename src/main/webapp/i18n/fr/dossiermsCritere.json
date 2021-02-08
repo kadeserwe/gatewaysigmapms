@@ -1,0 +1,27 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsCritere": {
+      "home": {
+        "title": "Criteres",
+        "createLabel": "Créer un nouveau Critere",
+        "createOrEditLabel": "Créer ou éditer un Critere",
+        "notFound": "Aucun Critere trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Critere {{ id }} ?"
+      },
+      "detail": {
+        "title": "Critere"
+      },
+      "libelle": "Libelle",
+      "autoriteId": "Autorite Id"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsCritere": {
+      "created": "Un nouveau Critere a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Critere avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Critere avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

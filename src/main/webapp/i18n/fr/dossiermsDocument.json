@@ -1,0 +1,48 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsDocument": {
+      "home": {
+        "title": "Documents",
+        "createLabel": "Créer un nouveau Document",
+        "createOrEditLabel": "Créer ou éditer un Document",
+        "notFound": "Aucun Document trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Document {{ id }} ?"
+      },
+      "detail": {
+        "title": "Document"
+      },
+      "typeDocument": "Type Document",
+      "textPVOuverture": "Text PV Ouverture",
+      "nomFichier": "Nom Fichier",
+      "libelle": "Libelle",
+      "reference": "Reference",
+      "objet": "Objet",
+      "origine": "Origine",
+      "lieuAcquisitionDAO": "Lieu Acquisition DAO",
+      "fichierDemandePublication": "Fichier Demande Publication",
+      "fichierDC": "Fichier DC",
+      "fichierAR": "Fichier AR",
+      "date": "Date",
+      "heure": "Heure",
+      "dateDemandePublication": "Date Demande Publication",
+      "dateLimiteDepot": "Date Limite Depot",
+      "heureLimiteDepot": "Heure Limite Depot",
+      "dateOuvertueDesplis": "Date Ouvertue Desplis",
+      "heureOuvertureDesPlis": "Heure Ouverture Des Plis",
+      "autoriteId": "Autorite Id",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "appelOffre": "Appel Offre",
+      "plisOuverture": "Plis Ouverture",
+      "lot": "Lot"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsDocument": {
+      "created": "Un nouveau Document a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Document avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Document avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

@@ -1,0 +1,208 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="appelOffre">
+            <h2><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.detail.title">Appel Offre</span> {{ appelOffre.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDatecreation">Apo Datecreation</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoDatecreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateAutorisation">Apo Date Autorisation</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoDateAutorisation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateDemandeAutorisation">Apo Date Demande Autorisation</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoDateDemandeAutorisation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateRejet">Apo Date Rejet</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoDateRejet }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateMiseAutorisation">Apo Date Mise Autorisation</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoDateMiseAutorisation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.dateStopProcedure">Date Stop Procedure</span></dt>
+                <dd>
+                    <span>{{ appelOffre.dateStopProcedure }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.dateAffectationDossier">Date Affectation Dossier</span></dt>
+                <dd>
+                    <span>{{ appelOffre.dateAffectationDossier }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDatePVOuverturepli">Apo Date PV Ouverturepli</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoDatePVOuverturepli }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoDateVersement">Apo Date Versement</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoDateVersement }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.datePubListeRestreinte">Date Pub Liste Restreinte</span></dt>
+                <dd>
+                    <span>{{ appelOffre.datePubListeRestreinte }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoProjet">Apo Projet</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoProjet }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoObjet">Apo Objet</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoObjet }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReference">Apo Reference</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoReference }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoNumeroPretCredit">Apo Numero Pret Credit</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoNumeroPretCredit }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoCommentaireAutorisation">Apo Commentaire Autorisation</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoCommentaireAutorisation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierMiseAutorisation">Apo Fichier Mise Autorisation</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoFichierMiseAutorisation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.numeroMarche">Numero Marche</span></dt>
+                <dd>
+                    <span>{{ appelOffre.numeroMarche }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.motifStopProcedure">Motif Stop Procedure</span></dt>
+                <dd>
+                    <span>{{ appelOffre.motifStopProcedure }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierPV">Apo Fichier PV</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoFichierPV }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierValidation">Apo Fichier Validation</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoFichierValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoAutorisationPrealable">Apo Autorisation Prealable</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoAutorisationPrealable }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierAutorisationPrealable">Apo Fichier Autorisation Prealable</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoFichierAutorisationPrealable }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReferenceRequeteAc">Apo Reference Requete Ac</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoReferenceRequeteAc }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoRapportSpecial">Apo Rapport Special</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoRapportSpecial }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReferenceCommunication">Apo Reference Communication</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoReferenceCommunication }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoReleveConseil">Apo Releve Conseil</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoReleveConseil }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierRapportSpecial">Apo Fichier Rapport Special</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoFichierRapportSpecial }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoFichierReleveConseil">Apo Fichier Releve Conseil</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoFichierReleveConseil }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.pubListeRestreinte">Pub Liste Restreinte</span></dt>
+                <dd>
+                    <span>{{ appelOffre.pubListeRestreinte }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.fichierListeRestreinte">Fichier Liste Restreinte</span></dt>
+                <dd>
+                    <span>{{ appelOffre.fichierListeRestreinte }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoMontantEstime">Apo Montant Estime</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoMontantEstime }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoMontantVersement">Apo Montant Versement</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoMontantVersement }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoResponsableDCMP">Apo Responsable DCMP</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoResponsableDCMP }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.etatSeuil">Etat Seuil</span></dt>
+                <dd>
+                    <span>{{ appelOffre.etatSeuil }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoStatut">Apo Statut</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoStatut }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoValide">Apo Valide</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoValide }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoNbreDAO">Apo Nbre DAO</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoNbreDAO }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoNbreDC">Apo Nbre DC</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoNbreDC }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.apoEtatValidation">Apo Etat Validation</span></dt>
+                <dd>
+                    <span>{{ appelOffre.apoEtatValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.autiriteId">Autirite Id</span></dt>
+                <dd>
+                    <span>{{ appelOffre.autiriteId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.realisationId">Realisation Id</span></dt>
+                <dd>
+                    <span>{{ appelOffre.realisationId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.modepassationId">Modepassation Id</span></dt>
+                <dd>
+                    <span>{{ appelOffre.modepassationId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.typemarcheId">Typemarche Id</span></dt>
+                <dd>
+                    <span>{{ appelOffre.typemarcheId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.modeselectionId">Modeselection Id</span></dt>
+                <dd>
+                    <span>{{ appelOffre.modeselectionId }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.dossiermsAppelOffre.categorieAppelOffre">Categorie Appel Offre</span></dt>
+                <dd>
+                    <div *ngIf="appelOffre.categorieAppelOffreId">
+                        <a [routerLink]="['/categorie-appel-offre', appelOffre.categorieAppelOffreId, 'view']">{{ appelOffre.categorieAppelOffreId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/appel-offre', appelOffre.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

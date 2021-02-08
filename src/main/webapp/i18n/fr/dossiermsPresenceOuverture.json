@@ -1,0 +1,36 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsPresenceOuverture": {
+      "home": {
+        "title": "PresenceOuvertures",
+        "createLabel": "Créer un nouveau Presence Ouverture",
+        "createOrEditLabel": "Créer ou éditer un Presence Ouverture",
+        "notFound": "Aucun Presence Ouverture trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Presence Ouverture {{ id }} ?"
+      },
+      "detail": {
+        "title": "Presence Ouverture"
+      },
+      "supplementaire": "Supplementaire",
+      "email": "Email",
+      "telephone": "Telephone",
+      "nomRepresentant": "Nom Representant",
+      "prenomRepresentant": "Prenom Representant",
+      "nomStructure": "Nom Structure",
+      "qualite": "Qualite",
+      "etapePI": "Etape PI",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "appelOffre": "Appel Offre",
+      "plisOuverture": "Plis Ouverture"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsPresenceOuverture": {
+      "created": "Un nouveau Presence Ouverture a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Presence Ouverture avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Presence Ouverture avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

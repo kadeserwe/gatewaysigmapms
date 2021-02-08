@@ -1,0 +1,35 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsRetraitRegistreDao": {
+      "home": {
+        "title": "RetraitRegistreDAOS",
+        "createLabel": "Créer un nouveau Retrait Registre DAO",
+        "createOrEditLabel": "Créer ou éditer un Retrait Registre DAO",
+        "notFound": "Aucun Retrait Registre DAO trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Retrait Registre DAO {{ id }} ?"
+      },
+      "detail": {
+        "title": "Retrait Registre DAO"
+      },
+      "nomSoumissionnaire": "Nom Soumissionnaire",
+      "telephone": "Telephone",
+      "email": "Email",
+      "modePaiement": "Mode Paiement",
+      "ninea": "Ninea",
+      "montantVerse": "Montant Verse",
+      "dateRetrait": "Date Retrait",
+      "dossierAppelOffre": "Dossier Appel Offre",
+      "fournisseur": "Fournisseur",
+      "pays": "Pays"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsRetraitRegistreDao": {
+      "created": "Un nouveau Retrait Registre DAO a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Retrait Registre DAO avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Retrait Registre DAO avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

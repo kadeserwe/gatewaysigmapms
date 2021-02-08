@@ -1,0 +1,62 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsTachesEffectue": {
+      "home": {
+        "title": "TachesEffectues",
+        "createLabel": "Créer un nouveau Taches Effectue",
+        "createOrEditLabel": "Créer ou éditer un Taches Effectue",
+        "notFound": "Aucun Taches Effectue trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Taches Effectue {{ id }} ?"
+      },
+      "detail": {
+        "title": "Taches Effectue"
+      },
+      "allotissement": "Allotissement",
+      "garantie": "Garantie",
+      "pieceAdministrative": "Piece Administrative",
+      "critereQualification": "Critere Qualification",
+      "devise": "Devise",
+      "financement": "Financement",
+      "registreRetrait": "Registre Retrait",
+      "registreDepot": "Registre Depot",
+      "lotsSoumis": "Lots Soumis",
+      "commissionsPassation": "Commissions Passation",
+      "representantsSoumis": "Representants Soumis",
+      "servicesTechniques": "Services Techniques",
+      "observateurs": "Observateurs",
+      "garantieSoum": "Garantie Soum",
+      "piecesSoumis": "Pieces Soumis",
+      "lectureOffre": "Lecture Offre",
+      "commissionTecnique": "Commission Tecnique",
+      "document": "Document",
+      "examenGarantie": "Examen Garantie",
+      "examenExhaustivite": "Examen Exhaustivite",
+      "examenSignatureOffre": "Examen Signature Offre",
+      "examenConformite": "Examen Conformite",
+      "verificationCritere": "Verification Critere",
+      "attributionProvisoire": "Attribution Provisoire",
+      "termeReference": "Terme Reference",
+      "depotCandidature": "Depot Candidature",
+      "preselection": "Preselection",
+      "notification": "Notification",
+      "commissionsPassationPI": "Commissions Passation PI",
+      "representantsSoumisPI": "Representants Soumis PI",
+      "notesTechnique": "Notes Technique",
+      "offresFinanciere": "Offres Financiere",
+      "prixEvalue": "Prix Evalue",
+      "registreDepotPI": "Registre Depot PI",
+      "critereProvenance": "Critere Provenance",
+      "procesVerbale": "Proces Verbale",
+      "dossierAppelOffre": "Dossier Appel Offre"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsTachesEffectue": {
+      "created": "Un nouveau Taches Effectue a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Taches Effectue avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Taches Effectue avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

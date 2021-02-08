@@ -1,0 +1,31 @@
+{
+  "gatewaysigmapApp": {
+    "dossiermsRepresentantServTech": {
+      "home": {
+        "title": "RepresentantServTeches",
+        "createLabel": "Créer un nouveau Representant Serv Tech",
+        "createOrEditLabel": "Créer ou éditer un Representant Serv Tech",
+        "notFound": "Aucun Representant Serv Tech trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Representant Serv Tech {{ id }} ?"
+      },
+      "detail": {
+        "title": "Representant Serv Tech"
+      },
+      "representant": "Representant",
+      "qualite": "Qualite",
+      "presence": "Presence",
+      "dateConvocation": "Date Convocation",
+      "etape": "Etape",
+      "dossierAppelOffre": "Dossier Appel Offre"
+    }
+  },
+  "dossiermsApp": {
+    "dossiermsRepresentantServTech": {
+      "created": "Un nouveau Representant Serv Tech a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Representant Serv Tech avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Representant Serv Tech avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}
