@@ -15,6 +15,11 @@
         "planpassationmsSygTypeMarche": "Syg Type Marche",
         "planpassationmsSygTypeSourceFinancement": "Syg Type Source Financement",
         "planpassationmsSygSourceFinancement": "Syg Source Financement",
+        "planpassationmsConfGenSequence": "Conf Gen Sequence",
+        "planpassationmsSygRealisation": "Syg Realisation",
+        "planpassationmsConfSequanceGenerator": "Conf Sequance Generator",
+        "planpassationmsConfTableDeTransaction": "Conf Table De Transaction",
+        "planpassationmsConfTableRow": "Conf Table Row",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

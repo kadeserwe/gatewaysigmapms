@@ -45,6 +45,34 @@ import { RouterModule } from '@angular/router';
             m => m.PlanpassationmsSygSourceFinancementModule
           ),
       },
+      {
+        path: 'conf-gen-sequence',
+        loadChildren: () =>
+          import('./planpassationms/conf-gen-sequence/conf-gen-sequence.module').then(m => m.PlanpassationmsConfGenSequenceModule),
+      },
+      {
+        path: 'syg-realisation',
+        loadChildren: () =>
+          import('./planpassationms/syg-realisation/syg-realisation.module').then(m => m.PlanpassationmsSygRealisationModule),
+      },
+      {
+        path: 'conf-sequance-generator',
+        loadChildren: () =>
+          import('./planpassationms/conf-sequance-generator/conf-sequance-generator.module').then(
+            m => m.PlanpassationmsConfSequanceGeneratorModule
+          ),
+      },
+      {
+        path: 'conf-table-de-transaction',
+        loadChildren: () =>
+          import('./planpassationms/conf-table-de-transaction/conf-table-de-transaction.module').then(
+            m => m.PlanpassationmsConfTableDeTransactionModule
+          ),
+      },
+      {
+        path: 'conf-table-row',
+        loadChildren: () => import('./planpassationms/conf-table-row/conf-table-row.module').then(m => m.PlanpassationmsConfTableRowModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],
