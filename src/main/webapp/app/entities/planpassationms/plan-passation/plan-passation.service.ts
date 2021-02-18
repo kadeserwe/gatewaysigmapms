@@ -49,6 +49,10 @@ export class PlanPassationService {
     return this.http.delete(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
 
+  // getData() {
+  //   return this.http.get('http://localhost:8080/contacts');
+  // }
+
   protected convertDateFromClient(planPassation: IPlanPassation): IPlanPassation {
     const copy: IPlanPassation = Object.assign({}, planPassation, {
       dateDebut: planPassation.dateDebut && planPassation.dateDebut.isValid() ? planPassation.dateDebut.format(DATE_FORMAT) : undefined,

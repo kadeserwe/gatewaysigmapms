@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { PlanDePassationComponent } from './modules/plan-de-passation/plan-de-passation.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MiseAJourPpComponent } from 'app/entities/planpassationms/plan-passation/mise-a-jour-pp/mise-a-jour-pp.component';
+import { PpPubliesComponent } from 'app/entities/planpassationms/plan-passation/pp-publies/pp-publies.component';
+import { SuiviPpComponent } from 'app/entities/planpassationms/plan-passation/suivi-pp/suivi-pp.component';
 
 @NgModule({
   imports: [
@@ -9,9 +14,27 @@ import { RouterModule } from '@angular/router';
         loadChildren: () => import('./planpassationms/historique/historique.module').then(m => m.PlanpassationmsHistoriqueModule),
       },
       {
-        path: 'plan-passation',
-        loadChildren: () =>
-          import('./planpassationms/plan-passation/plan-passation.module').then(m => m.PlanpassationmsPlanPassationModule),
+        path: 'plan-de-passation',
+        component: PlanDePassationComponent,
+        children: [
+          {
+            path: 'plan-passation',
+            loadChildren: () =>
+              import('./planpassationms/plan-passation/plan-passation.module').then(m => m.PlanpassationmsPlanPassationModule),
+          },
+          {
+            path: 'mise-a-jour-pp',
+            component: MiseAJourPpComponent,
+          },
+          {
+            path: 'pp-publies',
+            component: PpPubliesComponent,
+          },
+          {
+            path: 'suvi-pp',
+            component: SuiviPpComponent,
+          },
+        ],
       },
       {
         path: 'realisation',
@@ -75,6 +98,8 @@ import { RouterModule } from '@angular/router';
       },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
+    FontAwesomeModule,
   ],
+  // declarations: [PlanDePassationComponent],
 })
 export class GatewaysigmapEntityModule {}

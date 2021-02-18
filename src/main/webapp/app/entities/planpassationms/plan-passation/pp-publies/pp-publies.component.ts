@@ -1,21 +1,20 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IPlanPassation } from '../../../../shared/model/planpassationms/plan-passation.model';
+import { combineLatest, Subscription } from 'rxjs';
+import { BOUTON_DETAILS, BOUTON_MODIFIER, BOUTON_SUPRIMER, ITEMS_PER_PAGE } from '../../../../shared/constants/pagination.constants';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
-import { ActivatedRoute, ParamMap, Router, Data } from '@angular/router';
-import { Subscription, combineLatest } from 'rxjs';
-import { JhiEventManager, JhiDataUtils } from 'ng-jhipster';
+import { ActivatedRoute, Data, ParamMap, Router } from '@angular/router';
+import { PlanPassationDeleteDialogComponent } from '../plan-passation-delete-dialog.component';
+import { PlanPassationService } from '../plan-passation.service';
+import { JhiDataUtils, JhiEventManager } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { IPlanPassation } from 'app/shared/model/planpassationms/plan-passation.model';
-
-import { BOUTON_DETAILS, BOUTON_MODIFIER, BOUTON_SUPRIMER, ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
-import { PlanPassationService } from './plan-passation.service';
-import { PlanPassationDeleteDialogComponent } from './plan-passation-delete-dialog.component';
-
 @Component({
-  selector: 'jhi-plan-passation',
-  templateUrl: './plan-passation.component.html',
+  selector: 'jhi-pp-publies',
+  templateUrl: './pp-publies.component.html',
+  styleUrls: ['./pp-publies.component.scss'],
 })
-export class PlanPassationComponent implements OnInit, OnDestroy {
+export class PpPubliesComponent implements OnInit {
   planPassations?: IPlanPassation[];
   eventSubscriber?: Subscription;
   totalItems = 0;
@@ -28,7 +27,6 @@ export class PlanPassationComponent implements OnInit, OnDestroy {
   btnModifier = BOUTON_MODIFIER;
   btnDetails = BOUTON_DETAILS;
   term: any;
-  termDate: any;
 
   constructor(
     protected planPassationService: PlanPassationService,
@@ -74,11 +72,11 @@ export class PlanPassationComponent implements OnInit, OnDestroy {
     }).subscribe();
   }
 
-  ngOnDestroy(): void {
-    if (this.eventSubscriber) {
-      this.eventManager.destroy(this.eventSubscriber);
-    }
-  }
+  // ngOnDestroy(): void {
+  //   if (this.eventSubscriber) {
+  //     this.eventManager.destroy(this.eventSubscriber);
+  //   }
+  // }
 
   trackId(index: number, item: IPlanPassation): number {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
@@ -114,7 +112,7 @@ export class PlanPassationComponent implements OnInit, OnDestroy {
     this.totalItems = Number(headers.get('X-Total-Count'));
     this.page = page;
     if (navigate) {
-      this.router.navigate(['/plan-de-passation/plan-passation'], {
+      this.router.navigate(['/pp-publies'], {
         queryParams: {
           page: this.page,
           size: this.itemsPerPage,

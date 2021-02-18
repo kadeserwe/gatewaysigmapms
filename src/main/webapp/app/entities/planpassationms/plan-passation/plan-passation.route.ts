@@ -11,6 +11,7 @@ import { PlanPassationService } from './plan-passation.service';
 import { PlanPassationComponent } from './plan-passation.component';
 import { PlanPassationDetailComponent } from './plan-passation-detail.component';
 import { PlanPassationUpdateComponent } from './plan-passation-update.component';
+import { PlanDePassationComponent } from '../../modules/plan-de-passation/plan-de-passation.component';
 
 @Injectable({ providedIn: 'root' })
 export class PlanPassationResolve implements Resolve<IPlanPassation> {

@@ -3,7 +3,7 @@
 
         <span class="label label-primary" >Plan de Passations</span>
 
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-plan-passation" [routerLink]="['/plan-passation/new']">
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-plan-passation" [routerLink]="['/plan-de-passation/plan-passation/new']">
             <fa-icon icon="plus"></fa-icon>
             <span  jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.home.createLabel">
             Create a new Plan Passation
@@ -99,14 +99,14 @@
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"
-                                [routerLink]="['/plan-passation', planPassation.id, 'view']"
+                                [routerLink]="['/plan-de-passation/plan-passation', planPassation.id, 'view']"
                                 class="btn  btn-sm" [ngbTooltip]="btnDetails">
                             <fa-icon icon="eye" style="color: #28a745"></fa-icon>
                             <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>-->
                         </button>
 
                         <button type="submit"
-                                [routerLink]="['/plan-passation', planPassation.id, 'edit']"
+                                [routerLink]="['/plan-de-passation/plan-passation', planPassation.id, 'edit']"
                                 class="btn  btn-sm" [ngbTooltip]="btnModifier">
                             <fa-icon icon="pencil-alt" style="color: #17a2b8"></fa-icon>
                             <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>-->
