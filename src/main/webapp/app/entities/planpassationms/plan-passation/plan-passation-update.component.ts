@@ -33,7 +33,7 @@ export class PlanPassationUpdateComponent implements OnInit {
     dateDebut: [],
     dateFin: [],
     commentaire: [],
-    annee: [null, [Validators.required]],
+    annee: [],
     dateCreation: [],
     dateMiseValidation: [],
     dateValidation: [],
