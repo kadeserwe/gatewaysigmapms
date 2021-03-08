@@ -1,16 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as moment from 'moment';
 
 import { DATE_FORMAT } from 'app/shared/constants/input.constants';
 import { SERVER_API_URL } from 'app/app.constants';
-import { createRequestOption } from 'app/shared/util/request-util';
+import { createRequestOption, Pagination } from 'app/shared/util/request-util';
 import { IPlanPassation } from 'app/shared/model/planpassationms/plan-passation.model';
 
 type EntityResponseType = HttpResponse<IPlanPassation>;
 type EntityArrayResponseType = HttpResponse<IPlanPassation[]>;
+
+export interface PlanPassationsQuery extends Pagination {
+  fromDate: string;
+  toDate: string;
+}
 
 @Injectable({ providedIn: 'root' })
 export class PlanPassationService {
@@ -21,14 +26,14 @@ export class PlanPassationService {
   create(planPassation: IPlanPassation): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(planPassation);
     return this.http
-      .post<IPlanPassation>(this.resourceUrl, copy, { observe: 'response' })
+      .post<IPlanPassation>(`${this.resourceUrl}/savePlan`, copy, { observe: 'response' })
       .pipe(map((res: EntityResponseType) => this.convertDateFromServer(res)));
   }
 
   update(planPassation: IPlanPassation): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(planPassation);
     return this.http
-      .put<IPlanPassation>(this.resourceUrl, copy, { observe: 'response' })
+      .put<IPlanPassation>(`${this.resourceUrl}/updatePlan`, copy, { observe: 'response' })
       .pipe(map((res: EntityResponseType) => this.convertDateFromServer(res)));
   }
 
@@ -45,6 +50,17 @@ export class PlanPassationService {
       .pipe(map((res: EntityArrayResponseType) => this.convertDateArrayFromServer(res)));
   }
 
+  query1(req: PlanPassationsQuery): Observable<HttpResponse<IPlanPassation[]>> {
+    const params: HttpParams = createRequestOption(req);
+
+    const requestURL = SERVER_API_URL + 'services/planpassationms/api/plan-passations';
+
+    return this.http.get<IPlanPassation[]>(requestURL, {
+      params,
+      observe: 'response',
+    });
+  }
+
   delete(id: number): Observable<HttpResponse<{}>> {
     return this.http.delete(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
@@ -52,6 +68,13 @@ export class PlanPassationService {
   // getData() {
   //   return this.http.get('http://localhost:8080/contacts');
   // }
+
+  getPpPubies(page: number, size: number): Observable<IPlanPassation[]> {
+    let params = new HttpParams();
+    params = params.append('page', String(page));
+    params = params.append('limit', String(size));
+    return this.http.get<IPlanPassation[]>(this.resourceUrl, { params });
+  }
 
   protected convertDateFromClient(planPassation: IPlanPassation): IPlanPassation {
     const copy: IPlanPassation = Object.assign({}, planPassation, {

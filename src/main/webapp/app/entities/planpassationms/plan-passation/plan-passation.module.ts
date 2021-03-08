@@ -12,6 +12,7 @@ import { MiseAJourPpComponent } from './mise-a-jour-pp/mise-a-jour-pp.component'
 import { PpPubliesComponent } from './pp-publies/pp-publies.component';
 import { SuiviPpComponent } from './suivi-pp/suivi-pp.component';
 import { PlanDePassationComponent } from '../../modules/plan-de-passation/plan-de-passation.component';
+// import {PlanPubliesDetailsComponent} from "./pp-publies/pp-publies-details.component";
 
 @NgModule({
   imports: [GatewaysigmapSharedModule, Ng2SearchPipeModule, RouterModule.forChild(planPassationRoute)],
@@ -24,6 +25,7 @@ import { PlanDePassationComponent } from '../../modules/plan-de-passation/plan-d
     MiseAJourPpComponent,
     PpPubliesComponent,
     SuiviPpComponent,
+    // PlanPubliesDetailsComponent,
   ],
   entryComponents: [PlanPassationDeleteDialogComponent],
 })

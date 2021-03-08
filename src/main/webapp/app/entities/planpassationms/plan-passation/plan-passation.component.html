@@ -1,8 +1,6 @@
 <div>
     <h2 id="page-heading">
-
         <span class="label label-primary" >Plan de Passations</span>
-
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-plan-passation" [routerLink]="['/plan-de-passation/plan-passation/new']">
             <fa-icon icon="plus"></fa-icon>
             <span  jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.home.createLabel">
@@ -10,7 +8,8 @@
             </span>
         </button>
     </h2>
-
+    <br/>
+    <br/>
     <jhi-alert-error></jhi-alert-error>
 
     <jhi-alert></jhi-alert>
@@ -18,84 +17,52 @@
     <div class="alert alert-warning" id="no-result" *ngIf="planPassations?.length === 0">
         <span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.home.notFound">No planPassations found</span>
     </div>
-    <div class="row mb-3">
-      <div class="form-group">
-        <input type="text" class="mr-2" placeholder="Recherche" [(ngModel)]="term">
-      </div>
-    <div>
-        <input type="date" class="mr-2" [(ngModel)]="term">
-    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Recherche" [(ngModel)]="term">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" jhiTranslate="audits.filter.from">from</span>
+                </div>
+                <input type="date" class="form-control" name="start" [(ngModel)]="fromDate" (ngModelChange)="transition()" required/>
+
+                <div class="input-group-append">
+                    <span class="input-group-text" jhiTranslate="audits.filter.to">To</span>
+                </div>
+                <input type="date" class="form-control" name="end" [(ngModel)]="toDate" (ngModelChange)="transition()" required/>
+            </div>
+        </div>
     </div>
     <div class="table-responsive" id="entities" *ngIf="planPassations && planPassations.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
-            <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-                <!--<th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>-->
-               <!-- <th scope="col"  jhiSortBy="dateDebut"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateDebut">Date Debut</span> <fa-icon icon="sort"></fa-icon></th>
-                <th scope="col"  jhiSortBy="dateFin"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateFin">Date Fin</span> <fa-icon icon="sort"></fa-icon></th>-->
-                <th scope="col"  jhiSortBy="numero"><span >numero du plan </span> </th>
-                <th scope="col"  jhiSortBy="annee"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.annee">Annee</span> </th>
-
-                 <th scope="col"  jhiSortBy="dateCreation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateCreation">Date de Creation</span> </th>
-<th scope="col"  jhiSortBy="dateMiseValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateMiseValidation">Date de Mise Validation</span> </th>
-<th scope="col"  jhiSortBy="dateValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation">Date de Validation</span> </th>
-<th scope="col"  jhiSortBy="statut"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.statut">Statut</span> </th>
-  <th scope="col"  jhiSortBy="commentaire"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaire">Commentaire</span> </th>
-<!--<th scope="col"  jhiSortBy="commentaireMiseEnValidationAC"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaireMiseEnValidationAC">Commentaire Mise En Validation AC</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="referenceMiseValidationAC"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.referenceMiseValidationAC">Reference Mise Validation AC</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="fichierMiseValidationAC"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.fichierMiseValidationAC">Fichier Mise Validation AC</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="dateMiseEnValidationCcmp"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateMiseEnValidationCcmp">Date Mise En Validation Ccmp</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="fichierMiseValidationCcmp"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.fichierMiseValidationCcmp">Fichier Mise Validation Ccmp</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="referenceMiseValidationCcmp"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.referenceMiseValidationCcmp">Reference Mise Validation Ccmp</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="dateValidation1"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation1">Date Validation 1</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="commentaireValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaireValidation">Commentaire Validation</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="referenceValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.referenceValidation">Reference Validation</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="fichierValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.fichierValidation">Fichier Validation</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="dateValidation2"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation2">Date Validation 2</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="dateRejet"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateRejet">Date Rejet</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="datePublication"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.datePublication">Date Publication</span> <fa-icon icon="sort"></fa-icon></th>
-<th scope="col"  jhiSortBy="commentairePublication"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentairePublication">Commentaire Publication</span> <fa-icon icon="sort"></fa-icon></th>-->
-                <th scope="col"></th>
-            </tr>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="numero"><span >numero du plan </span> </th>
+                    <th scope="col"  jhiSortBy="annee"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.annee">Annee</span> </th>
+                    <th scope="col"  jhiSortBy="dateCreation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateCreation">Date de Creation</span> </th>
+                    <th scope="col"  jhiSortBy="dateMiseValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateMiseValidation">Date de Mise Validation</span> </th>
+                    <th scope="col"  jhiSortBy="dateValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation">Date de Validation</span> </th>
+                    <th scope="col"  jhiSortBy="statut"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.statut">Statut</span> </th>
+                    <th scope="col"  jhiSortBy="commentaire"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaire">Commentaire</span> </th>
+                    <th scope="col"></th>
+                </tr>
             </thead>
             <tbody>
             <tr *ngFor="let planPassation of planPassations | filter:term ">
-                <!-- <td><a [routerLink]="['/plan-passation', planPassation.id, 'view']">{{ planPassation.id }}</a></td>-->
-               <!-- <td>{{ planPassation.dateDebut | date:'mediumDate' }}</td>
-                <td>{{ planPassation.dateFin | date:'mediumDate' }}</td>-->
-                <td>{{ planPassation.numero }}</td>
+                <td>{{ planPassation.numPlan}}</td>
                 <td>{{ planPassation.annee }}</td>
-
-
                 <td>{{ planPassation.dateCreation | date:'mediumDate'| filter:term  }}</td>
-                 <td>{{ planPassation.dateMiseValidation | date:'mediumDate' }}</td>
-                 <td>{{ planPassation.dateValidation | date:'mediumDate' }}</td>
-                 <td>{{ planPassation.statut }}</td>
-                  <td>{{ planPassation.commentaire }}</td>
-                <!--
-                <td>{{ planPassation.commentaireMiseEnValidationAC }}</td>
-                <td>{{ planPassation.referenceMiseValidationAC }}</td>
+                <td>{{ planPassation.dateMiseValidation | date:'mediumDate' }}</td>
+                <td>{{ planPassation.dateValidation | date:'mediumDate' }}</td>
                 <td>
-                    <a *ngIf="planPassation.fichierMiseValidationAC" (click)="openFile(planPassation.fichierMiseValidationACContentType, planPassation.fichierMiseValidationAC)" jhiTranslate="entity.action.open">open</a>
-                    <span *ngIf="planPassation.fichierMiseValidationAC">{{ planPassation.fichierMiseValidationACContentType }}, {{ byteSize(planPassation.fichierMiseValidationAC) }}</span>
+                    <span class="badge badge-info">{{ planPassation.statut }}</span>
                 </td>
-                <td>{{ planPassation.dateMiseEnValidationCcmp | date:'mediumDate' }}</td>
-                <td>
-                    <a *ngIf="planPassation.fichierMiseValidationCcmp" (click)="openFile(planPassation.fichierMiseValidationCcmpContentType, planPassation.fichierMiseValidationCcmp)" jhiTranslate="entity.action.open">open</a>
-                    <span *ngIf="planPassation.fichierMiseValidationCcmp">{{ planPassation.fichierMiseValidationCcmpContentType }}, {{ byteSize(planPassation.fichierMiseValidationCcmp) }}</span>
-                </td>
-                <td>{{ planPassation.referenceMiseValidationCcmp }}</td>
-                <td>{{ planPassation.dateValidation1 | date:'mediumDate' }}</td>
-                <td>{{ planPassation.commentaireValidation }}</td>
-                <td>{{ planPassation.referenceValidation }}</td>
-                <td>
-                    <a *ngIf="planPassation.fichierValidation" (click)="openFile(planPassation.fichierValidationContentType, planPassation.fichierValidation)" jhiTranslate="entity.action.open">open</a>
-                    <span *ngIf="planPassation.fichierValidation">{{ planPassation.fichierValidationContentType }}, {{ byteSize(planPassation.fichierValidation) }}</span>
-                </td>
-                <td>{{ planPassation.dateValidation2 | date:'mediumDate' }}</td>
-                <td>{{ planPassation.dateRejet | date:'mediumDate' }}</td>
-                <td>{{ planPassation.datePublication | date:'mediumDate' }}</td>
-                <td>{{ planPassation.commentairePublication }}</td>-->
+                <td>{{ planPassation.commentaire }}</td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"
@@ -115,7 +82,6 @@
                         <button type="submit" (click)="delete(planPassation)"
                                 class="btn  btn-sm" [ngbTooltip]="btnSuprimer">
                             <fa-icon icon="trash-alt" style="color: #aa0000"></fa-icon>
-                            <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>-->
                         </button>
                     </div>
                 </td>

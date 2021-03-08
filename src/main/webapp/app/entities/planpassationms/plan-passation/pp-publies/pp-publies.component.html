@@ -1,7 +1,7 @@
 <div>
     <h2 id="page-heading">
 
-        <span class="label label-primary" >Plan de Passations</span>
+        <span class="label label-primary" >Plan de Passations Publies</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-plan-passation" [routerLink]="['/plan-passation/new']">
             <fa-icon icon="plus"></fa-icon>
@@ -21,7 +21,7 @@
     <div class="table-responsive" id="entities" *ngIf="planPassations && planPassations.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
-            <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage1.bind(this)">
                 <th scope="col"  jhiSortBy="numero"><span >numero du plan </span> </th>
                 <th scope="col"  jhiSortBy="annee"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.annee">Annee</span> </th>
                 <th scope="col"  jhiSortBy="dateCreation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateCreation">Date de Creation</span> </th>
@@ -34,12 +34,14 @@
             </thead>
             <tbody>
             <tr *ngFor="let planPassation of planPassations">
-                <td>{{ planPassation.numero }}</td>
+                <td>{{ planPassation.numPlan }}</td>
                 <td>{{ planPassation.annee }}</td>
                 <td>{{ planPassation.dateCreation | date:'mediumDate'}}</td>
                 <td>{{ planPassation.dateMiseValidation | date:'mediumDate' }}</td>
                 <td>{{ planPassation.dateValidation | date:'mediumDate' }}</td>
-                <td>{{ planPassation.statut }}</td>
+                <td>
+                    <span class="badge badge-info">{{ planPassation.statut }}</span>
+                </td>
                 <td>{{ planPassation.commentaire }}</td>
                 <td class="text-right">
                     <div class="btn-group">
@@ -73,7 +75,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage1($event)"></ngb-pagination>
         </div>
     </div>
 </div>

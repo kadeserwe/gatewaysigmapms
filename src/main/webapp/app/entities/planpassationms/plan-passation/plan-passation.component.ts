@@ -10,6 +10,8 @@ import { IPlanPassation } from 'app/shared/model/planpassationms/plan-passation.
 import { BOUTON_DETAILS, BOUTON_MODIFIER, BOUTON_SUPRIMER, ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { PlanPassationService } from './plan-passation.service';
 import { PlanPassationDeleteDialogComponent } from './plan-passation-delete-dialog.component';
+import { Audit } from '../../../admin/audits/audit.model';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'jhi-plan-passation',
@@ -29,6 +31,9 @@ export class PlanPassationComponent implements OnInit, OnDestroy {
   btnDetails = BOUTON_DETAILS;
   term: any;
   termDate: any;
+  fromDate = '';
+  toDate = '';
+  private dateFormat = 'yyyy-MM-dd';
 
   constructor(
     protected planPassationService: PlanPassationService,
@@ -36,7 +41,8 @@ export class PlanPassationComponent implements OnInit, OnDestroy {
     protected dataUtils: JhiDataUtils,
     protected router: Router,
     protected eventManager: JhiEventManager,
-    protected modalService: NgbModal
+    protected modalService: NgbModal,
+    private datePipe: DatePipe
   ) {}
 
   loadPage(page?: number, dontNavigate?: boolean): void {
@@ -54,9 +60,57 @@ export class PlanPassationComponent implements OnInit, OnDestroy {
       );
   }
 
+  // private loadData(): void {
+  //   this.p
+  //     .query({
+  //       page: this.page - 1,
+  //       size: this.itemsPerPage,
+  //       sort: this.sort(),
+  //       fromDate: this.fromDate,
+  //       toDate: this.toDate,
+  //     })
+  //     .subscribe((res: HttpResponse<Audit[]>) => this.onSuccess(res.body, res.headers));
+  // }
+
   ngOnInit(): void {
+    this.toDate = this.today();
+    this.fromDate = this.previousMonth();
     this.handleNavigation();
     this.registerChangeInPlanPassations();
+  }
+
+  canLoad(): boolean {
+    return this.fromDate !== '' && this.toDate !== '';
+  }
+
+  private previousMonth(): string {
+    let date = new Date();
+    if (date.getMonth() === 0) {
+      date = new Date(date.getFullYear() - 1, 11, date.getDate());
+    } else {
+      date = new Date(date.getFullYear(), date.getMonth() - 1, date.getDate());
+    }
+    return this.datePipe.transform(date, this.dateFormat)!;
+  }
+
+  private today(): string {
+    // Today + 1 day - needed if the current day must be included
+    const date = new Date();
+    date.setDate(date.getDate() + 1);
+    return this.datePipe.transform(date, this.dateFormat)!;
+  }
+
+  transition(): void {
+    if (this.canLoad()) {
+      this.router.navigate(['/plan-de-passation/plan-passation'], {
+        queryParams: {
+          page: this.page,
+          sort: this.predicate + ',' + (this.ascending ? 'asc' : 'desc'),
+          from: this.fromDate,
+          to: this.toDate,
+        },
+      });
+    }
   }
 
   protected handleNavigation(): void {

@@ -16,6 +16,7 @@ import { annees } from './annees';
   templateUrl: './plan-passation-update.component.html',
 })
 export class PlanPassationUpdateComponent implements OnInit {
+  planPassation!: IPlanPassation;
   isSaving = false;
   dateDebutDp: any;
   dateFinDp: any;
@@ -27,13 +28,17 @@ export class PlanPassationUpdateComponent implements OnInit {
   dateValidation2Dp: any;
   dateRejetDp: any;
   datePublicationDp: any;
+  anneePlan: any;
+  anCourant!: number;
+  anSuivant!: number;
+  etatPlan = 'EN COURS';
 
   editForm = this.fb.group({
     id: [],
     dateDebut: [],
     dateFin: [],
     commentaire: [],
-    annee: [],
+    annee: [null, Validators.required],
     dateCreation: [],
     dateMiseValidation: [],
     dateValidation: [],
@@ -55,7 +60,7 @@ export class PlanPassationUpdateComponent implements OnInit {
     dateRejet: [],
     datePublication: [],
     commentairePublication: [],
-    numero: [],
+    numPlan: [],
   });
 
   constructor(
@@ -70,6 +75,8 @@ export class PlanPassationUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ planPassation }) => {
       this.updateForm(planPassation);
     });
+    this.anCourant = this.anneeCourant();
+    this.anSuivant = this.anneeSuivant();
   }
 
   updateForm(planPassation: IPlanPassation): void {
@@ -100,7 +107,7 @@ export class PlanPassationUpdateComponent implements OnInit {
       dateRejet: planPassation.dateRejet,
       datePublication: planPassation.datePublication,
       commentairePublication: planPassation.commentairePublication,
-      numero: planPassation.numero,
+      numPlan: planPassation.numPlan,
     });
   }
 
@@ -145,7 +152,8 @@ export class PlanPassationUpdateComponent implements OnInit {
       dateCreation: this.editForm.get(['dateCreation'])!.value,
       dateMiseValidation: this.editForm.get(['dateMiseValidation'])!.value,
       dateValidation: this.editForm.get(['dateValidation'])!.value,
-      statut: this.editForm.get(['statut'])!.value,
+      // statut: this.editForm.get(['statut'])!.value,
+      statut: this.etatPlan,
       commentaireMiseEnValidationAC: this.editForm.get(['commentaireMiseEnValidationAC'])!.value,
       referenceMiseValidationAC: this.editForm.get(['referenceMiseValidationAC'])!.value,
       fichierMiseValidationACContentType: this.editForm.get(['fichierMiseValidationACContentType'])!.value,
@@ -163,7 +171,7 @@ export class PlanPassationUpdateComponent implements OnInit {
       dateRejet: this.editForm.get(['dateRejet'])!.value,
       datePublication: this.editForm.get(['datePublication'])!.value,
       commentairePublication: this.editForm.get(['commentairePublication'])!.value,
-      numero: this.editForm.get(['numero'])!.value,
+      numPlan: this.editForm.get(['numPlan'])!.value,
     };
   }
 
@@ -181,5 +189,17 @@ export class PlanPassationUpdateComponent implements OnInit {
 
   protected onSaveError(): void {
     this.isSaving = false;
+  }
+
+  private anneeCourant(): number {
+    // Today + 1 day - needed if the current day must be included
+    const date = new Date();
+    return date.getFullYear();
+  }
+
+  private anneeSuivant(): number {
+    const date = new Date();
+    const anneeSuivant = date.getFullYear() + 1;
+    return anneeSuivant;
   }
 }

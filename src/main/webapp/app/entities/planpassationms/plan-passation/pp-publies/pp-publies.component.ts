@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IPlanPassation } from '../../../../shared/model/planpassationms/plan-passation.model';
 import { combineLatest, Subscription } from 'rxjs';
 import { BOUTON_DETAILS, BOUTON_MODIFIER, BOUTON_SUPRIMER, ITEMS_PER_PAGE } from '../../../../shared/constants/pagination.constants';
@@ -14,7 +14,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './pp-publies.component.html',
   styleUrls: ['./pp-publies.component.scss'],
 })
-export class PpPubliesComponent implements OnInit {
+export class PpPubliesComponent implements OnInit, OnDestroy {
   planPassations?: IPlanPassation[];
   eventSubscriber?: Subscription;
   totalItems = 0;
@@ -37,7 +37,7 @@ export class PpPubliesComponent implements OnInit {
     protected modalService: NgbModal
   ) {}
 
-  loadPage(page?: number, dontNavigate?: boolean): void {
+  loadPage1(page?: number, dontNavigate?: boolean): void {
     const pageToLoad: number = page || this.page || 1;
 
     this.planPassationService
@@ -53,8 +53,9 @@ export class PpPubliesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.handleNavigation();
-    this.registerChangeInPlanPassations();
+    this.planPassationService.getPpPubies(0, 5).subscribe(planpassations => (this.planPassations = planpassations));
+    // this.handleNavigation();
+    // this.registerChangeInPlanPassations();
   }
 
   protected handleNavigation(): void {
@@ -67,16 +68,31 @@ export class PpPubliesComponent implements OnInit {
       if (pageNumber !== this.page || predicate !== this.predicate || ascending !== this.ascending) {
         this.predicate = predicate;
         this.ascending = ascending;
-        this.loadPage(pageNumber, true);
+        this.loadPage1(pageNumber, true);
       }
     }).subscribe();
   }
 
-  // ngOnDestroy(): void {
-  //   if (this.eventSubscriber) {
-  //     this.eventManager.destroy(this.eventSubscriber);
-  //   }
+  // protected handleNavigation(): void {
+  //   combineLatest(this.activatedRoute.data, this.activatedRoute.queryParamMap, (data: Data, params: ParamMap) => {
+  //     const page = params.get('page');
+  //     const pageNumber = page !== null ? +page : 1;
+  //     // const sort = (params.get('sort') ?? data['defaultSort']).split(',');
+  //     // const predicate = sort[0];
+  //     // const ascending = sort[1] === 'asc';
+  //     if (pageNumber !== this.page ) {
+  //       // this.predicate = predicate;
+  //       // this.ascending = ascending;
+  //       this.loadPage1(pageNumber, true);
+  //     }
+  //   }).subscribe();
   // }
+
+  ngOnDestroy(): void {
+    if (this.eventSubscriber) {
+      this.eventManager.destroy(this.eventSubscriber);
+    }
+  }
 
   trackId(index: number, item: IPlanPassation): number {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
@@ -92,7 +108,7 @@ export class PpPubliesComponent implements OnInit {
   }
 
   registerChangeInPlanPassations(): void {
-    this.eventSubscriber = this.eventManager.subscribe('planPassationListModification', () => this.loadPage());
+    this.eventSubscriber = this.eventManager.subscribe('planPassationListModification', () => this.loadPage1());
   }
 
   delete(planPassation: IPlanPassation): void {
@@ -112,7 +128,7 @@ export class PpPubliesComponent implements OnInit {
     this.totalItems = Number(headers.get('X-Total-Count'));
     this.page = page;
     if (navigate) {
-      this.router.navigate(['/pp-publies'], {
+      this.router.navigate(['/plan-de-passation/pp-publies'], {
         queryParams: {
           page: this.page,
           size: this.itemsPerPage,
