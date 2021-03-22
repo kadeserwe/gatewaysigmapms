@@ -10,6 +10,8 @@ import { IPlanPassation, PlanPassation } from 'app/shared/model/planpassationms/
 import { PlanPassationService } from './plan-passation.service';
 import { AlertError } from 'app/shared/alert/alert-error.model';
 import { annees } from './annees';
+import { DatePipe } from '@angular/common';
+import * as _moment from 'moment';
 
 @Component({
   selector: 'jhi-plan-passation-update',
@@ -32,6 +34,8 @@ export class PlanPassationUpdateComponent implements OnInit {
   anCourant!: number;
   anSuivant!: number;
   etatPlan = 'EN COURS';
+  private dateFormat = 'yyyy-MM-dd';
+  momentToday = _moment;
 
   editForm = this.fb.group({
     id: [],
@@ -68,7 +72,8 @@ export class PlanPassationUpdateComponent implements OnInit {
     protected eventManager: JhiEventManager,
     protected planPassationService: PlanPassationService,
     protected activatedRoute: ActivatedRoute,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private datePipe: DatePipe
   ) {}
 
   ngOnInit(): void {
@@ -145,11 +150,11 @@ export class PlanPassationUpdateComponent implements OnInit {
     return {
       ...new PlanPassation(),
       id: this.editForm.get(['id'])!.value,
-      dateDebut: this.editForm.get(['dateDebut'])!.value,
-      dateFin: this.editForm.get(['dateFin'])!.value,
+      dateDebut: this.momentToday(this.editForm.get(['dateDebut'])!.value),
+      dateFin: this.momentToday(this.editForm.get(['dateFin'])!.value),
       commentaire: this.editForm.get(['commentaire'])!.value,
       annee: this.editForm.get(['annee'])!.value,
-      dateCreation: this.editForm.get(['dateCreation'])!.value,
+      dateCreation: this.momentToday(new Date()),
       dateMiseValidation: this.editForm.get(['dateMiseValidation'])!.value,
       dateValidation: this.editForm.get(['dateValidation'])!.value,
       // statut: this.editForm.get(['statut'])!.value,

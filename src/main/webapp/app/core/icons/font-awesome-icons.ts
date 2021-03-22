@@ -41,6 +41,7 @@ import {
   faShare,
   faDesktop,
   faTrash,
+  faPrint,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const fontAwesomeIcons = [
@@ -86,4 +87,5 @@ export const fontAwesomeIcons = [
   faShare,
   faDesktop,
   faTrash,
+  faPrint,
 ];
