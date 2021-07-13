@@ -1,34 +1,27 @@
 <div>
     <h2 id="page-heading">
 
-        <span class="label label-primary" >Plan de Passations Publies</span>
+        <span class="label label-primary">Plan de Passations Publies</span>
 
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-plan-passation" [routerLink]="['/plan-passation/new']">
-            <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.home.createLabel">
-            Create a new Plan Passation
-            </span>
-        </button>
+<!--        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-plan-passation" [routerLink]="['/plan-passation/new']">-->
+<!--            <fa-icon icon="plus"></fa-icon>-->
+<!--            <span  jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.home.createLabel">-->
+<!--            Create a new Plan Passation-->
+<!--            </span>-->
+<!--        </button>-->
     </h2>
 
-    <jhi-alert-error></jhi-alert-error>
-
-    <jhi-alert></jhi-alert>
-
-<!--    <div class="alert alert-warning" id="no-result" *ngIf="planPassations?.length === 0">-->
-<!--        <span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.home.notFound">No planPassations found</span>-->
-<!--    </div>-->
     <div class="table-responsive" id="entities" *ngIf="planPassations && planPassations.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage1.bind(this)">
                 <th scope="col"  jhiSortBy="numero"><span >numero du plan </span> </th>
-                <th scope="col"  jhiSortBy="annee"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.annee">Annee</span> </th>
-                <th scope="col"  jhiSortBy="dateCreation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateCreation">Date de Creation</span> </th>
-                <th scope="col"  jhiSortBy="dateMiseValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateMiseValidation">Date de Mise Validation</span> </th>
-                <th scope="col"  jhiSortBy="dateValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation">Date de Validation</span> </th>
-                <th scope="col"  jhiSortBy="statut"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.statut">Statut</span> </th>
-                <th scope="col"  jhiSortBy="commentaire"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaire">Commentaire</span> </th>
+                <th scope="col"  jhiSortBy="annee"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.annee">Annee</span></th>
+                <th scope="col"  jhiSortBy="dateCreation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateCreation">Date de Creation</span></th>
+                <th scope="col"  jhiSortBy="dateMiseValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateMiseValidation">Date de Mise Validation</span></th>
+                <th scope="col"  jhiSortBy="dateValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation">Date de Validation</span></th>
+                <th scope="col"  jhiSortBy="statut"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.statut">Statut</span></th>
+                <th scope="col"  jhiSortBy="commentaire"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaire">Commentaire</span></th>
                 <th scope="col"></th>
             </tr>
             </thead>

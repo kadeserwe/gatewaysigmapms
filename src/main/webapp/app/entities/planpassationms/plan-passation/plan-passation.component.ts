@@ -36,130 +36,7 @@ export class PlanPassationComponent implements OnInit, OnDestroy {
   fromDate = '';
   toDate = '';
   private dateFormat = 'yyyy-MM-dd';
-
-  // constructor(
-  //   protected planPassationService: PlanPassationService,
-  //   protected activatedRoute: ActivatedRoute,
-  //   protected dataUtils: JhiDataUtils,
-  //   protected router: Router,
-  //   protected eventManager: JhiEventManager,
-  //   protected modalService: NgbModal,
-  //   private datePipe: DatePipe
-  // ) {}
-  //
-  // loadPage(page?: number, dontNavigate?: boolean): void {
-  //   const pageToLoad: number = page || this.page || 1;
-  //
-  //   this.planPassationService
-  //     .query({
-  //       page: pageToLoad - 1,
-  //       size: this.itemsPerPage,
-  //       sort: this.sort(),
-  //     })
-  //     .subscribe(
-  //       (res: HttpResponse<IPlanPassation[]>) => this.onSuccess(res.body, res.headers, pageToLoad, !dontNavigate),
-  //       () => this.onError()
-  //     );
-  // }
-  //
-  // ngOnInit(): void {
-  //   this.toDate = this.today();
-  //   this.fromDate = this.previousMonth();
-  //   this.handleNavigation();
-  //   this.registerChangeInPlanPassations();
-  // }
-  //
-  // canLoad(): boolean {
-  //   return this.fromDate !== '' && this.toDate !== '';
-  // }
-  //
-  // private previousMonth(): string {
-  //   let date = new Date();
-  //   if (date.getMonth() === 0) {
-  //     date = new Date(date.getFullYear() - 1, 11, date.getDate());
-  //   } else {
-  //     date = new Date(date.getFullYear(), date.getMonth() - 1, date.getDate());
-  //   }
-  //   return this.datePipe.transform(date, this.dateFormat)!;
-  // }
-  //
-  // private today(): string {
-  //   // Today + 1 day - needed if the current day must be included
-  //   const date = new Date();
-  //   date.setDate(date.getDate() + 1);
-  //   return this.datePipe.transform(date, this.dateFormat)!;
-  // }
-  //
-  // protected handleNavigation(): void {
-  //   combineLatest(this.activatedRoute.data, this.activatedRoute.queryParamMap, (data: Data, params: ParamMap) => {
-  //     const page = params.get('page');
-  //     const pageNumber = page !== null ? +page : 1;
-  //     const sort = (params.get('sort') ?? data['defaultSort']).split(',');
-  //     const predicate = sort[0];
-  //     const ascending = sort[1] === 'asc';
-  //     if (pageNumber !== this.page || predicate !== this.predicate || ascending !== this.ascending) {
-  //       this.predicate = predicate;
-  //       this.ascending = ascending;
-  //       this.loadPage(pageNumber, true);
-  //     }
-  //   }).subscribe();
-  // }
-  //
-  // ngOnDestroy(): void {
-  //   if (this.eventSubscriber) {
-  //     this.eventManager.destroy(this.eventSubscriber);
-  //   }
-  // }
-  //
-  // trackId(index: number, item: IPlanPassation): number {
-  //   // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
-  //   return item.id!;
-  // }
-  //
-  // byteSize(base64String: string): string {
-  //   return this.dataUtils.byteSize(base64String);
-  // }
-  //
-  // openFile(contentType = '', base64String: string): void {
-  //   return this.dataUtils.openFile(contentType, base64String);
-  // }
-  //
-  // registerChangeInPlanPassations(): void {
-  //   this.eventSubscriber = this.eventManager.subscribe('planPassationListModification', () => this.loadPage());
-  // }
-  //
-  // delete(planPassation: IPlanPassation): void {
-  //   const modalRef = this.modalService.open(PlanPassationDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
-  //   modalRef.componentInstance.planPassation = planPassation;
-  // }
-  //
-  // sort(): string[] {
-  //   const result = [this.predicate + ',' + (this.ascending ? 'asc' : 'desc')];
-  //   if (this.predicate !== 'id') {
-  //     result.push('id');
-  //   }
-  //   return result;
-  // }
-  //
-  // protected onSuccess(data: IPlanPassation[] | null, headers: HttpHeaders, page: number, navigate: boolean): void {
-  //   this.totalItems = Number(headers.get('X-Total-Count'));
-  //   this.page = page;
-  //   if (navigate) {
-  //     this.router.navigate(['/plan-de-passation/plan-passation'], {
-  //       queryParams: {
-  //         page: this.page,
-  //         size: this.itemsPerPage,
-  //         sort: this.predicate + ',' + (this.ascending ? 'asc' : 'desc'),
-  //       },
-  //     });
-  //   }
-  //   this.planPassations = data || [];
-  //   this.ngbPaginationPage = this.page;
-  // }
-  //
-  // protected onError(): void {
-  //   this.ngbPaginationPage = this.page ?? 1;
-  // }
+  selectedId: any;
 
   constructor(
     protected planPassationService: PlanPassationService,
@@ -170,6 +47,11 @@ export class PlanPassationComponent implements OnInit, OnDestroy {
     protected modalService: NgbModal,
     private datePipe: DatePipe
   ) {}
+
+  public highlightRow(planPassation: any) {
+    this.selectedId = planPassation.id;
+    // console.log(this.selectedId)
+  }
 
   private loadData(): void {
     this.planPassationService
@@ -267,6 +149,7 @@ export class PlanPassationComponent implements OnInit, OnDestroy {
     this.eventSubscriber = this.eventManager.subscribe('planPassationListModification', () => this.loadData());
   }
   //
+
   delete(planPassation: IPlanPassation): void {
     const modalRef = this.modalService.open(PlanPassationDeleteDialogComponent, { size: 'lg', backdrop: 'static' });
     modalRef.componentInstance.planPassation = planPassation;

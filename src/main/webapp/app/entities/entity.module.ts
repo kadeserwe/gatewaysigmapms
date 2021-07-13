@@ -100,6 +100,5 @@ import { SuiviPpComponent } from 'app/entities/planpassationms/plan-passation/su
     ]),
     FontAwesomeModule,
   ],
-  // declarations: [PlanDePassationComponent],
 })
 export class GatewaysigmapEntityModule {}

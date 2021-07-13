@@ -12,7 +12,8 @@ import { MiseAJourPpComponent } from './mise-a-jour-pp/mise-a-jour-pp.component'
 import { PpPubliesComponent } from './pp-publies/pp-publies.component';
 import { SuiviPpComponent } from './suivi-pp/suivi-pp.component';
 import { PlanDePassationComponent } from '../../modules/plan-de-passation/plan-de-passation.component';
-// import {PlanPubliesDetailsComponent} from "./pp-publies/pp-publies-details.component";
+import { PlanPassationDemandeValidationComponent } from './plan-passation-demande-validation.component';
+import { AjoutRealisationAuplanComponent } from './ajout-realisation-auplan.component';
 
 @NgModule({
   imports: [GatewaysigmapSharedModule, Ng2SearchPipeModule, RouterModule.forChild(planPassationRoute)],
@@ -26,6 +27,8 @@ import { PlanDePassationComponent } from '../../modules/plan-de-passation/plan-d
     PpPubliesComponent,
     SuiviPpComponent,
     // PlanPubliesDetailsComponent,
+    PlanPassationDemandeValidationComponent,
+    AjoutRealisationAuplanComponent,
   ],
   entryComponents: [PlanPassationDeleteDialogComponent],
 })

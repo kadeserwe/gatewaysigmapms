@@ -2,18 +2,17 @@
     <div _ngcontent-aay-c151="" class="col-md-3 side-menu">
         <div _ngcontent-aay-c151="">
 
-            <div _ngcontent-aay-c151="">
-                <div _ngcontent-aay-c151="" role="alert" class="alert alert-success">
+            <div >
+                <div role="alert" class="alert alert-success">
                     <h3 align="center">GESTION DES PLANS DE PASSATIONS COTE AC</h3>
                     <br/>
-                    <p style="animation-duration: initial" >(PP)=Plan de Passations</p>
-                    <p style="animation-duration: initial" >(AC)=Autorite Contractante</p>
                 </div>
             </div>
+
             <nav _ngcontent-aay-c151="" class="navbar navbar-light">
                 <ul _ngcontent-aay-c151="" class="navbar-nav mr-auto" ng-reflect-ng-switch="true">
 
-                    <li  class="nav-item" ng-reflect-router-link-active="active">
+                    <li  class="nav-item" ng-reflect-router-link-active="active" (click)="highlightRow()">
                         <a  routerLink="plan-passation" routerLinkActive="active" class="nav-link text-primary mt-3" ng-reflect-router-link="si-plan-passation" ng-reflect-router-link-active-options="[object Object]" >
                             <span class="btn-rounded align-middle">
                                 <fa-icon icon="list" size="2x" [fixedWidth]="true" class="ng-fa-icon" ng-reflect-icon="list" ng-reflect-size="2x" ng-reflect-fixed-width="true">
@@ -27,7 +26,7 @@
                     </li>
 
                     <li class="nav-item active" ng-reflect-router-link-active="active" ng-reflect-router-link-active-options="[object Object]">
-                        <a routerLink="pp-publies" class="nav-link text-primary mt-3" ng-reflect-router-link="pp-publies" >
+                        <a routerLink="pp-publies" class="nav-link text-primary mt-3" ng-reflect-router-link="plan-passation/pp-publies" >
                             <span class="btn-rounded align-middle">
                                 <fa-icon icon="share" size="2x" [fixedWidth]="true" class="ng-fa-icon" ng-reflect-icon="share" ng-reflect-size="2x" ng-reflect-fixed-width="true">
                                     <svg role="img" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="share" class="svg-inline--fa fa-share fa-w-16 fa-2x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -68,6 +67,16 @@
         </div>
     </div>
     <div class="col-md-9">
+<!--        <div>-->
+<!--            <div class="invisible">-->
+<!--                <div role="alert" class="alert alert-success">-->
+<!--                    <h1 class="text-justify"><b>LA PARTIE DE LA GESTION DU PLAN DE PASSATION CLIQUEZ SUR LES OPTIONS-->
+<!--                    DU SIDEBAR A GAUCHE POUR EFFECTUER VOS OPERATIONS</b></h1>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <router-outlet></router-outlet>
+<!--        <router-outlet name="outlet-a" *ngIf=""></router-outlet>-->
+<!--        <router-outlet name="outlet-b"></router-outlet>-->
     </div>
 </div>

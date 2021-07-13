@@ -11,7 +11,9 @@ import { PlanPassationService } from './plan-passation.service';
 import { PlanPassationComponent } from './plan-passation.component';
 import { PlanPassationDetailComponent } from './plan-passation-detail.component';
 import { PlanPassationUpdateComponent } from './plan-passation-update.component';
-import { PlanDePassationComponent } from '../../modules/plan-de-passation/plan-de-passation.component';
+import { PlanPassationDemandeValidationComponent } from './plan-passation-demande-validation.component';
+import { AjoutRealisationAuplanComponent } from './ajout-realisation-auplan.component';
+import { PpPubliesComponent } from './pp-publies/pp-publies.component';
 
 @Injectable({ providedIn: 'root' })
 export class PlanPassationResolve implements Resolve<IPlanPassation> {
@@ -73,6 +75,30 @@ export const planPassationRoute: Routes = [
   {
     path: ':id/edit',
     component: PlanPassationUpdateComponent,
+    resolve: {
+      planPassation: PlanPassationResolve,
+    },
+    data: {
+      authorities: [Authority.USER],
+      pageTitle: 'gatewaysigmapApp.planpassationmsPlanPassation.home.title',
+    },
+    canActivate: [UserRouteAccessService],
+  },
+  {
+    path: ':id/demande-validation',
+    component: PlanPassationDemandeValidationComponent,
+    resolve: {
+      planPassation: PlanPassationResolve,
+    },
+    data: {
+      authorities: [Authority.USER],
+      pageTitle: 'gatewaysigmapApp.planpassationmsPlanPassation.home.title',
+    },
+    canActivate: [UserRouteAccessService],
+  },
+  {
+    path: 'ajout-realisation-auplan',
+    component: AjoutRealisationAuplanComponent,
     resolve: {
       planPassation: PlanPassationResolve,
     },

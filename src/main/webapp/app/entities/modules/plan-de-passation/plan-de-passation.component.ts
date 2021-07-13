@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./plan-de-passation.component.scss'],
 })
 export class PlanDePassationComponent implements OnInit {
+  rdInvisible: any;
   constructor() {}
 
   ngOnInit(): void {}
+
+  public highlightRow() {
+    this.rdInvisible = 'disabled';
+    // console.log(this.rdInvisible)
+  }
 }

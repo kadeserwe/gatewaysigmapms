@@ -10,7 +10,7 @@
         </button>
 
         <button id="jh-miseval-entity" class="btn btn-info float-right jh-create-entity create-plan-passation"
-                [routerLink]="">
+                [routerLink]="['/plan-de-passation/plan-passation',selectedId,'demande-validation']" [disabled]=" selectedId == null">
             <fa-icon icon="share"></fa-icon>
             <span >
             Demande de validation
@@ -60,8 +60,18 @@
     <div class="table-responsive" id="entities" *ngIf="planPassations && planPassations.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead [ngSwitch]="canLoad()">
+<!--                <tr>-->
+<!--                    <th rowspan="2" data-checkbox="true" data-valign="middle"></th>-->
+<!--                    <th colspan="7" data-aling="center">Header</th>-->
+<!--                </tr>-->
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="transition.bind(this)" *ngSwitchCase="true">
-                    <th scope="col"  jhiSortBy="numero"><span >numero du plan </span> </th>
+<!--                    <th >-->
+<!--                        <span class="custom-checkbox">-->
+<!--                            <input type="checkbox" id="selectAll"/>-->
+<!--                            <label for="selectAll"></label>-->
+<!--                        </span>-->
+<!--                    </th>-->
+                    <th scope="col"  jhiSortBy="numero"><span >numero du plan </span><fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="annee"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.annee">Annee</span><fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="dateCreation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateCreation">Date de création</span><fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="dateMiseValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateMiseValidation">Date de mise à validation</span><fa-icon icon="sort"></fa-icon></th>
@@ -82,7 +92,9 @@
                 </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let planPassation of planPassations | filter:term ">
+              <tr *ngFor="let planPassation of planPassations | filter:term"
+                (click)="highlightRow(planPassation)"
+                [ngClass] = "{'highlight' : planPassation.id == selectedId}">
                 <td>{{ planPassation.numPlan}}</td>
                 <td>{{ planPassation.annee }}</td>
                 <td>{{ planPassation.dateCreation | date:'mediumDate'}}</td>
@@ -94,7 +106,7 @@
                 <td>{{ planPassation.commentaire }}</td>
                 <td class="text-right">
                     <div>
-                        <button id="jh-entity" class="btn btn-primary float-right jh-create-entity create-plan-passation" [routerLink]="">
+                        <button id="jh-entity" class="btn btn-primary float-right jh-create-entity create-plan-passation" [routerLink]="['/plan-de-passation/plan-passation/ajout-realisation-auplan']">
                             <fa-icon icon="plus"></fa-icon>
                             <span>
                              Ajouter Realisations
